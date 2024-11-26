@@ -8,5 +8,10 @@ namespace FitnessDomein.Model
 {
     public class RunningSession
     {
+        public int Duration { get; set; }
+        public double AvgSpeed { get; set; }
+        public Member Member { get; set; }
+        public int? RunningSessionId {  get; set; }
+        public DateTime Date { get; set; }
     }
 }

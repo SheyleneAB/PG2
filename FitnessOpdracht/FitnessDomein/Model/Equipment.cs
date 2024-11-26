@@ -8,5 +8,7 @@ namespace FitnessDomein.Model
 {
     public class Equipment
     {
+        public int? Id { get; set; }
+        public string DeviceType { get; set; }
     }
 }

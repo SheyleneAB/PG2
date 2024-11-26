@@ -8,5 +8,10 @@ namespace FitnessDomein.Model
 {
     public class RunningSessionDetail
     {
+        public int SeqNR { get; set; }
+        public int IntervalTime { get; set; }
+        public double IntervalSpeed { get; set; }
+        public RunningSession RunningSession { get; set; }
+        // omgekeerd? runningsesdet in runses
     }
 }
