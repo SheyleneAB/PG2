@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDomein", "FitnessDomein\FitnessDomein.csproj", "{10DB6371-5CBC-4565-9751-E5386D765782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessREST", "FitnessREST\FitnessREST.csproj", "{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10DB6371-5CBC-4565-9751-E5386D765782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DB6371-5CBC-4565-9751-E5386D765782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DB6371-5CBC-4565-9751-E5386D765782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DB6371-5CBC-4565-9751-E5386D765782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
