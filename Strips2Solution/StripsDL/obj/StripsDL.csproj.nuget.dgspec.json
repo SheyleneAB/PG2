@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elyne\\PG2\\Strips2\\StripsDL\\StripsDL.csproj": {}
+    "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsDL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elyne\\PG2\\Strips2\\StripsBL\\StripsBL.csproj": {
+    "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\StripsBL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elyne\\PG2\\Strips2\\StripsBL\\StripsBL.csproj",
+        "projectUniqueName": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\StripsBL.csproj",
         "projectName": "StripsBL",
-        "projectPath": "C:\\Users\\elyne\\PG2\\Strips2\\StripsBL\\StripsBL.csproj",
+        "projectPath": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\StripsBL.csproj",
         "packagesPath": "C:\\Users\\elyne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elyne\\PG2\\Strips2\\StripsBL\\obj\\",
+        "outputPath": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\elyne\\PG2\\Strips2\\StripsDL\\StripsDL.csproj": {
+    "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsDL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elyne\\PG2\\Strips2\\StripsDL\\StripsDL.csproj",
+        "projectUniqueName": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsDL.csproj",
         "projectName": "StripsDL",
-        "projectPath": "C:\\Users\\elyne\\PG2\\Strips2\\StripsDL\\StripsDL.csproj",
+        "projectPath": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsDL.csproj",
         "packagesPath": "C:\\Users\\elyne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elyne\\PG2\\Strips2\\StripsDL\\obj\\",
+        "outputPath": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\elyne\\PG2\\Strips2\\StripsBL\\StripsBL.csproj": {
-                "projectPath": "C:\\Users\\elyne\\PG2\\Strips2\\StripsBL\\StripsBL.csproj"
+              "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\StripsBL.csproj": {
+                "projectPath": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\StripsBL.csproj"
               }
             }
           }

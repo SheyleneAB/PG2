@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bsh3WAPcKXM=",
+  "dgSpecHash": "Q0zUmnSOfu4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\elyne\\PG2\\Strips2\\StripsRest\\StripsRest.csproj",
+  "projectFilePath": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsRest\\StripsRest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elyne\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\elyne\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
