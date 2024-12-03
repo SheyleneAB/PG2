@@ -1,0 +1,6 @@
+@StripsRest_HostAddress = http://localhost:5033
+
+GET {{StripsRest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
