@@ -20,7 +20,7 @@ namespace StripsBL.Model
         public string? Email
         {
             get { return email; }
-            set { if (string.IsNullOrWhiteSpace(value)) throw new DomeinException("SetEmail"); email = value; }
+            set {  email = value; }
         }
         public int? Id;
 

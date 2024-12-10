@@ -10,3 +10,15 @@ C:\Users\elyne\PG2\Strips\StripsBL\obj\Debug\net8.0\StripsBL.dll
 C:\Users\elyne\PG2\Strips\StripsBL\obj\Debug\net8.0\refint\StripsBL.dll
 C:\Users\elyne\PG2\Strips\StripsBL\obj\Debug\net8.0\StripsBL.pdb
 C:\Users\elyne\PG2\Strips\StripsBL\obj\Debug\net8.0\ref\StripsBL.dll
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\bin\Debug\net8.0\StripsBL.deps.json
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\bin\Debug\net8.0\StripsBL.dll
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\bin\Debug\net8.0\StripsBL.pdb
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\StripsBL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\StripsBL.AssemblyInfoInputs.cache
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\StripsBL.AssemblyInfo.cs
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\StripsBL.csproj.CoreCompileInputs.cache
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\StripsBL.sourcelink.json
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\StripsBL.dll
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\refint\StripsBL.dll
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\StripsBL.pdb
+C:\Users\elyne\PG2\Strips2Solution\StripsBL\obj\Debug\net8.0\ref\StripsBL.dll

@@ -1,6 +1,7 @@
 ﻿using StripsBL.Model;
 using System;
 using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,44 +11,34 @@ namespace StripsDL
 {
     public class StripsRepository
     {
-        public List<Strip> LeesStrips(string fileName)
+        private string connectionString;
+
+        public StripsRepository(string connectionString)
         {
-            try
-            {
-                List<Strip> strips = new List<Strip>();
-                using (StreamReader reader = new StreamReader(fileName))
-                {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                       
-                        string[] parts = line.Split(';');
-                        if (parts.Length != 5)
-                        {
-                            throw new Exception($"Invalid format in line: {line}");
-                        }
-
-                        int reeksNummer = int.Parse(parts[0]);
-                        string titel = parts[1];
-                        string uitgeverijNaam = parts[2];
-                        string reeksNaam = parts[3];
-                        string auteursString = parts[4];
-
-                        List<Auteur> auteurs = auteursString
-                                                            .Split('|')
-                                                            .Select(a => new Auteur(a.Trim(), null))
-                                                            .ToList();
-                        Strip strip = new Strip(titel, auteurs,  new Reeks(reeksNaam, reeksNummer), new Uitgeverij(uitgeverijNaam));
-                        strips.Add(strip);
-                    }
-                }
-                return strips;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"FileProcessor-LeesStrips [{fileName}]", ex);
-            }
-
+            this.connectionString = connectionString;
         }
+        public void SchrijfStrip(Strip strip)
+        {
+            string SQL = "INSERT INTO Product( id, nednaam, wetnaam, beschrijving, prijs) VALUES( @Id, @Nednaam, " +
+                "@Wetnaam, @Beschrijving, @Prijs)";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandText = SQL;
+                cmd.Parameters.Add(new SqlParameter("@Nednaam", System.Data.SqlDbType.NVarChar));
+                cmd.Parameters["@Nednaam"].Value = strip.Nednaam;
+                cmd.Parameters.Add(new SqlParameter("@Wetnaam", System.Data.SqlDbType.NVarChar));
+                cmd.Parameters["@Wetnaam"].Value = strip.Wetnaam;
+                cmd.Parameters.Add(new SqlParameter("@Beschrijving", System.Data.SqlDbType.NVarChar));
+                cmd.Parameters["@Beschrijving"].Value = strip.Beschrijving;
+                cmd.Parameters.Add(new SqlParameter("@Prijs", System.Data.SqlDbType.Float));
+                cmd.Parameters["@Prijs"].Value = strip.Prijs;
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+
     }
 }

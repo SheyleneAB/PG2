@@ -8,7 +8,7 @@ namespace StripsBL.Model
 {
     public class Reeks
     {
-        public Reeks(string naam,  int reeksnummer)
+        public Reeks(string naam,  int? reeksnummer)
         {
             Naam = naam;
             Reeksnummer = reeksnummer;
@@ -16,6 +16,6 @@ namespace StripsBL.Model
 
         public string Naam { get; set; }
         public int? Id { get; set; }
-        public int Reeksnummer { get; set; }
+        public int? Reeksnummer { get; set; }
     }
 }
