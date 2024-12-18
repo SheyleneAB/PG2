@@ -50,8 +50,7 @@
               "RelativeToolTip": "StripsBL\\Model\\Auteur.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAACgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T13:55:31.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T13:55:31.292Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "StripsBL\\Services\\StripService.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAIAwwBsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T22:18:19.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T22:18:19.397Z"
             },
             {
               "$type": "Document",
@@ -86,7 +84,7 @@
               "RelativeDocumentMoniker": "StripsDL\\StripsRepository.cs",
               "ToolTip": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsRepository.cs",
               "RelativeToolTip": "StripsDL\\StripsRepository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAAEsAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAAGcAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T21:00:33.76Z",
               "EditorCaption": ""
@@ -101,8 +99,7 @@
               "RelativeToolTip": "StripsDL\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T08:35:40.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T08:35:40.933Z"
             },
             {
               "$type": "Document",
@@ -114,8 +111,7 @@
               "RelativeToolTip": "StripsRest\\Controllers\\AuteurController.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAIAwwB0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T10:20:41.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T10:20:41.641Z"
             }
           ]
         }

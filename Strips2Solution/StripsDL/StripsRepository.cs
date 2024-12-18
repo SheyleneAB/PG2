@@ -80,46 +80,71 @@ namespace StripsDL
 
         public void SchrijfStrip(Strip strip)
         {
-            string SQL = "INSERT INTO offerte(datum, klantid, afhalenbool, plaatsenbool) output INSERTED.ID VALUES( @Datum, @Klantid, @Afhalenbool, @Plaatsenbool)";
-            string SQLAU = "INSERT INTO offerteklantaantal(offerteid, productid, aantal) VALUES(@OfferteId, @ProductId, @Aantal)";
+            const string SQL = @"
+                INSERT INTO Strip (Titel, ReeksId, UitgeverijId) 
+                OUTPUT INSERTED.ID 
+                VALUES (@Titel, @ReeksId, @UitgeverijId);";
+
+            const string SQLReeks = @"
+                insert into Reeks(naam) OUTPUT INSERTED.ID values (@ReeksNaam);";
+
+            const string SQLUitgeverij = @"
+                insert into Uitgeverij(naam, adres) OUTPUT INSERTED.ID values (@UitgeverijNaam, @Adres);";
+
+            const string SQLAuteur = @"'
+                insert into Auteur(naam, email) OUTPUT INSERTED.ID values (@AuteurNaam, @Email);";
+
+            const string SQLStripAuteur = @"
+                INSERT INTO StripAuteur () 
+                VALUES (@StripId, @AuteurId);";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlTransaction transaction = conn.BeginTransaction())
                 {
-                    int offerteId;
                     try
                     {
                         using (SqlCommand cmd = conn.CreateCommand())
                         {
                             cmd.Transaction = transaction;
+                            cmd.CommandText = SQLReeks;
+
+                            cmd.Parameters.AddWithValue("@ReeksNaam", strip.Reeks.Naam);
+                            
+                        }
+                        int stripId;
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.Transaction = transaction;
                             cmd.CommandText = SQL;
 
-                            cmd.Parameters.Add(new SqlParameter("@Datum", System.Data.SqlDbType.DateTime)).Value = offerte.Datum;
-                            cmd.Parameters.Add(new SqlParameter("@Klantid", System.Data.SqlDbType.Int)).Value = offerte.Klant.Id;
-                            cmd.Parameters.Add(new SqlParameter("@Afhalenbool", System.Data.SqlDbType.Bit)).Value = offerte.AfhalenBool;
-                            cmd.Parameters.Add(new SqlParameter("@Plaatsenbool", System.Data.SqlDbType.Bit)).Value = offerte.PlaatsenBool;
+                            cmd.Parameters.AddWithValue("@Titel", strip.Titel);
+                            stripId = Convert.ToInt32(cmd.ExecuteScalar());
+                        }
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.Transaction = transaction;
+                            cmd.CommandText = SQL;
 
-                            offerteId = Convert.ToInt32(cmd.ExecuteScalar());
+                            cmd.Parameters.AddWithValue("@Titel", strip.Titel);
+                            stripId = Convert.ToInt32(cmd.ExecuteScalar());
                         }
 
-                        using (SqlCommand cmdProd = conn.CreateCommand())
+                        using (SqlCommand cmdAuteur = conn.CreateCommand())
                         {
-                            cmdProd.Transaction = transaction;
-                            cmdProd.CommandText = SQLprod;
+                            cmdAuteur.Transaction = transaction;
+                            cmdAuteur.CommandText = SQLStripAuteur;
 
-                            cmdProd.Parameters.Add(new SqlParameter("@OfferteId", System.Data.SqlDbType.Int));
-                            cmdProd.Parameters.Add(new SqlParameter("@ProductId", System.Data.SqlDbType.Int));
-                            cmdProd.Parameters.Add(new SqlParameter("@Aantal", System.Data.SqlDbType.Int));
+                            cmdAuteur.Parameters.Add(new SqlParameter("@StripId", SqlDbType.Int));
+                            cmdAuteur.Parameters.Add(new SqlParameter("@AuteurId", SqlDbType.Int));
 
-                            foreach (var producten in offerte.Producten)
+                            foreach (var auteur in strip.Auteurs)
                             {
-                                cmdProd.Parameters["@OfferteId"].Value = offerteId;
-                                cmdProd.Parameters["@ProductId"].Value = producten.Key.Id;
-                                cmdProd.Parameters["@Aantal"].Value = producten.Value;
+                                cmdAuteur.Parameters["@StripId"].Value = stripId;
+                                cmdAuteur.Parameters["@AuteurId"].Value = auteur.Id;
 
-                                cmdProd.ExecuteNonQuery();
+                                cmdAuteur.ExecuteNonQuery();
                             }
                         }
 
@@ -128,11 +153,12 @@ namespace StripsDL
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw;
+                        throw new Exception("Error writing strip", ex);
                     }
                 }
             }
         }
-        
+
+
     }
 }
