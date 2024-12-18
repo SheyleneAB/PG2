@@ -17,6 +17,13 @@ namespace StripsBL.Model
         public Reeks Reeks { get; set; }
         public Uitgeverij Uitgeverij { get; set; }
 
+        public Strip(string titel,  Reeks reeks, Uitgeverij uitgeverij)
+        {
+            Titel = titel;
+            Reeks = reeks;
+            Uitgeverij = uitgeverij;
+        }
+
         public Strip(string titel, List<Auteur> auteurs, Reeks reeks, Uitgeverij uitgeverij)
         {
             Titel = titel;

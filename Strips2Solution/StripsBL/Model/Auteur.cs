@@ -24,9 +24,13 @@ namespace StripsBL.Model
         }
         public int? Id;
 
-
-        public Auteur(string naam, string? email)
+        public Auteur( string naam)
         {
+            Naam = naam;
+        }
+        public Auteur( int? id, string naam, string? email)
+        {
+            Id = id;
             Naam = naam;
             Email = email;
         }

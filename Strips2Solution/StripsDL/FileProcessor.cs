@@ -39,7 +39,7 @@ namespace StripsDL
 
                         List<Auteur> auteurs = auteursString
                                                             .Split('|')
-                                                            .Select(a => new Auteur(a.Trim(), null))
+                                                            .Select(a => new Auteur(a.Trim()))
                                                             .ToList();
                         Strip strip = new Strip(titel, auteurs, new Reeks(reeksNaam, reeksNummer), new Uitgeverij(uitgeverijNaam));
                         strips.Add(strip);

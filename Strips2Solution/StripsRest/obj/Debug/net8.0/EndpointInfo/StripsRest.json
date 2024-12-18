@@ -4,6 +4,122 @@
     "title": "StripsRest",
     "version": "1.0"
   },
-  "paths": { },
-  "components": { }
+  "paths": {
+    "/api/Auteur/Auteur/{Id}": {
+      "get": {
+        "tags": [
+          "Auteur"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Strip"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Strip"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Strip"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Auteur": {
+        "type": "object",
+        "properties": {
+          "naam": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Reeks": {
+        "type": "object",
+        "properties": {
+          "naam": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "reeksnummer": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Strip": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "titel": {
+            "type": "string",
+            "nullable": true
+          },
+          "reeks": {
+            "$ref": "#/components/schemas/Reeks"
+          },
+          "uitgeverij": {
+            "$ref": "#/components/schemas/Uitgeverij"
+          },
+          "auteurs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auteur"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Uitgeverij": {
+        "type": "object",
+        "properties": {
+          "naam": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

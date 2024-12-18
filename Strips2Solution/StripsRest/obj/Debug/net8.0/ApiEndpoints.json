@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "ContainingType": "StripsRest.Controllers.AuteurController",
+    "Method": "Get",
+    "RelativePath": "api/Auteur/Auteur/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "StripsBL.Model.Strip",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

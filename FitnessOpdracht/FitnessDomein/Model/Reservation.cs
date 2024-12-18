@@ -14,6 +14,7 @@ namespace FitnessDomein.Model
         public DateTime Date { get; set; }
         public Equipment Equipment { get; set; }
         // reservations in member 
+        // lijst combinatie tijdslot en equipment
 
     }
 }

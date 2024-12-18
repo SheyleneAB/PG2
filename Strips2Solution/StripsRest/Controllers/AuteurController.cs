@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using StripsBL.Model;
 using StripsBL.Services;
 
 namespace StripsRest.Controllers
 {
-    [Route("api/[controller]/Straat")]
+
+    [Route("api/[controller]/Auteur")]
     [ApiController]
     public class AuteurController : ControllerBase
     {
@@ -16,12 +19,14 @@ namespace StripsRest.Controllers
             this.StripService = stripservice;
         }
 
-        [HttpGet("{gemeenteId}")]
-        public ActionResult<GemeenteRESToutputDTO> GetGemeente(int gemeenteId)
+        [HttpGet("{Id}")]
+        public ActionResult<Strip> Get(int Id)
         {
-            Gemeente gemeente = StripService.GeefGemeente(gemeenteId);
-            GemeenteRESToutputDTO dto = MapFromDomain.MapFromGemeenteDomein(url, gemeente, straatService);
-            return Ok(dto);
+            try
+            {
+                return Ok(StripService.GeefStrip(Id));
+            }
+            catch (Exception ex) { return BadRequest(ex.Message); }
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitnessREST")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86512a85b6274bd3f8e853ecc268c789768e5f78")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6216262fabf5e5c20911bee235d3f9b3ff1a97b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitnessREST")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitnessREST")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

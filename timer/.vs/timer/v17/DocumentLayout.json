@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\elyne\\PG2\\timer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C810BC7-66B8-4DDF-8CAB-FC8639F1C510}|timer\\timer.csproj|c:\\users\\elyne\\pg2\\timer\\timer\\function1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C810BC7-66B8-4DDF-8CAB-FC8639F1C510}|timer\\timer.csproj|solutionrelative:timer\\function1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Function1.cs",
+              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\timer\\timer\\Function1.cs",
+              "RelativeDocumentMoniker": "timer\\Function1.cs",
+              "ToolTip": "C:\\Users\\elyne\\PG2\\timer\\timer\\Function1.cs",
+              "RelativeToolTip": "timer\\Function1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T10:46:11.776Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
