@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripsDL", "StripsDL\Strips
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{030FECFB-D15C-4269-9D03-328DDA56027B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripClientWPFStripView", "StripClientWPFStripView\StripClientWPFStripView.csproj", "{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,9 +31,16 @@ Global
 		{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF} = {030FECFB-D15C-4269-9D03-328DDA56027B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {63CB42D3-A088-4585-982A-90EFDD0CDC55}
