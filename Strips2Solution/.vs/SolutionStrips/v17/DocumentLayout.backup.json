@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\elyne\\PG2\\Strips2Solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsbl\\services\\stripservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|solutionrelative:stripsbl\\services\\stripservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}|StripsDL\\StripsDL.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsdl\\stripsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}|StripsDL\\StripsDL.csproj|solutionrelative:stripsdl\\stripsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}|StripClientWPFStripView\\StripClientWPFStripView.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripclientwpfstripview\\model\\reeks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}|StripClientWPFStripView\\StripClientWPFStripView.csproj|solutionrelative:stripclientwpfstripview\\model\\reeks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsbl\\interfaces\\istripsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|solutionrelative:stripsbl\\interfaces\\istripsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45CB5538-1B6C-43F6-ADF4-FD14B8F97C18}|StripsRest\\StripsRest.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsrest\\controllers\\reekscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45CB5538-1B6C-43F6-ADF4-FD14B8F97C18}|StripsRest\\StripsRest.csproj|solutionrelative:stripsrest\\controllers\\reekscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsbl\\services\\stripservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|solutionrelative:stripsbl\\services\\stripservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45CB5538-1B6C-43F6-ADF4-FD14B8F97C18}|StripsRest\\StripsRest.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsrest\\controllers\\stripcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{45CB5538-1B6C-43F6-ADF4-FD14B8F97C18}|StripsRest\\StripsRest.csproj|solutionrelative:stripsrest\\controllers\\auteurcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}|StripsDL\\StripsDL.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsdl\\stripsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}|StripsDL\\StripsDL.csproj|solutionrelative:stripsdl\\stripsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}|StripsDL\\StripsDL.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsdl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F4CC6B4-BD96-4E81-B47D-EFAD256D4D04}|StripsDL\\StripsDL.csproj|solutionrelative:stripsdl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45CB5538-1B6C-43F6-ADF4-FD14B8F97C18}|StripsRest\\StripsRest.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsrest\\controllers\\reekscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45CB5538-1B6C-43F6-ADF4-FD14B8F97C18}|StripsRest\\StripsRest.csproj|solutionrelative:stripsrest\\controllers\\reekscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}|StripClientWPFStripView\\StripClientWPFStripView.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripclientwpfstripview\\services\\stripservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,19 +55,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Reeks.cs",
+              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripClientWPFStripView\\Model\\Reeks.cs",
+              "RelativeDocumentMoniker": "StripClientWPFStripView\\Model\\Reeks.cs",
+              "ToolTip": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripClientWPFStripView\\Model\\Reeks.cs",
+              "RelativeToolTip": "StripClientWPFStripView\\Model\\Reeks.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T23:09:35.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StripsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsRepository.cs",
+              "RelativeDocumentMoniker": "StripsDL\\StripsRepository.cs",
+              "ToolTip": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsRepository.cs",
+              "RelativeToolTip": "StripsDL\\StripsRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAAGAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T21:00:33.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "IStripsRepository.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\Interfaces\\IStripsRepository.cs",
               "RelativeDocumentMoniker": "StripsBL\\Interfaces\\IStripsRepository.cs",
               "ToolTip": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\Interfaces\\IStripsRepository.cs",
               "RelativeToolTip": "StripsBL\\Interfaces\\IStripsRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T23:19:00.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "StripController.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsRest\\Controllers\\StripController.cs",
               "RelativeDocumentMoniker": "StripsRest\\Controllers\\StripController.cs",
@@ -71,12 +101,11 @@
               "RelativeToolTip": "StripsRest\\Controllers\\StripController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAswBQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T23:09:30.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-21T23:09:30.165Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "StripService.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\Services\\StripService.cs",
               "RelativeDocumentMoniker": "StripsBL\\Services\\StripService.cs",
@@ -89,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "AuteurController.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsRest\\Controllers\\AuteurController.cs",
               "RelativeDocumentMoniker": "StripsRest\\Controllers\\AuteurController.cs",
@@ -97,25 +126,11 @@
               "RelativeToolTip": "StripsRest\\Controllers\\AuteurController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T10:20:41.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T10:20:41.641Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StripsRepository.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsRepository.cs",
-              "RelativeDocumentMoniker": "StripsDL\\StripsRepository.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\StripsRepository.cs",
-              "RelativeToolTip": "StripsDL\\StripsRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAOgAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T21:00:33.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "ReeksController.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsRest\\Controllers\\ReeksController.cs",
               "RelativeDocumentMoniker": "StripsRest\\Controllers\\ReeksController.cs",
@@ -128,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "StripService.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripClientWPFStripView\\Services\\StripService.cs",
               "RelativeDocumentMoniker": "StripClientWPFStripView\\Services\\StripService.cs",
@@ -136,12 +151,11 @@
               "RelativeToolTip": "StripClientWPFStripView\\Services\\StripService.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T10:41:57.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T10:41:57.913Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsDL\\Program.cs",
               "RelativeDocumentMoniker": "StripsDL\\Program.cs",
@@ -149,8 +163,7 @@
               "RelativeToolTip": "StripsDL\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T08:35:40.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T08:35:40.933Z"
             }
           ]
         }

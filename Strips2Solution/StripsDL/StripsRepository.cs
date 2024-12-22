@@ -94,7 +94,65 @@ namespace StripsDL
                 }
             }
         }
-        
+        public List<Strip> GeefReeksMStrip(int reeksnummer)
+        {
+            string SQL = "SELECT Strip.*, Reeks.Naam as ReeksNaam, Uitgeverij.Naam as UitgeverNaam, Auteur.Naam as Auteurnaam, Auteur.Id as AuteurId" +
+                         " FROM Strip" +
+                         " JOIN Reeks ON Reeks.Id = Strip.ReeksId" +
+                         " JOIN Uitgeverij ON Uitgeverij.Id = Strip.UitgeverijId" +
+                         " JOIN StripAuteur ON Strip.Id = StripAuteur.StripId" +
+                         " JOIN Auteur ON StripAuteur.AuteurId = Auteur.Id" +
+                         " WHERE Reeks.Reeksnummer = @Reeksnummer;";
+
+            List<Strip> strips = new List<Strip>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                try
+                {
+                    conn.Open();
+                    cmd.CommandText = SQL;
+                    cmd.Parameters.AddWithValue("@Reeksnummer", reeksnummer);
+
+                    using (IDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int stripId = reader.GetInt32(reader.GetOrdinal("Id"));
+                            Strip strip = strips.FirstOrDefault(s => s.Id == stripId);
+                            if (strip == null)
+                            {
+                                string titel = reader.GetString(reader.GetOrdinal("Titel"));
+                                int uitgeverijId = reader.GetInt32(reader.GetOrdinal("UitgeverijId"));
+                                string adres = reader.IsDBNull(reader.GetOrdinal("Adres")) ? string.Empty : reader.GetString(reader.GetOrdinal("Adres"));
+                                string reeksNaam = reader.GetString(reader.GetOrdinal("ReeksNaam"));
+                                int reeksId = reader.GetInt32(reader.GetOrdinal("ReeksId"));
+                                string uitgeverijNaam = reader.GetString(reader.GetOrdinal("UitgeverNaam"));
+                                int reeksNummer = reader.IsDBNull(reader.GetOrdinal("ReeksNummer")) ? 0 : reader.GetInt32(reader.GetOrdinal("ReeksNummer"));
+
+                                Uitgeverij uitgeverij = new Uitgeverij(uitgeverijId, uitgeverijNaam, adres);
+                                Reeks reeks = new Reeks(reeksNaam, reeksId, reeksNummer);
+                                strip = new Strip(titel, reeks, uitgeverij) { Id = stripId };
+                                strips.Add(strip);
+                            }
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("AuteurId")))
+                            {
+                                int auteurId = reader.GetInt32(reader.GetOrdinal("AuteurId"));
+                                string auteurNaam = reader.GetString(reader.GetOrdinal("Auteurnaam"));
+                                Auteur auteur = new Auteur(auteurId, auteurNaam, null);
+                                strip.VoegAuteurToe(auteur);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error retrieving strips by series number", ex);
+                }
+            }
+            return strips;
+        }
         public void SchrijfStripReeksnr(Strip strip)
         {
             const string SQL = @"
@@ -242,7 +300,6 @@ namespace StripsDL
                 cmd.ExecuteNonQuery();
             }
         }
-
         public void RemoveAuteurFromStrip(int stripId, int auteurId)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -255,8 +312,148 @@ namespace StripsDL
                 cmd.ExecuteNonQuery();
             }
         }
+        public void UpdateStripTitel(Strip strip)
+        {
+            string query = "UPDATE dbo.strip SET Titel=@Titel WHERE Strip.id =@Stripid";
+            SqlConnection conn = new SqlConnection(connectionString);
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.Add(new SqlParameter("@Stripid", SqlDbType.Int));
+                    command.Parameters.Add(new SqlParameter("@Titel", SqlDbType.NVarChar));
+                    command.Parameters["@Stripid"].Value = strip.Id;
+                    command.Parameters["@Titel"].Value = strip.Titel;
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("UpdateStripTitel not successful", ex);
+                    dbex.Data.Add("Strip", strip);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public void UpdateUitgeverijgeg(Uitgeverij uitgeverij)
+        {
+            string query = "UPDATE dbo.Uitgeverij SET Naam=@Naam, Adres=@Adres WHERE Uitgeverij.id =@Uitgeverijid";
+            SqlConnection conn = new SqlConnection(connectionString);
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.Add(new SqlParameter("@Uitgeverijid", SqlDbType.Int));
+                    command.Parameters.Add(new SqlParameter("@Naam", SqlDbType.NVarChar));
+                    command.Parameters.Add(new SqlParameter("@Adres", SqlDbType.NVarChar));
+                    command.Parameters["@Uitgeverijid"].Value = uitgeverij.UitgeverijId;
+                    command.Parameters["@Naam"].Value = uitgeverij.Naam;
+                    command.Parameters["@Adres"].Value = uitgeverij.Adres;
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("UpdateUitgeverijgeg not successful", ex);
+                    dbex.Data.Add("Uitgeverij", uitgeverij);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
 
 
-
+        }
+        public void UpdateAuteurgeg(Auteur auteur)
+        {
+            string query = "UPDATE dbo.Auteur SET Naam=@Naam, Email=@Email WHERE Auteur.id =@Auteurid";
+            SqlConnection conn = new SqlConnection(connectionString);
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.Add(new SqlParameter("@Auteurid", SqlDbType.Int));
+                    command.Parameters.Add(new SqlParameter("@Naam", SqlDbType.NVarChar));
+                    command.Parameters.Add(new SqlParameter("@Email", SqlDbType.NVarChar));
+                    command.Parameters["@Auteurid"].Value = auteur.Id;
+                    command.Parameters["@Naam"].Value = auteur.Naam;
+                    command.Parameters["@Email"].Value = auteur.Email;
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("UpdateAuteurgeg not successful", ex);
+                    dbex.Data.Add("Auteur", auteur);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public void VeranderReeks(Strip strip, Reeks reeks)
+        {
+            string query = "UPDATE dbo.strip SET ReeksId=@ReeksId WHERE Strip.id =@Stripid";
+            SqlConnection conn = new SqlConnection(connectionString);
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.Add(new SqlParameter("@Stripid", SqlDbType.Int));
+                    command.Parameters.Add(new SqlParameter("@ReeksId", SqlDbType.Int));
+                    command.Parameters["@Stripid"].Value = strip.Id;
+                    command.Parameters["@ReeksId"].Value = reeks.Id;
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("VeranderReeks not successful", ex);
+                    dbex.Data.Add("Strip", strip);
+                    dbex.Data.Add("Reeks", reeks);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public void VeranderUitgever(Strip strip, Uitgeverij uitgeverij)
+        {
+            string query = "UPDATE dbo.strip SET UitgeverijId=@UitgeverijId WHERE Strip.id =@Stripid";
+            SqlConnection conn = new SqlConnection(connectionString);
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.Add(new SqlParameter("@Stripid", SqlDbType.Int));
+                    command.Parameters.Add(new SqlParameter("@UitgeverijId", SqlDbType.Int));
+                    command.Parameters["@Stripid"].Value = strip.Id;
+                    command.Parameters["@UitgeverijId"].Value = uitgeverij.UitgeverijId;
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("VeranderUitgever not successful", ex);
+                    dbex.Data.Add("Strip", strip);
+                    dbex.Data.Add("Uitgeverij", uitgeverij);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

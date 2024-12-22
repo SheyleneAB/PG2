@@ -7,5 +7,7 @@ namespace StripsBL.Interfaces
         Strip GeefStrip(int id);
         void RemoveAuteurFromStrip(int stripId, int auteurId);
         void AddAuteurToStrip(int stripId, Auteur auteur);
+        public void UpdateStripTitel(Strip strip);
+        public void UpdateUitgeverijgeg(Uitgeverij uitgeverij);
     }
 }

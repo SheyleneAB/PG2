@@ -8,7 +8,7 @@ namespace StripsBL.Model
 {
     public class Uitgeverij
     {
-        private int uitgeverijid;
+        private int? id;
         private string adres;
 
         public Uitgeverij(string naam)
@@ -18,12 +18,13 @@ namespace StripsBL.Model
 
         public Uitgeverij(int uitgeverijid, string naam, string adres)
         {
-            this.uitgeverijid = uitgeverijid;
+            Id = uitgeverijid;
             Naam = naam;
             this.adres = adres;
         }
 
         public string Naam {  get; set; }
+        public int? Id { get; set; }
 
     }
 }
