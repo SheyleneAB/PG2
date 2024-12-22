@@ -1,0 +1,4 @@
+C:\Users\elyne\PG2\Strips2Solution\StripClientWPFStripView\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\elyne\PG2\Strips2Solution\StripClientWPFStripView\obj\Debug\net9.0-windows\App.g.cs
+C:\Users\elyne\PG2\Strips2Solution\StripClientWPFStripView\obj\Debug\net9.0-windows\StripClientWPFStripView_MarkupCompile.cache
+C:\Users\elyne\PG2\Strips2Solution\StripClientWPFStripView\obj\Debug\net9.0-windows\StripClientWPFStripView_MarkupCompile.lref

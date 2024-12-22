@@ -19,6 +19,7 @@ namespace StripClientWPFStripView.Services
             client.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
+        //TODO: vis uit waarom readasasync niet werkt
         public async Task<Strip> GetStripAsync(string path)
         {
             try

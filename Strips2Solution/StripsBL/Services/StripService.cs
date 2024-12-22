@@ -18,6 +18,17 @@ namespace StripsBL.Services
             this.repo = repo;
         }
 
+        public void VerwijderAuteur(int stripId, int auteurId)
+        {
+            repo.RemoveAuteurFromStrip(stripId, auteurId);
+        }
+
+        public void VoegAuteurToe(int stripId, Auteur auteur)
+        {
+            //TODO: check if auteur WHAT is going wrong here
+            repo.AddAuteurToStrip(stripId, auteur);
+        }
+
         public Strip GeefStrip(int id)
         {
             try

@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Auteur/Auteur/{Id}": {
+    "/api/Strip/{Id}": {
       "get": {
         "tags": [
-          "Auteur"
+          "Strip"
         ],
         "parameters": [
           {
@@ -41,6 +41,80 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/Strip/{stripId}/auteurs": {
+      "post": {
+        "tags": [
+          "Strip"
+        ],
+        "parameters": [
+          {
+            "name": "stripId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auteur"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auteur"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auteur"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Strip/{stripId}/auteurs/{auteurId}": {
+      "delete": {
+        "tags": [
+          "Strip"
+        ],
+        "parameters": [
+          {
+            "name": "stripId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "auteurId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -113,7 +187,16 @@
       "Uitgeverij": {
         "type": "object",
         "properties": {
+          "uitgeverijId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "naam": {
+            "type": "string",
+            "nullable": true
+          },
+          "adres": {
             "type": "string",
             "nullable": true
           }
