@@ -5,50 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Strip/{Id}": {
-      "get": {
-        "tags": [
-          "Strip"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Strip"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Strip"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Strip"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Strip/{stripId}/auteurs": {
+    "/api/Auteur/Auteur/{stripId}/auteurs": {
       "post": {
         "tags": [
-          "Strip"
+          "Auteur"
         ],
         "parameters": [
           {
@@ -87,10 +47,10 @@
         }
       }
     },
-    "/api/Strip/{stripId}/auteurs/{auteurId}": {
+    "/api/Auteur/Auteur/{stripId}/auteurs/{auteurId}": {
       "delete": {
         "tags": [
-          "Strip"
+          "Auteur"
         ],
         "parameters": [
           {
@@ -107,6 +67,47 @@
             "in": "path",
             "required": true,
             "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auteur"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auteur"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auteur"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Strip/{Id}": {
+      "get": {
+        "tags": [
+          "Strip"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
               "type": "integer",
               "format": "int32"
             }
@@ -114,7 +115,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Strip"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Strip"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Strip"
+                }
+              }
+            }
           }
         }
       }

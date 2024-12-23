@@ -441,6 +441,33 @@ namespace StripsDL
             }
             return reeks.Id.Value;
         }
+        public int VoegUitgeverijToe(Uitgeverij uitgever)
+        {
+            string query = "INSERT INTO dbo.Uitgeverij (Naam, Adres) OUTPUT INSERTED.Id VALUES (@Naam, @Adres)";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = conn.CreateCommand())
+            {
+                try
+                {
+                    conn.Open();
+                    command.CommandText = query;
+                    command.Parameters.AddWithValue("@Naam", uitgever.Naam);
+                    command.Parameters.AddWithValue("@Adres", uitgever.Adres ?? (object)DBNull.Value);
+                    uitgever.UitgeverijId = (int)command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("VoegUitgeverijToe niet gelukt", ex);
+                    dbex.Data.Add("Uitgeverij", uitgever);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return uitgever.UitgeverijId.Value;
+        }
         public void AddAuteurToStrip(int stripId, int auteurid)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -632,5 +659,7 @@ namespace StripsDL
                 }
             }
         }
+
+       
     }
 }

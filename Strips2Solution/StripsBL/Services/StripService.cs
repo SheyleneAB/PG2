@@ -36,7 +36,6 @@ namespace StripsBL.Services
             }
 
         }
-
         public Auteur VoegAuteurToe(int stripId, Auteur auteur)
         {
             try
@@ -54,7 +53,6 @@ namespace StripsBL.Services
                 throw new StripServiceException("VoegAuteurToe", ex);
             }
         }
-
         public Strip GeefStrip(int id)
         {
             try
@@ -72,7 +70,7 @@ namespace StripsBL.Services
             catch (Exception ex) { throw new StripServiceException("GeefReeks", ex); }
 
         }
-        public void UpdateStripTitel (Strip strip)
+        public void UpdateStripTitel(Strip strip)
         {
             try
             {
@@ -109,10 +107,22 @@ namespace StripsBL.Services
                 if (strip == null) throw new StripServiceException("VeranderReeks - strip is null");
                 if (reeks == null) throw new StripServiceException("VeranderReeks - reeks is null");
                 if (!repo.HeeftStrip(strip)) throw new StripServiceException("VeranderReeks - strip bestaat niet");
-                if (!repo.HeeftReeks(reeks)) throw new StripServiceException("VeranderReeks - reeks bestaat niet");
+                if (!repo.HeeftReeks(reeks)) reeks.Id = repo.VoegReeksToe(reeks);
                 repo.VeranderReeks(strip, reeks);
             }
             catch (Exception ex) { throw new StripServiceException("VeranderReeks", ex); }
+        }
+        public void VeranderUitgever(Strip strip, Uitgeverij uitgever)
+        {
+            try
+            {
+                if (strip == null) throw new StripServiceException("VeranderUitgever - strip is null");
+                if (uitgever == null) throw new StripServiceException("VeranderUitgever - uitgever is null");
+                if (!repo.HeeftStrip(strip)) throw new StripServiceException("VeranderUitgever - strip bestaat niet");
+                if (!repo.HeeftUitgeverij(uitgever)) uitgever.UitgeverijId = repo.VoegUitgeverijToe(uitgever);
+                repo.VeranderUitgever(strip, uitgever);
+            }
+            catch (Exception ex) { throw new StripServiceException("VeranderUitgever", ex); }
         }
     }
 }

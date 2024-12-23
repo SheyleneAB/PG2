@@ -27,32 +27,6 @@ namespace StripsRest.Controllers
             catch (Exception ex) { return BadRequest(ex.Message); }
         }
 
-        [HttpPost("{stripId}/auteurs")]
-        public ActionResult VoegAuteurToe(int stripId, [FromBody] Auteur auteur)
-        {
-            try
-            {
-                StripService.VoegAuteurToe(stripId, auteur);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-        [HttpDelete("{stripId}/auteurs/{auteurId}")]
-        public ActionResult VerwijderAuteur(int stripId, int auteurId)
-        {
-            try
-            {
-                StripService.VerwijderAuteur(stripId, auteurId);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
 
 
         /*

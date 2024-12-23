@@ -20,5 +20,6 @@ namespace StripsBL.Interfaces
         public void VeranderReeks(Strip strip, Reeks reeks);
         public void VeranderUitgever(Strip strip, Uitgeverij uitgeverij);
         int AuteurGetId(Auteur auteur);
+        int VoegUitgeverijToe(Uitgeverij uitgever);
     }
 }

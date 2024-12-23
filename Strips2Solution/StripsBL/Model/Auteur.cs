@@ -11,6 +11,7 @@ namespace StripsBL.Model
     {
         private string naam;
         private string? email;
+        public Auteur() { }
 
         public string Naam
         {

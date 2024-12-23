@@ -1,5 +1,52 @@
 [
   {
+    "ContainingType": "StripsRest.Controllers.AuteurController",
+    "Method": "VoegAuteurToe",
+    "RelativePath": "api/Auteur/Auteur/{stripId}/auteurs",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stripId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "auteur",
+        "Type": "StripsBL.Model.Auteur",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StripsRest.Controllers.AuteurController",
+    "Method": "VerwijderAuteur",
+    "RelativePath": "api/Auteur/Auteur/{stripId}/auteurs/{auteurId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stripId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "auteur",
+        "Type": "StripsBL.Model.Auteur",
+        "IsRequired": true
+      },
+      {
+        "Name": "auteurId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "StripsRest.Controllers.StripController",
     "Method": "Get",
     "RelativePath": "api/Strip/{Id}",
@@ -24,47 +71,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "StripsRest.Controllers.StripController",
-    "Method": "VoegAuteurToe",
-    "RelativePath": "api/Strip/{stripId}/auteurs",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "stripId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "auteur",
-        "Type": "StripsBL.Model.Auteur",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "StripsRest.Controllers.StripController",
-    "Method": "VerwijderAuteur",
-    "RelativePath": "api/Strip/{stripId}/auteurs/{auteurId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "stripId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "auteurId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   }
 ]
