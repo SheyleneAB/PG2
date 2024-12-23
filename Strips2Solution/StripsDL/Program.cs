@@ -16,13 +16,7 @@ internal class Program
         StripsRepository repo = new StripsRepository(connectionstring);
         Strip destrip = repo.GeefStrip(1);
         Console.WriteLine(destrip.Titel + destrip.Reeks.Naam + destrip.Uitgeverij.Naam);
-        foreach (Strip Strip in Strips)
-        {
-            if (Strip.Reeks.Reeksnummer != null)
-            {
-                repo.SchrijfStripReeksnr(Strip);
-            } 
-        }
+        
 
     }
 }

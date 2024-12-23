@@ -171,7 +171,6 @@ namespace StripsDL
                 }
             }
         }
-
         public void SchrijfStrip(Strip strip)
         {
             const string SQL = @"
@@ -288,7 +287,107 @@ namespace StripsDL
                 }
             }
         }
-        public void AddAuteurToStrip(int stripId, Auteur auteur)
+        public bool HeeftAuteur(Auteur auteur)
+        {
+            string query = "SELECT count(*) FROM dbo.Auteur WHERE Naam=@Naam";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@Naam", auteur.Naam);
+                    int n = (int)command.ExecuteScalar();
+                    return n > 0;
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("HeeftAuteur niet gelukt", ex);
+                    dbex.Data.Add("Auteur", auteur);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public bool HeeftStrip (Strip strip)
+        {
+            string query = "SELECT count(*) FROM dbo.Strip WHERE Titel=@Titel";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@Titel", strip.Titel);
+                    int n = (int)command.ExecuteScalar();
+                    return n > 0;
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("HeeftStrip niet gelukt", ex);
+                    dbex.Data.Add("Strip", strip);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public bool HeeftReeks (Reeks reeks)
+        {
+            string query = "SELECT count(*) FROM dbo.Reeks WHERE Naam=@Naam";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@Naam", reeks.Naam);
+                    int n = (int)command.ExecuteScalar();
+                    return n > 0;
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("HeeftReeks niet gelukt", ex);
+                    dbex.Data.Add("Reeks", reeks);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public bool HeeftUitgeverij(Uitgeverij uitgeverij)
+        {
+            string query = "SELECT count(*) FROM dbo.Uitgeverij WHERE Naam=@Naam";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@Naam", uitgeverij.Naam);
+                    int n = (int)command.ExecuteScalar();
+                    return n > 0;
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("HeeftUitgeverij niet gelukt", ex);
+                    dbex.Data.Add("Uitgeverij", uitgeverij);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public void AddAuteurToStrip(int stripId, int auteurid)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             using (SqlCommand cmd = conn.CreateCommand())
@@ -296,7 +395,7 @@ namespace StripsDL
                 conn.Open();
                 cmd.CommandText = "INSERT INTO StripAuteur (StripId, AuteurId) VALUES (@StripId, @AuteurId)";
                 cmd.Parameters.AddWithValue("@StripId", stripId);
-                cmd.Parameters.AddWithValue("@AuteurId", auteur.Id);
+                cmd.Parameters.AddWithValue("@AuteurId", auteurid);
                 cmd.ExecuteNonQuery();
             }
         }
