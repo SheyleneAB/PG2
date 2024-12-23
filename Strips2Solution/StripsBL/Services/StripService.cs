@@ -23,13 +23,18 @@ namespace StripsBL.Services
             try
             { //TODO: getauteurid methode schrijven
                 if (!repo.HeeftAuteur(auteur)) throw new StripServiceException("VerwijderAuteur - Auteur bestaat niet");
-                repo.RemoveAuteurFromStrip(stripId, auteur.Id.Value);
+                else
+                {
+                    auteur.Id = repo.AuteurGetId(auteur);
+                    repo.RemoveAuteurFromStrip(stripId, auteur.Id.Value);
+                }
+
             }
             catch (Exception ex)
             {
                 throw new StripServiceException("VerwijderAuteur", ex);
             }
-            
+
         }
 
         public Auteur VoegAuteurToe(int stripId, Auteur auteur)
@@ -58,6 +63,56 @@ namespace StripsBL.Services
             }
             catch (Exception ex) { throw new StripServiceException("GeefStrip", ex); }
         }
-       
+        public List<Strip> GeefReeks(int reeksid)
+        {
+            try
+            {
+                return repo.GeefReeksMStrip(reeksid);
+            }
+            catch (Exception ex) { throw new StripServiceException("GeefReeks", ex); }
+
+        }
+        public void UpdateStripTitel (Strip strip)
+        {
+            try
+            {
+                if (strip == null) throw new StripServiceException("UpdateStripTitel - strip is null");
+                if (!repo.HeeftStrip(strip)) throw new StripServiceException("UpdateStripTitel - strip bestaat niet");
+                repo.UpdateStripTitel(strip);
+            }
+            catch (Exception ex) { throw new StripServiceException("UpdateStripTitel", ex); }
+        }
+        public void UpdateUitgeverijgeg(Uitgeverij uitgeverij)
+        {
+            try
+            {
+                if (uitgeverij == null) throw new StripServiceException("UpdateUitgeverijgeg - uitgeverij is null");
+                if (!repo.HeeftUitgeverij(uitgeverij)) throw new StripServiceException("UpdateUitgeverijgeg - uitgeverij bestaat niet");
+                repo.UpdateUitgeverijgeg(uitgeverij);
+            }
+            catch (Exception ex) { throw new StripServiceException("UpdateUitgeverijgeg", ex); }
+        }
+        public void UpdateAuteurgeg(Auteur auteur)
+        {
+            try
+            {
+                if (auteur == null) throw new StripServiceException("UpdateAuteurgeg - auteur is null");
+                if (!repo.HeeftAuteur(auteur)) throw new StripServiceException("UpdateAuteurgeg - auteur bestaat niet");
+                repo.UpdateAuteurgeg(auteur);
+            }
+            catch (Exception ex) { throw new StripServiceException("UpdateAuteurgeg", ex); }
+        }
+        public void VeranderReeks(Strip strip, Reeks reeks)
+        {
+            try
+            {
+                if (strip == null) throw new StripServiceException("VeranderReeks - strip is null");
+                if (reeks == null) throw new StripServiceException("VeranderReeks - reeks is null");
+                if (!repo.HeeftStrip(strip)) throw new StripServiceException("VeranderReeks - strip bestaat niet");
+                if (!repo.HeeftReeks(reeks)) throw new StripServiceException("VeranderReeks - reeks bestaat niet");
+                repo.VeranderReeks(strip, reeks);
+            }
+            catch (Exception ex) { throw new StripServiceException("VeranderReeks", ex); }
+        }
     }
 }

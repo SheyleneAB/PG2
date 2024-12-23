@@ -414,6 +414,33 @@ namespace StripsDL
             }
             return auteur.Id.Value;
         }
+        public int VoegReeksToe(Reeks reeks)
+        {
+            string query = "INSERT INTO dbo.Reeks (Naam, Reeksnummer) OUTPUT INSERTED.Id VALUES (@Naam, @Reeksnummer)";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = conn.CreateCommand())
+            {
+                try
+                {
+                    conn.Open();
+                    command.CommandText = query;
+                    command.Parameters.AddWithValue("@Naam", reeks.Naam);
+                    command.Parameters.AddWithValue("@Reeksnummer", reeks.Reeksnummer);
+                    reeks.Id = (int)command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("VoegReeksToe niet gelukt", ex);
+                    dbex.Data.Add("Reeks", reeks);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return reeks.Id.Value;
+        }
         public void AddAuteurToStrip(int stripId, int auteurid)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -573,6 +600,30 @@ namespace StripsDL
                     Exception dbex = new Exception("VeranderUitgever not successful", ex);
                     dbex.Data.Add("Strip", strip);
                     dbex.Data.Add("Uitgeverij", uitgeverij);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public int AuteurGetId(Auteur auteur)
+        {
+            string query = "SELECT Id FROM dbo.Auteur WHERE Naam=@Naam";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@Naam", auteur.Naam);
+                    return (int)command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("AuteurGetId not successful", ex);
+                    dbex.Data.Add("Auteur", auteur);
                     throw dbex;
                 }
                 finally
