@@ -387,6 +387,33 @@ namespace StripsDL
                 }
             }
         }
+        public int VoegAuteurtoe(Auteur auteur)
+        {
+            string query = "INSERT INTO dbo.Auteur (Naam, Email) OUTPUT INSERTED.Id VALUES (@Naam, @Email)";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = conn.CreateCommand())
+            {
+                try
+                {
+                    conn.Open();
+                    command.CommandText = query;
+                    command.Parameters.AddWithValue("@Naam", auteur.Naam);
+                    command.Parameters.AddWithValue("@Email", auteur.Email);
+                    auteur.Id = (int)command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("VoegAuteurToe niet gelukt", ex);
+                    dbex.Data.Add("Auteur", auteur);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return auteur.Id.Value;
+        }
         public void AddAuteurToStrip(int stripId, int auteurid)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))

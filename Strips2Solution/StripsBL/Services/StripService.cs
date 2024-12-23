@@ -18,15 +18,36 @@ namespace StripsBL.Services
             this.repo = repo;
         }
 
-        public void VerwijderAuteur(int stripId, int auteurId)
+        public void VerwijderAuteur(int stripId, Auteur auteur)
         {
-            repo.RemoveAuteurFromStrip(stripId, auteurId);
+            try
+            { //TODO: getauteurid methode schrijven
+                if (!repo.HeeftAuteur(auteur)) throw new StripServiceException("VerwijderAuteur - Auteur bestaat niet");
+                repo.RemoveAuteurFromStrip(stripId, auteur.Id.Value);
+            }
+            catch (Exception ex)
+            {
+                throw new StripServiceException("VerwijderAuteur", ex);
+            }
+            
         }
 
-        public void VoegAuteurToe(int stripId, Auteur auteur)
+        public Auteur VoegAuteurToe(int stripId, Auteur auteur)
         {
-            //TODO: check if auteur WHAT is going wrong here
-            repo.AddAuteurToStrip(stripId, auteur);
+            try
+            {
+                if (auteur == null) throw new StripServiceException("VoegAuteurToe - auteur is null");
+                if (!repo.HeeftAuteur(auteur))
+                {
+                    auteur.Id = repo.VoegAuteurtoe(auteur);
+                }
+                repo.AddAuteurToStrip(stripId, auteur.Id.Value);
+                return auteur;
+            }
+            catch (Exception ex)
+            {
+                throw new StripServiceException("VoegAuteurToe", ex);
+            }
         }
 
         public Strip GeefStrip(int id)
@@ -37,5 +58,6 @@ namespace StripsBL.Services
             }
             catch (Exception ex) { throw new StripServiceException("GeefStrip", ex); }
         }
+       
     }
 }

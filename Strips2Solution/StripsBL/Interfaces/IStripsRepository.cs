@@ -12,6 +12,7 @@ namespace StripsBL.Interfaces
         public bool HeeftStrip(Strip strip);
         public bool HeeftReeks(Reeks reeks);
         public bool HeeftUitgeverij(Uitgeverij uitgeverij);
+        public int VoegAuteurtoe(Auteur auteur);
         public void UpdateStripTitel(Strip strip);
         public void UpdateUitgeverijgeg(Uitgeverij uitgeverij);
         public void UpdateAuteurgeg(Auteur auteur);
