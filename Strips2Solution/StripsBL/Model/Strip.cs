@@ -9,6 +9,10 @@ namespace StripsBL.Model
 {
     public class Strip
     {
+        public Strip()
+        {
+            Auteurs = new List<Auteur>();
+        }
         public int? Id { get; set; }
         private string titel;
         public string Titel { get { return titel; } set { if (string.IsNullOrWhiteSpace(value)) throw new DomeinException("SetTitel"); titel = value; } }
@@ -16,20 +20,23 @@ namespace StripsBL.Model
         private List<Auteur> auteurs=new();
         public Reeks Reeks { get; set; }
         public Uitgeverij Uitgeverij { get; set; }
+        public int? Reeksnummer { get; set; }
 
-        public Strip(string titel,  Reeks reeks, Uitgeverij uitgeverij)
+        public Strip(string titel,  Reeks reeks, Uitgeverij uitgeverij, int? reeksnr)
         {
             Titel = titel;
             Reeks = reeks;
             Uitgeverij = uitgeverij;
+            Reeksnummer = reeksnr;
         }
 
-        public Strip(string titel, List<Auteur> auteurs, Reeks reeks, Uitgeverij uitgeverij)
+        public Strip(string titel, List<Auteur> auteurs, Reeks reeks, Uitgeverij uitgeverij, int? reeksnr)
         {
             Titel = titel;
             Auteurs = auteurs;
             Reeks = reeks;
             Uitgeverij = uitgeverij;
+            Reeksnummer = reeksnr;
         }
 
         public IReadOnlyList<Auteur> Auteurs { 

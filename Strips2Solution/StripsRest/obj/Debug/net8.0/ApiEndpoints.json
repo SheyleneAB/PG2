@@ -47,6 +47,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "StripsRest.Controllers.AuteurController",
+    "Method": "UpdateAuteurgeg",
+    "RelativePath": "api/Auteur/Auteur/Update/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "auteur",
+        "Type": "StripsBL.Model.Auteur",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StripsRest.Controllers.ReeksController",
+    "Method": "UpdateStripReeks",
+    "RelativePath": "api/Reeks/reeks/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "reeks",
+        "Type": "StripsBL.Model.Reeks",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StripsRest.Controllers.ReeksController",
+    "Method": "GetReeks",
+    "RelativePath": "api/Reeks/reeks/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "StripsRest.Controllers.StripController",
     "Method": "Get",
     "RelativePath": "api/Strip/{Id}",
@@ -71,5 +129,73 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "StripsRest.Controllers.StripController",
+    "Method": "UpdateStripTitel",
+    "RelativePath": "api/Strip/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "striptitel",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StripsRest.Controllers.UitgeverijController",
+    "Method": "UpdateUitgeverijgeg",
+    "RelativePath": "api/Uitgeverij/Uitgeverij/Update/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "uitgeverij",
+        "Type": "StripsBL.Model.Uitgeverij",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StripsRest.Controllers.UitgeverijController",
+    "Method": "UpdateStripUitgeverij",
+    "RelativePath": "api/Uitgeverij/Uitgeverij/UpdateStrip/{StripId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "uitgeverij",
+        "Type": "StripsBL.Model.Uitgeverij",
+        "IsRequired": true
+      },
+      {
+        "Name": "StripId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -26,95 +26,59 @@ namespace StripsRest.Controllers
             }
             catch (Exception ex) { return BadRequest(ex.Message); }
         }
-
-
-
-        /*
-          private readonly IStripsRepository _repository;
-
-          public StripsController(IStripsRepository repository)
-          {
-              _repository = repository;
-          }
-
-          [HttpGet("{id}")]
-          public ActionResult<StripDTO> GetStrip(int id)
-          {
-              var strip = _repository.GeefStrip(id);
-              if (strip == null) return NotFound();
-
-              var stripDTO = new StripDTO
-              {
-                  Id = strip.Id,
-                  Titel = strip.Titel,
-                  ReeksId = strip.Reeks?.Id,
-                  UitgeverijId = strip.Uitgeverij.Id,
-                  AuteurIds = strip.Auteurs.Select(a => a.Id.Value).ToList()
-              };
-
-              return Ok(stripDTO);
-          }
-
-          [HttpPost]
-          public ActionResult<StripDTO> CreateStrip(StripDTO stripDTO)
-          {
-              var reeks = _repository.GeefReeks(stripDTO.ReeksId);
-              var uitgeverij = _repository.GeefUitgeverij(stripDTO.UitgeverijId);
-              var auteurs = stripDTO.AuteurIds.Select(id => _repository.GeefAuteur(id)).ToList();
-
-              var strip = new Strip(stripDTO.Titel, reeks, uitgeverij);
-              foreach (var auteur in auteurs)
-              {
-                  strip.VoegAuteurToe(auteur);
-              }
-
-              _repository.SchrijfStrip(strip);
-
-              return CreatedAtAction(nameof(GetStrip), new { id = strip.Id }, stripDTO);
-          }
-
-          [HttpPut("{id}")]
-          public IActionResult UpdateStrip(int id, StripDTO stripDTO)
-          {
-              var strip = _repository.GeefStrip(id);
-              if (strip == null) return NotFound();
-
-              strip.WijzigTitel(stripDTO.Titel);
-              strip.WijzigReeks(_repository.GeefReeks(stripDTO.ReeksId));
-              strip.WijzigUitgeverij(_repository.GeefUitgeverij(stripDTO.UitgeverijId));
-
-              var huidigeAuteurs = strip.Auteurs.Select(a => a.Id).ToList();
-              foreach (var auteurId in stripDTO.AuteurIds)
-              {
-                  if (!huidigeAuteurs.Contains(auteurId))
-                  {
-                      strip.VoegAuteurToe(_repository.GeefAuteur(auteurId));
-                  }
-              }
-
-              foreach (var auteur in strip.Auteurs.ToList())
-              {
-                  if (!stripDTO.AuteurIds.Contains(auteur.Id.Value))
-                  {
-                      strip.VerwijderAuteur(auteur);
-                  }
-              }
-
-              _repository.UpdateStrip(strip);
-
-              return NoContent();
-          }
-
-          [HttpDelete("{id}")]
-          public IActionResult DeleteStrip(int id)
-          {
-              var strip = _repository.GeefStrip(id);
-              if (strip == null) return NotFound();
-
-              _repository.VerwijderStrip(strip);
-
-              return NoContent();
-          }
-        */
+        [HttpPut("{Id}")]
+        public IActionResult UpdateStripTitel(int Id, [FromBody] string striptitel)
+        {
+            if (striptitel == null)
+            {
+                return BadRequest("Striptitel is null");
+            }
+            if (!StripService.HeeftStrip(Id))
+            {
+                return NotFound("Strip not found");
+            }
+            Strip strip = StripService.GeefStrip(Id);
+            strip.Titel = striptitel;
+            strip.Id = Id;
+            StripService.UpdateStripTitel(strip);
+            return NoContent();
+        }
     }
+
+
+                /*
+                  
+
+                  [HttpPost]
+                  public ActionResult<StripDTO> CreateStrip(StripDTO stripDTO)
+                  {
+                      var reeks = _repository.GeefReeks(stripDTO.ReeksId);
+                      var uitgeverij = _repository.GeefUitgeverij(stripDTO.UitgeverijId);
+                      var auteurs = stripDTO.AuteurIds.Select(id => _repository.GeefAuteur(id)).ToList();
+
+                      var strip = new Strip(stripDTO.Titel, reeks, uitgeverij);
+                      foreach (var auteur in auteurs)
+                      {
+                          strip.VoegAuteurToe(auteur);
+                      }
+
+                      _repository.SchrijfStrip(strip);
+
+                      return CreatedAtAction(nameof(GetStrip), new { id = strip.Id }, stripDTO);
+                  }
+
+                  
+
+                  [HttpDelete("{id}")]
+                  public IActionResult DeleteStrip(int id)
+                  {
+                      var strip = _repository.GeefStrip(id);
+                      if (strip == null) return NotFound();
+
+                      _repository.VerwijderStrip(strip);
+
+                      return NoContent();
+                  }
+                */
+    
 }

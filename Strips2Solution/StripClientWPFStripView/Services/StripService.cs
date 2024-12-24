@@ -1,4 +1,4 @@
-﻿using StripsBL.Model;
+﻿using StripClientWPFStripView.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -22,7 +22,7 @@ namespace StripsDL
 
         public Strip GeefStrip(int id)
         {
-            string SQL = "SELECT *, auteur.Naam as Auteurnaam, Uitgeverij.Naam as Uitgevernaam, Reeks.Naam as Reeksnaam" +
+            string SQL = "SELECT *, auteur.Naam as Auteurnaam, Uitgeverij.Naam as Uitgevernaam, Reeks.Naam as Reeksnaam, uitgeverij.adres" +
                          " FROM Strip" +
                          " JOIN Reeks ON Reeks.Id = Strip.ReeksId" +
                          " JOIN Uitgeverij ON Uitgeverij.Id = Strip.UitgeverijId" +
@@ -72,8 +72,8 @@ namespace StripsDL
                                 string uitgeverijNaam = reader.GetString(reader.GetOrdinal("UitgeverNaam"));
 
                                 Uitgeverij uitgeverij = new Uitgeverij(uitgeverijId, uitgeverijNaam, adres);
-                                Reeks reeks = new Reeks(reeksNaam, reeksId, reeksNummer);
-                                strip = new Strip(titel, reeks, uitgeverij);
+                                Reeks reeks = new Reeks(reeksNaam, reeksId);
+                                strip = new Strip(titel, reeks, uitgeverij, reeksNummer);
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("AuteurId")))
@@ -94,15 +94,15 @@ namespace StripsDL
                 }
             }
         }
-        public List<Strip> GeefReeksMStrip(int reeksnummer)
+        public List<Strip> GeefReeksMStrip(int reeksId)
         {
-            string SQL = "SELECT Strip.*, Reeks.Naam as ReeksNaam, Uitgeverij.Naam as UitgeverNaam, Auteur.Naam as Auteurnaam, Auteur.Id as AuteurId" +
+            string SQL = "SELECT *, auteur.Naam as Auteurnaam, Uitgeverij.Naam as Uitgevernaam, Reeks.Naam as Reeksnaam, uitgeverij.adres" +
                          " FROM Strip" +
                          " JOIN Reeks ON Reeks.Id = Strip.ReeksId" +
                          " JOIN Uitgeverij ON Uitgeverij.Id = Strip.UitgeverijId" +
                          " JOIN StripAuteur ON Strip.Id = StripAuteur.StripId" +
                          " JOIN Auteur ON StripAuteur.AuteurId = Auteur.Id" +
-                         " WHERE Reeks.Reeksnummer = @Reeksnummer;";
+                         " WHERE Strip.ReeksId = @Id;";
 
             List<Strip> strips = new List<Strip>();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -112,7 +112,7 @@ namespace StripsDL
                 {
                     conn.Open();
                     cmd.CommandText = SQL;
-                    cmd.Parameters.AddWithValue("@Reeksnummer", reeksnummer);
+                    cmd.Parameters.AddWithValue("@id", reeksId);
 
                     using (IDataReader reader = cmd.ExecuteReader())
                     {
@@ -126,13 +126,13 @@ namespace StripsDL
                                 int uitgeverijId = reader.GetInt32(reader.GetOrdinal("UitgeverijId"));
                                 string adres = reader.IsDBNull(reader.GetOrdinal("Adres")) ? string.Empty : reader.GetString(reader.GetOrdinal("Adres"));
                                 string reeksNaam = reader.GetString(reader.GetOrdinal("ReeksNaam"));
-                                int reeksId = reader.GetInt32(reader.GetOrdinal("ReeksId"));
                                 string uitgeverijNaam = reader.GetString(reader.GetOrdinal("UitgeverNaam"));
                                 int reeksNummer = reader.IsDBNull(reader.GetOrdinal("ReeksNummer")) ? 0 : reader.GetInt32(reader.GetOrdinal("ReeksNummer"));
 
                                 Uitgeverij uitgeverij = new Uitgeverij(uitgeverijId, uitgeverijNaam, adres);
-                                Reeks reeks = new Reeks(reeksNaam, reeksId, reeksNummer);
-                                strip = new Strip(titel, reeks, uitgeverij) { Id = stripId };
+                                Reeks reeks = new Reeks(reeksNaam, reeksId);
+                               
+                                strip = new Strip(titel, reeks, uitgeverij, reeksNummer) { Id = stripId };
                                 strips.Add(strip);
                             }
 
@@ -157,7 +157,7 @@ namespace StripsDL
         {
             const string SQL = @"
                UPDATE strip
-               SET reeksnummer = @Reeksnummer
+               SET reeksId = @Reeksnummer
                WHERE Titel = @Titel;";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -165,7 +165,7 @@ namespace StripsDL
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = SQL;
-                    cmd.Parameters.AddWithValue("@Reeksnummer", strip.Reeks.Reeksnummer);
+                    cmd.Parameters.AddWithValue("@Reeksnummer", strip.Reeksnummer);
                     cmd.Parameters.AddWithValue("@Titel", strip.Titel);
                     cmd.ExecuteNonQuery();
                 }
@@ -250,7 +250,7 @@ namespace StripsDL
                             cmd.CommandText = SQL;
                             cmd.Parameters.AddWithValue("@Titel", strip.Titel);
                             cmd.Parameters.AddWithValue("@ReeksId", reeksId);
-                            cmd.Parameters.AddWithValue("@ReeksNummer", strip.Reeks.Reeksnummer);
+                            cmd.Parameters.AddWithValue("@ReeksNummer", strip.Reeksnummer);
                             cmd.Parameters.AddWithValue("@UitgeverijId", uitgeverijId);
                             stripId = Convert.ToInt32(cmd.ExecuteScalar());
                         }
@@ -337,6 +337,31 @@ namespace StripsDL
                 }
             }
         }
+        public bool HeeftStripId(int stripid)
+        {
+            string query = "SELECT count(*) FROM dbo.Strip WHERE Id=@StripId";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@StripId", stripid);
+                    int n = (int)command.ExecuteScalar();
+                    return n > 0;
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("HeeftStripId niet gelukt", ex);
+                    dbex.Data.Add("StripId", stripid);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
         public bool HeeftReeks (Reeks reeks)
         {
             string query = "SELECT count(*) FROM dbo.Reeks WHERE Naam=@Naam";
@@ -387,6 +412,81 @@ namespace StripsDL
                 }
             }
         }
+        public bool HeeftUitgeverijId(int id)
+        {
+            string query = "SELECT count(*) FROM dbo.Uitgeverij WHERE Id=@Id";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@Id", id);
+                    int n = (int)command.ExecuteScalar();
+                    return n > 0;
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("HeeftUitgeverijId niet gelukt", ex);
+                    dbex.Data.Add("UitgeverijId", id);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public bool HeeftAuteurId(int id)
+        {
+            string query = "SELECT count(*) FROM dbo.Auteur WHERE Id=@Id";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@Id", id);
+                    int n = (int)command.ExecuteScalar();
+                    return n > 0;
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("HeeftAuteurId niet gelukt", ex);
+                    dbex.Data.Add("AuteurId", id);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public bool HeeftReeksId(int id)
+        {
+            string query = "SELECT count(*) FROM dbo.Reeks WHERE Id=@Id";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@Id", id);
+                    int n = (int)command.ExecuteScalar();
+                    return n > 0;
+                }
+                catch (Exception ex)
+                {
+                    Exception dbex = new Exception("HeeftReeksId niet gelukt", ex);
+                    dbex.Data.Add("ReeksId", id);
+                    throw dbex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
         public int VoegAuteurtoe(Auteur auteur)
         {
             string query = "INSERT INTO dbo.Auteur (Naam, Email) OUTPUT INSERTED.Id VALUES (@Naam, @Email)";
@@ -416,7 +516,7 @@ namespace StripsDL
         }
         public int VoegReeksToe(Reeks reeks)
         {
-            string query = "INSERT INTO dbo.Reeks (Naam, Reeksnummer) OUTPUT INSERTED.Id VALUES (@Naam, @Reeksnummer)";
+            string query = "INSERT INTO dbo.Reeks (Naam) OUTPUT INSERTED.Id VALUES (@Naam)";
             using (SqlConnection conn = new SqlConnection(connectionString))
             using (SqlCommand command = conn.CreateCommand())
             {
@@ -425,7 +525,6 @@ namespace StripsDL
                     conn.Open();
                     command.CommandText = query;
                     command.Parameters.AddWithValue("@Naam", reeks.Naam);
-                    command.Parameters.AddWithValue("@Reeksnummer", reeks.Reeksnummer);
                     reeks.Id = (int)command.ExecuteScalar();
                 }
                 catch (Exception ex)
@@ -660,6 +759,6 @@ namespace StripsDL
             }
         }
 
-       
+        
     }
 }

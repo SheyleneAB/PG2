@@ -70,12 +70,28 @@ namespace StripsBL.Services
             catch (Exception ex) { throw new StripServiceException("GeefReeks", ex); }
 
         }
+        public bool HeeftStrip(int stripid)
+        {
+            try
+            {
+                return repo.HeeftStripId(stripid);
+            }
+            catch (Exception ex) { throw new StripServiceException("HeeftStrip", ex); }
+        }
+        public bool HeeftUitgeverij(Uitgeverij uitgeverij)
+        {
+            try
+            {
+                return repo.HeeftUitgeverij(uitgeverij);
+            }
+            catch (Exception ex) { throw new StripServiceException("HeeftUitgeverij", ex); }
+        }
         public void UpdateStripTitel(Strip strip)
         {
             try
             {
                 if (strip == null) throw new StripServiceException("UpdateStripTitel - strip is null");
-                if (!repo.HeeftStrip(strip)) throw new StripServiceException("UpdateStripTitel - strip bestaat niet");
+                if (!repo.HeeftStripId(strip.Id.Value)) throw new StripServiceException("UpdateStripTitel - strip bestaat niet");
                 repo.UpdateStripTitel(strip);
             }
             catch (Exception ex) { throw new StripServiceException("UpdateStripTitel", ex); }
@@ -85,7 +101,7 @@ namespace StripsBL.Services
             try
             {
                 if (uitgeverij == null) throw new StripServiceException("UpdateUitgeverijgeg - uitgeverij is null");
-                if (!repo.HeeftUitgeverij(uitgeverij)) throw new StripServiceException("UpdateUitgeverijgeg - uitgeverij bestaat niet");
+                if (!repo.HeeftUitgeverijId(uitgeverij.UitgeverijId.Value)) throw new StripServiceException("UpdateUitgeverijgeg - uitgeverij bestaat niet");
                 repo.UpdateUitgeverijgeg(uitgeverij);
             }
             catch (Exception ex) { throw new StripServiceException("UpdateUitgeverijgeg", ex); }
@@ -95,7 +111,7 @@ namespace StripsBL.Services
             try
             {
                 if (auteur == null) throw new StripServiceException("UpdateAuteurgeg - auteur is null");
-                if (!repo.HeeftAuteur(auteur)) throw new StripServiceException("UpdateAuteurgeg - auteur bestaat niet");
+                if (!repo.HeeftAuteurId(auteur.Id.Value)) throw new StripServiceException("UpdateAuteurgeg - auteur bestaat niet");
                 repo.UpdateAuteurgeg(auteur);
             }
             catch (Exception ex) { throw new StripServiceException("UpdateAuteurgeg", ex); }
@@ -123,6 +139,33 @@ namespace StripsBL.Services
                 repo.VeranderUitgever(strip, uitgever);
             }
             catch (Exception ex) { throw new StripServiceException("VeranderUitgever", ex); }
+        }
+
+        public bool HeeftUitgeverijId(int id)
+        {
+            try
+            {
+                return repo.HeeftUitgeverijId(id);
+            }
+            catch (Exception ex) { throw new StripServiceException("HeeftUitgeverij", ex); }
+        }
+
+        public bool HeeftAuteurId(int id)
+        {
+            try
+            {
+                return repo.HeeftAuteurId(id); 
+            }
+            catch (Exception ex) { throw new StripServiceException("HeeftAuteurId", ex); }
+        }
+
+        public bool HeeftReeksId(int id)
+        {
+            try
+            {
+                return repo.HeeftReeksId(id);
+            }
+            catch (Exception ex) { throw new StripServiceException("HeeftReeksId", ex); }
         }
     }
 }

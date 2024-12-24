@@ -8,21 +8,20 @@ namespace StripsBL.Model
 {
     public class Reeks
     {
+        public Reeks(){}
         public Reeks(string naam, int? reeksnummer)
         {
             Naam = naam;
-            Reeksnummer = reeksnummer;
         }
 
         public Reeks(string naam, int? id, int? reeksnummer)
         {
-            Reeksnummer = reeksnummer;
             Naam = naam;
             Id = id;
         }
 
         public string Naam { get; set; }
         public int? Id { get; set; }
-        public int? Reeksnummer { get; set; }
+       
     }
 }

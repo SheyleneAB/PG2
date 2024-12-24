@@ -8,6 +8,7 @@ namespace StripsBL.Model
 {
     public class Uitgeverij
     {
+        public Uitgeverij() { }
         private int? uitgeverijid;
         private string adres;
 

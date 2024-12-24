@@ -45,5 +45,20 @@ namespace StripsRest.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPut("Update/{Id}")]
+        public IActionResult UpdateAuteurgeg(int Id, [FromBody] Auteur auteur)
+        {
+            if (auteur == null)
+            {
+                return BadRequest("Auteur is null");
+            }
+            if (!StripService.HeeftAuteurId(Id))
+            {
+                return NotFound("Uitgeverij not found");
+            }
+            auteur.Id = Id;
+            StripService.UpdateAuteurgeg(auteur);
+            return NoContent();
+        }
     }
 }
