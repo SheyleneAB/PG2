@@ -21,7 +21,7 @@ namespace StripsBL.Services
         public void VerwijderAuteur(int stripId, Auteur auteur)
         {
             try
-            { //TODO: getauteurid methode schrijven
+            { 
                 if (!repo.HeeftAuteur(auteur)) throw new StripServiceException("VerwijderAuteur - Auteur bestaat niet");
                 else
                 {

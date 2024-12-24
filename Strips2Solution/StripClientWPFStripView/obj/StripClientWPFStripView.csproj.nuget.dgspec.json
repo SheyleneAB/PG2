@@ -49,6 +49,16 @@
       "frameworks": {
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "System.Net.Http.Formatting.Extension": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "WinInsider.System.Net.Http.Formatting": {
+              "target": "Package",
+              "version": "[1.0.14, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

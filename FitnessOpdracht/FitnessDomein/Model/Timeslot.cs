@@ -11,5 +11,6 @@ namespace FitnessDomein.Model
         public int? Id {  get; set; }
         public int StartTime { get; set; }
         public int EndTime { get; set; }
+        // lijst combinatie tijdslot en equipment
     }
 }

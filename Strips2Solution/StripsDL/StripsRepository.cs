@@ -19,7 +19,7 @@ namespace StripsDL
         {
             this.connectionString = connectionString;
         }
-
+        // TODO: ids toevoegen bij sommige delen
         public Strip GeefStrip(int id)
         {
             string SQL = "SELECT *, auteur.Naam as Auteurnaam, Uitgeverij.Naam as Uitgevernaam, Reeks.Naam as Reeksnaam, uitgeverij.adres" +

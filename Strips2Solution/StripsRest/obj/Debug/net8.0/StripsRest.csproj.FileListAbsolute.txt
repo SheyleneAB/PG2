@@ -114,3 +114,7 @@ C:\Users\elyne\PG2\Strips2Solution\StripsRest\obj\Debug\net8.0\refint\StripsRest
 C:\Users\elyne\PG2\Strips2Solution\StripsRest\obj\Debug\net8.0\StripsRest.pdb
 C:\Users\elyne\PG2\Strips2Solution\StripsRest\obj\Debug\net8.0\StripsRest.genruntimeconfig.cache
 C:\Users\elyne\PG2\Strips2Solution\StripsRest\obj\Debug\net8.0\ref\StripsRest.dll
+C:\Users\elyne\PG2\Strips2Solution\StripsRest\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\elyne\PG2\Strips2Solution\StripsRest\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\elyne\PG2\Strips2Solution\StripsRest\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\elyne\PG2\Strips2Solution\StripsRest\obj\Debug\net8.0\StripsRest.MvcApplicationPartsAssemblyInfo.cs
