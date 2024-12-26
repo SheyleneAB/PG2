@@ -10,5 +10,6 @@ namespace FitnessDomein.Model
     {
         public int? Id { get; set; }
         public string DeviceType { get; set; }
+        public bool IsInMaintenance { get; set; }
     }
 }

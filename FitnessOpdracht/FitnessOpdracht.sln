@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessREST", "FitnessREST\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppFitnessHTTPClient", "ConsoleAppFitnessHTTPClient\ConsoleAppFitnessHTTPClient.csproj", "{230BD909-37C3-40F2-BAFE-A1703463608E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDL", "FitnessDL\FitnessDL.csproj", "{672DDB2B-BB1B-482E-9BD1-66D34B519AC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDB", "FitnessDB\FitnessDB.csproj", "{E1534E7F-E08E-4F63-B1AD-908B4D815898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{230BD909-37C3-40F2-BAFE-A1703463608E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{230BD909-37C3-40F2-BAFE-A1703463608E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{230BD909-37C3-40F2-BAFE-A1703463608E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{672DDB2B-BB1B-482E-9BD1-66D34B519AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{672DDB2B-BB1B-482E-9BD1-66D34B519AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{672DDB2B-BB1B-482E-9BD1-66D34B519AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{672DDB2B-BB1B-482E-9BD1-66D34B519AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1534E7F-E08E-4F63-B1AD-908B4D815898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1534E7F-E08E-4F63-B1AD-908B4D815898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1534E7F-E08E-4F63-B1AD-908B4D815898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1534E7F-E08E-4F63-B1AD-908B4D815898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

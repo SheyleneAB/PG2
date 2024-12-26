@@ -13,6 +13,8 @@ namespace FitnessDomein.Model
         public Timeslot TimeSlot { get; set; }
         public DateTime Date { get; set; }
         public Equipment Equipment { get; set; }
+        public List<ReservationTimeSlot> TimeSlots { get; set; }
+
         // reservations in member 
         // lijst combinatie tijdslot en equipment
 

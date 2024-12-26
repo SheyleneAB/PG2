@@ -1,56 +1,33 @@
-﻿using System;
+﻿
+using FitnessDL.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FitnessDL.Model
+namespace FitnessDB.Models;
+
+public partial class MemberEF
 {
-    public class MemberEF
-    {
-        public MemberEF() { }
+    public int MemberId { get; set; }
 
-        public MemberEF(int? id, string? firstName, string lastName, string email, string? address, DateTime birthday, string? interests, string? memberType)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
-            Address = address;
-            Birthday = birthday;
-            Interests = interests;
-            MemberType = memberType;
-        }
+    public string FirstName { get; set; } = null!;
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int? Id { get; set; }
+    public string LastName { get; set; } = null!;
 
-        [Column(TypeName = "nvarchar(45)")]
-        public string? FirstName { get; set; }
+    public string? Email { get; set; }
 
-        [Required]
-        [Column(TypeName = "nvarchar(45)")]
-        public string LastName { get; set; }
+    public string Address { get; set; } = null!;
 
-        [Required]
-        [Column(TypeName = "nvarchar(50)")]
-        public string Email { get; set; }
+    public DateOnly Birthday { get; set; }
 
-        [Column(TypeName = "nvarchar(200)")]
-        public string? Address { get; set; }
+    public string? Interests { get; set; }
 
-        [Required]
-        [Column(TypeName = "date")]
-        public DateTime Birthday { get; set; }
+    public string? Membertype { get; set; }
 
-        [Column(TypeName = "nvarchar(500)")]
-        public string? Interests { get; set; }
+    public virtual ICollection<CyclingsessionEF> Cyclingsessions { get; set; } = new List<CyclingsessionEF>();
 
-        [Column(TypeName = "nvarchar(20)")]
-        public string? MemberType { get; set; }
+    public virtual ICollection<ReservationEF> Reservations { get; set; } = new List<ReservationEF>();
 
-        
-    }
+    public virtual ICollection<RunningsessionMain> RunningsessionMains { get; set; } = new List<RunningsessionMain>();
+
+    public virtual ICollection<ProgramEF> ProgramCodes { get; set; } = new List<ProgramEF>();
 }

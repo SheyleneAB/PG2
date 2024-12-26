@@ -8,6 +8,18 @@ namespace FitnessDomein.Model
 {
     public class Member
     {
+
+        public Member(string firstName, string lastName, string? email, string address, DateTime birthday, string? interests, string? memberType)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Address = address;
+            Birthday = birthday;
+            Interests = interests;
+            MemberType = memberType;
+        }
+
         public Member(int? id, string? firstName, string lastName, string email, string? address, DateTime birthday, string? interests, string? memberType)
         {
             Id = id;

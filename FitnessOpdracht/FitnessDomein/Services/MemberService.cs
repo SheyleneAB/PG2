@@ -27,7 +27,7 @@ namespace FitnessDomein.Services
                 throw new MemberServiceException("GeefMember", ex);
             }
         }
-        public void VerwijderMember(int id)
+        /*public void VerwijderMember(int id)
         {
             try
             {
@@ -39,12 +39,13 @@ namespace FitnessDomein.Services
                 throw new MemberServiceException("VerwijderMember", ex);
             }
         }
+        */
         public Member VoegMemberToe (Member member)
         {
             try
             {
                 if (member == null) throw new MemberServiceException("VoegMemberToe - member is null");
-                if (repo.HeeftMember(member.Id.Value)) throw new MemberServiceException("VoegMemberToe - member bestaat reeds");
+                if (repo.HeeftMember(member.LastName, member.Birthday, member.Address)) throw new MemberServiceException("VoegMemberToe - member bestaat reeds");
                 repo.VoegMemberToe(member);
                 return member;
             }
@@ -64,11 +65,12 @@ namespace FitnessDomein.Services
                 throw new MemberServiceException("GeefMembers", ex);
             }
         }
-        public bool HeeftMember(int id)
+       
+        public bool HeeftMember(string lastName, DateTime birthday, string address)
         {
             try
             {
-                return repo.HeeftMember(id);
+                return repo.HeeftMember(lastName, birthday, address);
             }
             catch (Exception ex)
             {
@@ -80,7 +82,6 @@ namespace FitnessDomein.Services
             try
             {
                 if (member == null) throw new MemberServiceException("UpdateMember - member is null");
-                if (!repo.HeeftMember(member.Id.Value)) throw new MemberServiceException("UpdateMember - member bestaat niet");
                 Member memberDB = repo.GeefMember(member.Id.Value);
                 if (member == memberDB) throw new MemberServiceException("UpdateMember - geen verschillen");
                 repo.UpdateMember(member);
@@ -92,6 +93,6 @@ namespace FitnessDomein.Services
             }
         }
 
-        
+       
     }
 }
