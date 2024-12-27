@@ -13,7 +13,7 @@ public partial class TimeSlot
 
     public string PartOfDay { get; set; } = null!;
 
-    public virtual ICollection<ReservationTimeSlot> ReservationTimeSlots { get; set; } = new List<ReservationTimeSlot>();
+    public virtual ICollection<ReservationTimeSlotEF> ReservationTimeSlots { get; set; } = new List<ReservationTimeSlotEF>();
 
     public virtual ICollection<ReservationEF> Reservations { get; set; } = new List<ReservationEF>();
 }

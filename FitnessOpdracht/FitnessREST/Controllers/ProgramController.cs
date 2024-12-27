@@ -11,7 +11,7 @@ namespace FitnessREST.Controllers
 {
     [Route("api/[controller]/Program")]
     [ApiController]
-    public class ProgramController : Controller
+   public class ProgramController : Controller
     {
         private ProgramService ProgramService;
         private string url = "api/Programs";
@@ -21,13 +21,12 @@ namespace FitnessREST.Controllers
         }
 
         [HttpPost("/Program/Voegtoe")]
-        public FitnessDomein.Model.Program VoegProgramToe([FromBody] ProgramDTO program)
+        public ActionResult<FitnessDomein.Model.Program> VoegProgramToe([FromBody] ProgramDTO program)
         {
             try
             {
                 FitnessDomein.Model.Program programdm = new FitnessDomein.Model.Program
                 (
-
                     program.Name,
                     program.Target,
                     program.StartDate,
@@ -38,8 +37,31 @@ namespace FitnessREST.Controllers
             }
             catch (Exception ex)
             {
-
-                throw new Exception(ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPut("/Program/Update{Programcode}")]
+        public ActionResult<FitnessDomein.Model.Program> UpdateProgram([FromRoute] string Programcode, [FromBody] ProgramDTO program)
+        {
+            if (string.IsNullOrEmpty(Programcode) || program == null)
+            {
+                return BadRequest("Invalid input data.");
+            }
+            try
+            {
+                FitnessDomein.Model.Program programdm = new FitnessDomein.Model.Program
+                (
+                    program.Name,
+                    program.Target,
+                    program.StartDate,
+                    program.MaxMembers
+                );
+                programdm.programCode = Programcode;
+                return ProgramService.UpdateProgram(programdm);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
     }

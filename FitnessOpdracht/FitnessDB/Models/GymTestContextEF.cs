@@ -27,7 +27,7 @@ public partial class GymTestContextEF : DbContext
 
     public virtual DbSet<ReservationEF> Reservations { get; set; }
 
-    public virtual DbSet<ReservationTimeSlot> ReservationTimeSlots { get; set; }
+    public virtual DbSet<ReservationTimeSlotEF> ReservationTimeSlots { get; set; }
 
     public virtual DbSet<RunningsessionDetail> RunningsessionDetails { get; set; }
 
@@ -191,7 +191,7 @@ public partial class GymTestContextEF : DbContext
                 .HasConstraintName("reservation$FK_reservation_time_slot");
         });
 
-        modelBuilder.Entity<ReservationTimeSlot>(entity =>
+        modelBuilder.Entity<ReservationTimeSlotEF>(entity =>
         {
             entity.ToTable("ReservationTimeSlot");
 
@@ -203,7 +203,7 @@ public partial class GymTestContextEF : DbContext
                 .HasConstraintName("FK_ReservationTimeSlot_equipment");
 
             entity.HasOne(d => d.ReservationTimeSlotNavigation).WithOne(p => p.ReservationTimeSlot)
-                .HasForeignKey<ReservationTimeSlot>(d => d.ReservationTimeSlotId)
+                .HasForeignKey<ReservationTimeSlotEF>(d => d.ReservationTimeSlotId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ReservationTimeSlot_reservation");
 

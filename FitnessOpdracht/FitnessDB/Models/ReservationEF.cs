@@ -11,7 +11,7 @@ public partial class ReservationEF
 
     public int TimeSlotId { get; set; }
 
-    public DateOnly Date { get; set; }
+    public DateTime Date { get; set; }
 
     public int MemberId { get; set; }
 
@@ -19,7 +19,7 @@ public partial class ReservationEF
 
     public virtual MemberEF Member { get; set; } = null!;
 
-    public virtual ReservationTimeSlot? ReservationTimeSlot { get; set; }
+    public virtual ReservationTimeSlotEF? ReservationTimeSlot { get; set; }
 
     public virtual TimeSlot TimeSlot { get; set; } = null!;
 }

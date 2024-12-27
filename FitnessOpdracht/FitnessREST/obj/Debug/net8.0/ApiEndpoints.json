@@ -73,6 +73,37 @@
   },
   {
     "ContainingType": "FitnessREST.Controllers.ProgramController",
+    "Method": "UpdateProgram",
+    "RelativePath": "Program/Update{Programcode}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Programcode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "program",
+        "Type": "FitnessREST.DTO.ProgramDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessDomein.Model.Program",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.ProgramController",
     "Method": "VoegProgramToe",
     "RelativePath": "Program/Voegtoe",
     "HttpMethod": "POST",

@@ -11,7 +11,7 @@ public partial class EquipmentEF
 
     public bool? IsInMaintenance { get; set; }
 
-    public virtual ICollection<ReservationTimeSlot> ReservationTimeSlots { get; set; } = new List<ReservationTimeSlot>();
+    public virtual ICollection<ReservationTimeSlotEF> ReservationTimeSlots { get; set; } = new List<ReservationTimeSlotEF>();
 
     public virtual ICollection<ReservationEF> Reservations { get; set; } = new List<ReservationEF>();
 }

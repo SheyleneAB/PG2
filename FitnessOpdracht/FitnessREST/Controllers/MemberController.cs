@@ -70,8 +70,7 @@ namespace FitnessREST.Controllers
         {
             try
             {
-               
-                FitnessDomein.Model.Member memberdm = new FitnessDomein.Model.Member
+                Member memberdm = new Member
                 (
                     member.FirstName,
                     member.LastName,
@@ -82,7 +81,7 @@ namespace FitnessREST.Controllers
                     member.MemberType
                 );
 
-                memberdm.Id = id; // Stel het ID in voor de bestaande member
+                memberdm.Id = id; 
                 MemberService.UpdateMember(memberdm);
                 return NoContent();
             }
