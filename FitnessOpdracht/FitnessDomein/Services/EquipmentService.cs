@@ -32,7 +32,6 @@ namespace FitnessDomein.Services
             try
             {
                 if (equipment == null) throw new EquipmentServiceException("VoegEquipmentToe - equipment is null");
-                if (repo.HeeftEquipment(equipment.Id.Value)) throw new EquipmentServiceException("VoegEquipmentToe - equipment bestaat reeds");
                 repo.VoegEquipmentToe(equipment);
                 return equipment;
             }

@@ -1,4 +1,4 @@
-﻿namespace FitnessDL.Exceptions
+﻿namespace FitnessDB.Exceptions
 {
     [Serializable]
     internal class EquipmentRepositoryException : Exception

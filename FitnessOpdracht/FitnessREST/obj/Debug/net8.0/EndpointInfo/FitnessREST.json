@@ -5,6 +5,54 @@
     "version": "1.0"
   },
   "paths": {
+    "/Equipment/Voegtoe": {
+      "post": {
+        "tags": [
+          "Equipment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Equipment"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Equipment"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Equipment"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/Member/Voegtoe": {
       "post": {
         "tags": [
@@ -282,6 +330,37 @@
   },
   "components": {
     "schemas": {
+      "Equipment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "deviceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "isInMaintenance": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EquipmentDTO": {
+        "type": "object",
+        "properties": {
+          "deviceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "isInMaintenance": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "Member": {
         "type": "object",
         "properties": {

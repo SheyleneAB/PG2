@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "FitnessREST.Controllers.EquipmentController",
+    "Method": "VoegEquipmentToe",
+    "RelativePath": "Equipment/Voegtoe",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "equipment",
+        "Type": "FitnessREST.DTO.EquipmentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessDomein.Model.Equipment",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "FitnessREST.Controllers.MemberController",
     "Method": "GetMember",
     "RelativePath": "Member/{id}",

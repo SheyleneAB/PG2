@@ -90,8 +90,5 @@ namespace FitnessREST.Controllers
                 return BadRequest(ex.Message); 
             }
         }
-
-
     }
-
 }

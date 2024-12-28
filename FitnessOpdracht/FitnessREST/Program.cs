@@ -3,7 +3,7 @@ using FitnessDomein.Interfaces;
 using FitnessDomein.Services;
 using Microsoft.EntityFrameworkCore;
 using FitnessDB.Models;
-using FitnessDB.Repositories; // Add this line to include the missing namespace
+using FitnessDB.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +12,9 @@ builder.Services.AddSingleton<IProgramRepositoryEF>(new ProgramRepositoryEF("Dat
 builder.Services.AddScoped<ProgramService>();
 builder.Services.AddSingleton<IMemberRepositoryEF>(new MemberRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
 builder.Services.AddScoped<MemberService>();
-//builder.Services.AddScoped<IMemberService, MemberService>();
+builder.Services.AddScoped<EquipmentService>();
+builder.Services.AddSingleton<IEquipmentRepositoryEF>(new EquipmentRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
+
 
 builder.Services.AddDbContext<GymTestContextEF>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

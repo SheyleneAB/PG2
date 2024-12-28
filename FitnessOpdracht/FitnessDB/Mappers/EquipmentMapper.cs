@@ -33,7 +33,7 @@ namespace FitnessDB.Mappers
             {
                 return new EquipmentEF
                 {
-                    EquipmentId = (int)e.Id,
+                    
                     DeviceType = e.DeviceType,
                     IsInMaintenance = e.IsInMaintenance
                 };

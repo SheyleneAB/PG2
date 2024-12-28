@@ -1,5 +1,4 @@
-﻿using FitnessDL.Exceptions;
-using FitnessDomein.Model;
+﻿using FitnessDomein.Model;
 using FitnessDomein.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,17 +6,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FitnessDL;
 using FitnessDB.Mappers;
+using FitnessDB.Models;
+using FitnessDB.Exceptions;
 
 namespace FitnessDB.Repositories
 {
     public class EquipmentRepositoryEF : IEquipmentRepositoryEF
     {
-        public FitnessContext ctx;
+        private GymTestContextEF ctx;
         public EquipmentRepositoryEF(string connectionString)
         {
-            ctx = new FitnessContext(connectionString);
+            ctx = new GymTestContextEF(connectionString);
         }
         private void SaveAndClear()
         {
