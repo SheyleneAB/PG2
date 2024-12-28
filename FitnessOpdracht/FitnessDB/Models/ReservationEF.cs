@@ -21,5 +21,5 @@ public partial class ReservationEF
 
     public virtual ReservationTimeSlotEF? ReservationTimeSlot { get; set; }
 
-    public virtual TimeSlot TimeSlot { get; set; } = null!;
+    public virtual TimeSlotEF TimeSlot { get; set; } = null!;
 }

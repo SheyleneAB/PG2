@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FitnessDB.Models;
 
-public partial class RunningsessionDetail
+public partial class RunningsessionDetailEF
 {
     public int RunningsessionId { get; set; }
 
@@ -13,5 +13,5 @@ public partial class RunningsessionDetail
 
     public double IntervalSpeed { get; set; }
 
-    public virtual RunningsessionMain Runningsession { get; set; } = null!;
+    public virtual RunningsessionMainEF Runningsession { get; set; } = null!;
 }

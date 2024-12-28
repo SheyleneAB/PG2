@@ -6,11 +6,11 @@ namespace FitnessDB.Mappers
 {
     public class TimeSlotMapper
     {
-        public static TimeSlot MapToDB(Timeslot timeSlot)
+        public static TimeSlotEF MapToDB(Timeslot timeSlot)
         {
             try
             {
-                return new TimeSlot
+                return new TimeSlotEF
                 {
                     TimeSlotId = (int)timeSlot.Id,
                     StartTime = timeSlot.StartTime,
@@ -24,7 +24,7 @@ namespace FitnessDB.Mappers
             }
         }
 
-        public static Timeslot MaptoDomain(TimeSlot timeSlot)
+        public static Timeslot MaptoDomain(TimeSlotEF timeSlot)
         {
             try
             {

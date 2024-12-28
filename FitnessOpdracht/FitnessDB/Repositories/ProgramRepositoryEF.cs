@@ -27,12 +27,7 @@ namespace FitnessDB.Repositories
         public void VoegProgramToe(Program program)
         {
             try
-            {
-                if (string.IsNullOrEmpty(program.programCode))
-                {
-                    program.programCode = Guid.NewGuid().ToString(); // Generate a new unique code
-                }
-
+            {   
                 var programEntity = ProgramMapper.MapToDB(program);
                 ctx.Programs.Add(programEntity);
                 SaveAndClear();
@@ -46,12 +41,24 @@ namespace FitnessDB.Repositories
         {
             try
             {
-                ctx.Programs.Update(ProgramMapper.MapToDB(program));
-                SaveAndClear();
+                // Check if the program exists
+                var dbProgram = ctx.Programs.FirstOrDefault(p => p.ProgramCode == program.ProgramCode);
+
+                if (dbProgram == null)
+                    throw new KeyNotFoundException($"Program with code {program.ProgramCode} not found");
+
+                // Update fields
+                dbProgram.Name = program.Name;
+                dbProgram.Target = program.Target;
+                dbProgram.Startdate = program.StartDate;
+                dbProgram.MaxMembers = program.MaxMembers;
+
+                // Save changes
+                ctx.SaveChanges();
             }
             catch (Exception ex)
             {
-                throw new ProgramRepositoryException("UpdateProgram", ex);
+                throw new ProgramRepositoryException("Error updating program", ex);
             }
         }
 

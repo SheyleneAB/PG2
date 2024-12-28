@@ -29,11 +29,11 @@ public partial class GymTestContextEF : DbContext
 
     public virtual DbSet<ReservationTimeSlotEF> ReservationTimeSlots { get; set; }
 
-    public virtual DbSet<RunningsessionDetail> RunningsessionDetails { get; set; }
+    public virtual DbSet<RunningsessionDetailEF> RunningsessionDetails { get; set; }
 
-    public virtual DbSet<RunningsessionMain> RunningsessionMains { get; set; }
+    public virtual DbSet<RunningsessionMainEF> RunningsessionMains { get; set; }
 
-    public virtual DbSet<TimeSlot> TimeSlots { get; set; }
+    public virtual DbSet<TimeSlotEF> TimeSlots { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -193,27 +193,31 @@ public partial class GymTestContextEF : DbContext
 
         modelBuilder.Entity<ReservationTimeSlotEF>(entity =>
         {
+            entity.HasKey(e => e.ReservationTimeSlotId);
             entity.ToTable("ReservationTimeSlot");
 
             entity.Property(e => e.ReservationTimeSlotId).ValueGeneratedNever();
 
-            entity.HasOne(d => d.Device).WithMany(p => p.ReservationTimeSlots)
-                .HasForeignKey(d => d.DeviceId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+            entity.HasOne(d => d.Equipment).WithMany(p => p.ReservationTimeSlots)
+                 .HasForeignKey(d => d.EquipmentId) // Use the foreign key property directly
+                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ReservationTimeSlot_equipment");
+
 
             entity.HasOne(d => d.ReservationTimeSlotNavigation).WithOne(p => p.ReservationTimeSlot)
                 .HasForeignKey<ReservationTimeSlotEF>(d => d.ReservationTimeSlotId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ReservationTimeSlot_reservation");
 
-            entity.HasOne(d => d.TimeSlot).WithMany(p => p.ReservationTimeSlots)
-                .HasForeignKey(d => d.TimeSlotId)
+            entity.HasOne(d => d.TimeSlot)
+                .WithMany(p => p.ReservationTimeSlots)
+                .HasForeignKey(d => d.TimeSlotId)  // Use TimeSlotId directly
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ReservationTimeSlot_time_slot");
+
         });
 
-        modelBuilder.Entity<RunningsessionDetail>(entity =>
+        modelBuilder.Entity<RunningsessionDetailEF>(entity =>
         {
             entity.HasKey(e => new { e.RunningsessionId, e.SeqNr }).HasName("PK_runningsession_detail_runningsession_id");
 
@@ -230,7 +234,7 @@ public partial class GymTestContextEF : DbContext
                 .HasConstraintName("runningsession_detail$FK_runningsession_detail_main");
         });
 
-        modelBuilder.Entity<RunningsessionMain>(entity =>
+        modelBuilder.Entity<RunningsessionMainEF>(entity =>
         {
             entity.HasKey(e => e.RunningsessionId).HasName("PK_runningsession_main_runningsession_id");
 
@@ -250,7 +254,7 @@ public partial class GymTestContextEF : DbContext
                 .HasConstraintName("runningsession_main$FK_runningsession_main_members");
         });
 
-        modelBuilder.Entity<TimeSlot>(entity =>
+        modelBuilder.Entity<TimeSlotEF>(entity =>
         {
             entity.HasKey(e => e.TimeSlotId).HasName("PK_time_slot_time_slot_id");
 

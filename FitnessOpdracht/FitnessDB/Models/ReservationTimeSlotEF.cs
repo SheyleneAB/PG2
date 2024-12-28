@@ -9,11 +9,13 @@ public partial class ReservationTimeSlotEF
     {
        
     }
+    public int EquipmentId { get; set; } 
     public int ReservationTimeSlotId { get; set; }
-
-    public virtual EquipmentEF Device { get; set; }
+    public int TimeSlotId { get; set; }
+    public virtual EquipmentEF Equipment { get; set; }
 
     public virtual ReservationEF ReservationTimeSlotNavigation { get; set; } 
 
-    public virtual TimeSlot TimeSlot { get; set; } 
+    public virtual TimeSlotEF TimeSlot { get; set; }
+    
 }

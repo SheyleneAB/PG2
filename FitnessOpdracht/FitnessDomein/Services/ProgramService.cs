@@ -21,7 +21,7 @@ namespace FitnessDomein.Services
             try
             {
                 if (program == null) throw new ProgramServiceException("VoegProgramToe - program is null");
-                if (repo.HeeftProgram(program.programCode)) throw new ProgramServiceException("VoegProgramToe - program bestaat reeds");
+                if (repo.HeeftProgram(program.ProgramCode)) throw new ProgramServiceException("VoegProgramToe - program bestaat reeds");
                 repo.VoegProgramToe(program);
                 return program;
             }
@@ -35,8 +35,8 @@ namespace FitnessDomein.Services
             try
             {
                 if (program == null) throw new ProgramServiceException("UpdateProgram - program is null");
-                if (!repo.HeeftProgram(program.programCode)) throw new ProgramServiceException("UpdateProgram - program bestaat niet");
-                Program programDB = repo.GeefProgram(program.programCode);
+                if (!repo.HeeftProgram(program.ProgramCode)) throw new ProgramServiceException("UpdateProgram - program bestaat niet");
+                Program programDB = repo.GeefProgram(program.ProgramCode);
                 if (program == programDB) throw new ProgramServiceException("UpdateProgram - geen verschillen");
                 repo.UpdateProgram(program);
                 return program;

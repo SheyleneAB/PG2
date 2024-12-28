@@ -18,7 +18,7 @@ namespace FitnessDB.Mappers
                 return new Program
                 {
                     Name = db.Name,
-                    programCode = db.ProgramCode,
+                    ProgramCode = db.ProgramCode,
                     Target = db.Target,
                     MaxMembers = db.MaxMembers,
                     StartDate = db.Startdate,
@@ -37,7 +37,7 @@ namespace FitnessDB.Mappers
                 return new ProgramEF
                 {
                     Name = p.Name,
-                    ProgramCode = p.programCode,
+                    ProgramCode = p.ProgramCode,
                     Target = p.Target,
                     MaxMembers = p.MaxMembers,
                     Startdate = p.StartDate,

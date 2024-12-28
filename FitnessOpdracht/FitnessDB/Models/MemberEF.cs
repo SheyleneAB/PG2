@@ -50,7 +50,7 @@ public partial class MemberEF
 
     public virtual ICollection<ReservationEF> Reservations { get; set; } = new List<ReservationEF>();
 
-    public virtual ICollection<RunningsessionMain> RunningsessionMains { get; set; } = new List<RunningsessionMain>();
+    public virtual ICollection<RunningsessionMainEF> RunningsessionMains { get; set; } = new List<RunningsessionMainEF>();
 
     public virtual ICollection<ProgramEF> ProgramCodes { get; set; } = new List<ProgramEF>();
 }

@@ -19,7 +19,7 @@ namespace FitnessDB.Mappers
                 {
                     Id = db.ReservationTimeSlotId,
                     Reservation = ReservationMapper.MapToDomain(db.ReservationTimeSlotNavigation),
-                    Equipment = EquipmentMapper.MapToDomain(db.Device),
+                    Equipment = EquipmentMapper.MapToDomain(db.Equipment),
                     TimeSlot = TimeSlotMapper.MaptoDomain(db.TimeSlot)
                 };
             }
@@ -36,7 +36,7 @@ namespace FitnessDB.Mappers
                 {
                     ReservationTimeSlotId = (int)r.Id,
                     ReservationTimeSlotNavigation = ReservationMapper.MapToDB(r.Reservation),
-                    Device = EquipmentMapper.MapToDB(r.Equipment),
+                    Equipment = EquipmentMapper.MapToDB(r.Equipment),
                     TimeSlot = TimeSlotMapper.MapToDB(r.TimeSlot)
                 };
             }

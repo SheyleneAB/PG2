@@ -10,8 +10,9 @@ namespace FitnessDomein.Model
     {
         public Program() { }
 
-        public Program(string name, string target,  DateTime startDate, int maxMembers)
+        public Program(string programcode,string name, string target,  DateTime startDate, int maxMembers)
         {
+            ProgramCode = programcode;
             Name = name;
             Target = target;
             MaxMembers = maxMembers;
@@ -23,7 +24,7 @@ namespace FitnessDomein.Model
         public string Target { get; set; }
         public int MaxMembers { get; set; }
         public DateTime StartDate { get; set; }
-        public string? programCode { get; set; }
+        public string ProgramCode { get; set; }
         public List<Member> Members { get; set; }
 
     }

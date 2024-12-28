@@ -391,6 +391,10 @@
       "ProgramDTO": {
         "type": "object",
         "properties": {
+          "programCode": {
+            "type": "string",
+            "nullable": true
+          },
           "name": {
             "type": "string",
             "nullable": true

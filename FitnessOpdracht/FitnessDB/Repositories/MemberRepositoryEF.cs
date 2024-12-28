@@ -52,15 +52,26 @@ namespace FitnessDB.Repositories
         {
             try
             {
-                MemberEF dbMember = MemberMapper.MapToDB(member);
-                dbMember.MemberId = (int)member.Id;
-                ctx.Members.Attach(dbMember);
-                ctx.Entry(dbMember).State = EntityState.Modified;
-                SaveAndClear();
+                // Check if the member exists in the database
+                var dbMember = ctx.Members.FirstOrDefault(m => m.MemberId == member.Id);
+                if (dbMember == null)
+                    throw new KeyNotFoundException($"Member with ID {member.Id} not found.");
+
+                // Update properties
+                dbMember.FirstName = member.FirstName;
+                dbMember.LastName = member.LastName;
+                dbMember.Email = member.Email;
+                dbMember.Address = member.Address;
+                dbMember.Birthday = member.Birthday;
+                dbMember.Interests = member.Interests;
+                dbMember.Membertype = member.MemberType;
+
+                // Save changes
+                ctx.SaveChanges();
             }
             catch (Exception ex)
             {
-                throw new MemberRepositoryException("UpdateMember", ex);
+                throw new MemberRepositoryException("Error updating member", ex);
             }
         }
         public void VerwijderMember(int id)

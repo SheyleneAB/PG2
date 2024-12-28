@@ -12,6 +12,5 @@ namespace FitnessDomein.Model
         public int StartTime { get; set; }
         public int EndTime { get; set; }
         public string PartOfDay { get; set; }
-        // lijst combinatie tijdslot en equipment
     }
 }

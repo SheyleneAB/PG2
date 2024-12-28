@@ -27,6 +27,7 @@ namespace FitnessREST.Controllers
             {
                 FitnessDomein.Model.Program programdm = new FitnessDomein.Model.Program
                 (
+                    program.ProgramCode,
                     program.Name,
                     program.Target,
                     program.StartDate,
@@ -51,12 +52,13 @@ namespace FitnessREST.Controllers
             {
                 FitnessDomein.Model.Program programdm = new FitnessDomein.Model.Program
                 (
+                    program.ProgramCode,
                     program.Name,
                     program.Target,
                     program.StartDate,
                     program.MaxMembers
                 );
-                programdm.programCode = Programcode;
+                programdm.ProgramCode = Programcode;
                 return ProgramService.UpdateProgram(programdm);
             }
             catch (Exception ex)

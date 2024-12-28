@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FitnessDB.Models;
 
-public partial class RunningsessionMain
+public partial class RunningsessionMainEF
 {
     public int RunningsessionId { get; set; }
 
@@ -17,5 +17,5 @@ public partial class RunningsessionMain
 
     public virtual MemberEF Member { get; set; } = null!;
 
-    public virtual ICollection<RunningsessionDetail> RunningsessionDetails { get; set; } = new List<RunningsessionDetail>();
+    public virtual ICollection<RunningsessionDetailEF> RunningsessionDetails { get; set; } = new List<RunningsessionDetailEF>();
 }
