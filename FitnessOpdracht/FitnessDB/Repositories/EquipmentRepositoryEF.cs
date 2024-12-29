@@ -61,6 +61,43 @@ namespace FitnessDB.Repositories
                 throw new EquipmentRepositoryException("HeeftEquipment", ex);
             }
         }
+        public List<Member> SetRepairEquipment(int equipmentId)
+        {
+            try
+            {
+                var equipment = ctx.Equipment.FirstOrDefault(e => e.EquipmentId == equipmentId);
+                if (equipment == null)
+                    throw new KeyNotFoundException($"Equipment with ID {equipmentId} not found.");
+
+                equipment.IsInMaintenance = true;
+
+                var futureReservations = ctx.Reservations
+                    .Include(r => r.Member) 
+                    .Where(r => r.EquipmentId == equipmentId && r.Date > DateTime.Now)
+                    .ToList();
+
+                var members = futureReservations
+                    .Select(r => r.Member)
+                    .Distinct()
+                    .ToList();
+                List<Member> membersdm = new List<Member>();
+                foreach (var member in members)
+                {
+                    membersdm.Add(MemberMapper.MapToDomain(member));
+                }
+
+                ctx.Reservations.RemoveRange(futureReservations);
+
+                ctx.SaveChanges();
+
+                return membersdm; 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error setting InMaintenance and deleting future reservations.", ex);
+            }
+        }
+
     }
 
 }

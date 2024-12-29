@@ -91,6 +91,17 @@ namespace FitnessDB.Repositories
             }
         }
 
+        public List<Program> GetProgramsForMember(int id)
+        {
+            try
+            {
+                return ctx.Programs.Where(p => p.Members.Any(m => m.MemberId == id)).Select(ProgramMapper.MapToDomain).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new ProgramRepositoryException("GetProgramsForMember", ex);
+            }
+        }
     }
    
 }

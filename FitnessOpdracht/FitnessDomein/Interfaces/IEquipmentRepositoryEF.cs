@@ -12,5 +12,6 @@ namespace FitnessDomein.Interfaces
         void VoegEquipmentToe(Equipment equipment);
         Equipment GeefEquipment(int equipmentId);
         bool HeeftEquipment(int equipmentId);
+        public List<Member> SetRepairEquipment(int equipmentId);
     }
 }

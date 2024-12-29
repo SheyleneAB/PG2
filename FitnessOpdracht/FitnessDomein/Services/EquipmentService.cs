@@ -41,7 +41,17 @@ namespace FitnessDomein.Services
             }
         }
 
+        public List<Member> SetRepairEquipment(int equipmentId)
+        {
+            try
+            {
+                return repo.SetRepairEquipment(equipmentId);
+            }
+            catch (Exception ex)
+            {
+                throw new EquipmentServiceException("SetRepairEquipment", ex);
+            }
+        }
 
-       
     }
 }

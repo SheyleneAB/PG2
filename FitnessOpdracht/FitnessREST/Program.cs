@@ -13,6 +13,7 @@ builder.Services.AddScoped<ProgramService>();
 builder.Services.AddSingleton<IMemberRepositoryEF>(new MemberRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
 builder.Services.AddScoped<MemberService>();
 builder.Services.AddScoped<EquipmentService>();
+builder.Services.AddSingleton<IReservationRepositoryEF>(new ReservationRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
 builder.Services.AddSingleton<IEquipmentRepositoryEF>(new EquipmentRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
 
 

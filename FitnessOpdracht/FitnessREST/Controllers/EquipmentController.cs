@@ -32,7 +32,19 @@ namespace FitnessREST.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        
+        [HttpGet("/Equipment/SetRepair/{id}")]
+        public List<Member> SetRepairEquipment([FromRoute]int id)
+        {
+            try
+            {
+                return EquipmentService.SetRepairEquipment(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
 
     }
 }

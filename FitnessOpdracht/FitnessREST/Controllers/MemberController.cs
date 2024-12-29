@@ -90,5 +90,30 @@ namespace FitnessREST.Controllers
                 return BadRequest(ex.Message); 
             }
         }
+        [HttpGet("/GetMemberReservations/{id}")]
+        public List<Reservation> GetMemberReservations([FromRoute] int id)
+        {
+            try
+            {
+                return MemberService.GetReservationsForMember(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpGet("/GetMemberPrograms/{id}")]
+        public List<FitnessDomein.Model.Program> GetMemberPrograms([FromRoute] int id)
+        {
+            try
+            {
+                return MemberService.GetProgramsForMember(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

@@ -12,9 +12,13 @@ namespace FitnessDomein.Services
     public class MemberService
     {
         private IMemberRepositoryEF repo;
-        public MemberService(IMemberRepositoryEF repo)
+        private IReservationRepositoryEF repoRes;
+        private IProgramRepositoryEF repoProg;
+        public MemberService(IMemberRepositoryEF repo, IReservationRepositoryEF repoRes, IProgramRepositoryEF repoProg)
         {
             this.repo = repo;
+            this.repoRes = repoRes;
+            this.repoProg = repoProg;
         }
         public Member GeefMember(int id)
         {
@@ -27,19 +31,7 @@ namespace FitnessDomein.Services
                 throw new MemberServiceException("GeefMember", ex);
             }
         }
-        /*public void VerwijderMember(int id)
-        {
-            try
-            {
-                if (!repo.HeeftMember(id)) throw new MemberServiceException("VerwijderMember - member bestaat niet");
-                repo.VerwijderMember(id);
-            }
-            catch (Exception ex)
-            {
-                throw new MemberServiceException("VerwijderMember", ex);
-            }
-        }
-        */
+
         public Member VoegMemberToe (Member member)
         {
             try
@@ -92,7 +84,28 @@ namespace FitnessDomein.Services
                 throw new MemberServiceException("UpdateMember", ex);
             }
         }
+        public List<Reservation> GetReservationsForMember(int memberId)
+        {
+            try
+            {
+                return repoRes.GeefMemberReservations(memberId);
+            }
+            catch (Exception ex)
+            {
+                throw new MemberServiceException("GetReservationsForMember", ex);
+            }
+        }
 
-       
+        public List<Program> GetProgramsForMember(int id)
+        {
+            try
+            {
+                return repoProg.GetProgramsForMember(id);
+            }
+            catch (Exception ex)
+            {
+                throw new MemberServiceException("GetProgramsForMember", ex);
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ namespace FitnessDomein.Interfaces
     {
         Member GeefMember(int id);
         List<Member> GeefMembers();
+        
         public bool HeeftMember(string lastName, DateTime birthday, string address);
         void UpdateMember(Member member);
         void VerwijderMember(int id);

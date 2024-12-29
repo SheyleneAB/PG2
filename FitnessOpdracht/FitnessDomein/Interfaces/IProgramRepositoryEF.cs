@@ -13,5 +13,6 @@ namespace FitnessDomein.Interfaces
         public bool HeeftProgram(string programCode);
         public void UpdateProgram(Program program);
         public void VoegProgramToe(Program program);
+        List<Program> GetProgramsForMember(int id);
     }
 }
