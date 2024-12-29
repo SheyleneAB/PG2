@@ -6,20 +6,13 @@ namespace FitnessDB.Models;
 public partial class ReservationEF
 {
     public int ReservationId { get; set; }
-
-    public int EquipmentId { get; set; }
-
-    public int TimeSlotId { get; set; }
-
+ 
     public DateTime Date { get; set; }
 
     public int MemberId { get; set; }
 
-    public virtual EquipmentEF Equipment { get; set; } = null!;
-
     public virtual MemberEF Member { get; set; } = null!;
 
-    public virtual ReservationTimeSlotEF? ReservationTimeSlot { get; set; }
+    public virtual ICollection<ReservationTimeSlotEF> ReservationTimeSlots { get; set; } = new List<ReservationTimeSlotEF>();
 
-    public virtual TimeSlotEF TimeSlot { get; set; } = null!;
 }

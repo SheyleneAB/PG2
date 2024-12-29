@@ -15,5 +15,4 @@ public partial class TimeSlotEF
 
     public virtual ICollection<ReservationTimeSlotEF> ReservationTimeSlots { get; set; } 
 
-    public virtual ICollection<ReservationEF> Reservations { get; set; } 
-}
+    }

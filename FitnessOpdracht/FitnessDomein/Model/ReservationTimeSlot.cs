@@ -11,6 +11,13 @@ namespace FitnessDomein.Model
         public ReservationTimeSlot()
         {
         }
+
+        public ReservationTimeSlot(Equipment equipment, Timeslot timeSlot)
+        {
+            Equipment = equipment;
+            TimeSlot = timeSlot;
+        }
+
         public ReservationTimeSlot(Reservation reservation, Equipment equipment, Timeslot timeSlot)
         {
             Reservation = reservation;

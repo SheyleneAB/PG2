@@ -71,26 +71,28 @@ namespace FitnessDB.Repositories
 
                 equipment.IsInMaintenance = true;
 
-                var futureReservations = ctx.Reservations
-                    .Include(r => r.Member) 
-                    .Where(r => r.EquipmentId == equipmentId && r.Date > DateTime.Now)
+                var futureReservationTimeSlots = ctx.ReservationTimeSlots
+                    .Include(rts => rts.Reservation)
+                    .ThenInclude(r => r.Member)
+                    .Where(rts => rts.EquipmentId == equipmentId && rts.Reservation.Date > DateTime.Now)
                     .ToList();
 
-                var members = futureReservations
-                    .Select(r => r.Member)
+                var members = futureReservationTimeSlots
+                    .Select(rts => rts.Reservation.Member)
                     .Distinct()
                     .ToList();
+
                 List<Member> membersdm = new List<Member>();
                 foreach (var member in members)
                 {
                     membersdm.Add(MemberMapper.MapToDomain(member));
                 }
 
-                ctx.Reservations.RemoveRange(futureReservations);
+                ctx.ReservationTimeSlots.RemoveRange(futureReservationTimeSlots);
 
                 ctx.SaveChanges();
 
-                return membersdm; 
+                return membersdm;
             }
             catch (Exception ex)
             {

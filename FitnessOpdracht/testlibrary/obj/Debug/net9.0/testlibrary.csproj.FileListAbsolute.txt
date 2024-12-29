@@ -1,0 +1,15 @@
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\bin\Debug\net9.0\testlibrary.deps.json
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\bin\Debug\net9.0\testlibrary.dll
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\bin\Debug\net9.0\testlibrary.pdb
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.AssemblyInfoInputs.cache
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.AssemblyInfo.cs
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.csproj.CoreCompileInputs.cache
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.sourcelink.json
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.dll
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\refint\testlibrary.dll
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.pdb
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\ref\testlibrary.dll
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\bin\Debug\net9.0\testlibrary.runtimeconfig.json
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.genruntimeconfig.cache
+C:\Users\elyne\PG2\FitnessOpdracht\testlibrary\obj\Debug\net9.0\testlibrary.csproj.AssemblyReference.cache

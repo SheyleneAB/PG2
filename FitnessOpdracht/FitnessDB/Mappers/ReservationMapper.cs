@@ -1,6 +1,7 @@
 ﻿using FitnessDB.Exceptions;
 using FitnessDB.Models;
 using FitnessDomein.Model;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,16 @@ namespace FitnessDB.Mappers
 {
     public class ReservationMapper
     {
-        public static Reservation MapToDomain (ReservationEF db)
+        public static Reservation MapToDomain(ReservationEF db)
         {
             try
             {
+                
                 return new Reservation
                 {
                     Id = db.ReservationId,
-                    Date = db.Date
-                    // ReservationTimeSlot = db.ReservationTimeSlot
-                    //TODO: Add ReservationTimeSlot
+                    Date = db.Date,
+                    Member = MemberMapper.MapToDomain(db.Member)
                 };
             }
             catch (Exception ex)
@@ -28,6 +29,7 @@ namespace FitnessDB.Mappers
                 throw new MapException("MapReservation - MapToDomain", ex);
             }
         }
+
         public static ReservationEF MapToDB(Reservation r)
         {
             try
@@ -35,8 +37,8 @@ namespace FitnessDB.Mappers
                 return new ReservationEF
                 {
                     ReservationId = (int)r.Id,
-                    Date = r.Date
-                    // ReservationTimeSlot = r.ReservationTimeSlot
+                    Date = r.Date,
+                    Member = MemberMapper.MapToDB(r.Member)
                 };
             }
             catch (Exception ex)
@@ -44,6 +46,5 @@ namespace FitnessDB.Mappers
                 throw new MapException("MapReservation - MapToDB", ex);
             }
         }
-                 
     }
 }

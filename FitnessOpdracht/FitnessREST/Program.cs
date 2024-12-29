@@ -7,18 +7,17 @@ using FitnessDB.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
-builder.Services.AddSingleton<IProgramRepositoryEF>(new ProgramRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
+string defaultConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddSingleton<IProgramRepositoryEF>(new ProgramRepositoryEF(defaultConnectionString));
+builder.Services.AddSingleton<IMemberRepositoryEF>(new MemberRepositoryEF(defaultConnectionString));
+builder.Services.AddSingleton<IReservationRepositoryEF>(new ReservationRepositoryEF(defaultConnectionString));
+builder.Services.AddSingleton<IEquipmentRepositoryEF>(new EquipmentRepositoryEF(defaultConnectionString));
 builder.Services.AddScoped<ProgramService>();
-builder.Services.AddSingleton<IMemberRepositoryEF>(new MemberRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
 builder.Services.AddScoped<MemberService>();
 builder.Services.AddScoped<EquipmentService>();
-builder.Services.AddSingleton<IReservationRepositoryEF>(new ReservationRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
-builder.Services.AddSingleton<IEquipmentRepositoryEF>(new EquipmentRepositoryEF("Data Source=radion\\sqlexpress;Initial Catalog=GymTest;Integrated Security=True;Encrypt=False"));
-
-
-builder.Services.AddDbContext<GymTestContextEF>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<ReservationService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

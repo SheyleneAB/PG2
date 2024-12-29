@@ -174,4 +174,3 @@ C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\refint\FitnessRE
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.pdb
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.genruntimeconfig.cache
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\ref\FitnessREST.dll
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.MvcApplicationPartsAssemblyInfo.cs

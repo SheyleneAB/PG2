@@ -17,5 +17,4 @@ public partial class EquipmentEF
 
     public virtual ICollection<ReservationTimeSlotEF> ReservationTimeSlots { get; set; } = new List<ReservationTimeSlotEF>();
 
-    public virtual ICollection<ReservationEF> Reservations { get; set; } = new List<ReservationEF>();
 }
