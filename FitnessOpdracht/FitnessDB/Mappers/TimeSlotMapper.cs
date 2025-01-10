@@ -41,5 +41,6 @@ namespace FitnessDB.Mappers
                 throw new MapException("MapTimeSlot - MapToDomain", ex);
             }
         }
+
     }
 }

@@ -103,8 +103,8 @@ namespace FitnessREST.Controllers
                 var reservationTimeSlots = reservation.ReservationTimeSlot
                     .Select(dto => new ReservationTimeSlot
                     {
-                        EquipmentId = dto.EquipmentId,
-                        TimeSlotId = dto.TimeSlotId
+                        Equipment = EquipmentService.GeefEquipment(dto.EquipmentId),
+                        TimeSlot = TimeSlotService.GeefTimeSlot(dto.TimeSlotId)
                     }).ToList();
 
                 Reservation reservationdm = new Reservation

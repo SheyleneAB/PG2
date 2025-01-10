@@ -1,14 +1,15 @@
 ﻿using StripsBL.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace StripsBL.Model
 {
-    public class Strip
-    {
+    public class Strip 
+    { 
         public Strip()
         {
             Auteurs = new List<Auteur>();

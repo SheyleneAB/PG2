@@ -36,7 +36,7 @@ namespace FitnessDB.Mappers
             {
                 return new ReservationEF
                 {
-                    ReservationId = (int)r.Id,
+                    ReservationId = r.Id.HasValue ? (int)r.Id : 0,
                     Date = r.Date,
                     Member = MemberMapper.MapToDB(r.Member)
                 };

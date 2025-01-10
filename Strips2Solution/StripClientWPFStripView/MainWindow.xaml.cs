@@ -19,18 +19,33 @@ namespace StripClientWPFStripView
     public partial class MainWindow : Window
     {
         private StripService stripService;
+        private Strip strip = new Strip();
         public MainWindow()
         {
             InitializeComponent();
             stripService = new StripService();
+            
         }
         private async void StripButton_Click(object sender, RoutedEventArgs e)
         {
             string stid = StripIdTextBox.Text;
             if (int.TryParse(stid, out int id))
             {
-                Strip strip = await stripService.GetStripAsync($"api/Strip/{id}");
-                SelectedStripTextBox.Text = strip.ToString();
+                var fetchedStrip = await stripService.GetStripAsync($"api/Strip/{id}");
+                if (fetchedStrip != null)
+                {
+                    strip.Id = fetchedStrip.Id;
+                    strip.Titel = fetchedStrip.Titel;
+                    strip.Reeksnummer = fetchedStrip.Reeksnummer;
+                    strip.Reeks = fetchedStrip.Reeks;
+                    strip.Uitgeverij = fetchedStrip.Uitgeverij;
+                    strip.Auteurs = fetchedStrip.Auteurs;
+                    this.DataContext = fetchedStrip;
+                }
+                else
+                {
+                    MessageBox.Show("Strip not found.");
+                }
             }
             else
             {

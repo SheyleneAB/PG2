@@ -14,10 +14,12 @@ builder.Services.AddSingleton<IProgramRepositoryEF>(new ProgramRepositoryEF(defa
 builder.Services.AddSingleton<IMemberRepositoryEF>(new MemberRepositoryEF(defaultConnectionString));
 builder.Services.AddSingleton<IReservationRepositoryEF>(new ReservationRepositoryEF(defaultConnectionString));
 builder.Services.AddSingleton<IEquipmentRepositoryEF>(new EquipmentRepositoryEF(defaultConnectionString));
+builder.Services.AddSingleton<ITimeSlotRepositoryEF>(new TimeSlotRepositoryEF(defaultConnectionString));
 builder.Services.AddScoped<ProgramService>();
 builder.Services.AddScoped<MemberService>();
 builder.Services.AddScoped<EquipmentService>();
 builder.Services.AddScoped<ReservationService>();
+builder.Services.AddScoped<TimeSlotService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

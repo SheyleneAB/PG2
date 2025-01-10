@@ -6,43 +6,48 @@
         xmlns:local="clr-namespace:StripClientWPFStripView"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
- 
+
     <Grid Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            
-            <Label Grid.Row="0" Grid.Column="0" Content="Strip Id :" Margin="5"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Strip Id:" Margin="5"/>
         <TextBox Grid.Row="0" Grid.Column="1" Name="StripIdTextBox" Margin="5"/>
         <Button Grid.Row="0" Grid.Column="2" Content="Get Strip" Margin="5" Click="StripButton_Click" />
-        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Name="SelectedStripTextBox" Margin="5"/>
-        <Label Content="Titel" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="TitleTextBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="5"/>
 
-        <!-- Nr and Reeks -->
-        <Label Content="Nr" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="NrTextBox" Grid.Row="2" Grid.Column="1" Margin="5"/>
-        <Label Content="Reeks" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
-        <TextBox Name="ReeksTextBox" Grid.Row="2" Grid.Column="3" Margin="5"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Titel:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="TitleTextBox" Margin="5" Text="{Binding Titel, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Uitgeverij -->
-        <Label Content="Uitgeverij" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="PublisherTextBox" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="5"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Nr:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="NrTextBox" Margin="5" Text="{Binding Reeksnummer, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Auteurs -->
-        <Label Content="Auteurs" Grid.Row="4" Grid.Column="0" VerticalAlignment="Top"/>
-        <TextBox Name="AuthorsTextBox" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" 
-                 Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
-    
+        <Label Grid.Row="2" Grid.Column="2" Content="Reeks:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="3" Name="ReeksTextBox" Margin="5" Text="{Binding Reeks.Naam, UpdateSourceTrigger=PropertyChanged}"/>
 
+        <Label Grid.Row="3" Grid.Column="0" Content="Uitgeverij:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Name="PublisherTextBox" Margin="5" Text="{Binding Uitgeverij.Naam, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Auteurs:" VerticalAlignment="Top"/>
+        <ListBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Name="AuthorsListBox" Margin="5" 
+         ItemsSource="{Binding Auteurs}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Naam}" Margin="5"/>
+                        <TextBlock Text="{Binding Email}" Margin="5"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

@@ -888,7 +888,7 @@
           "reservationTimeSlot": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ReservationTimeSlot"
+              "$ref": "#/components/schemas/ReservationTimeSlotDTO"
             },
             "nullable": true
           }
@@ -911,6 +911,20 @@
           },
           "timeSlot": {
             "$ref": "#/components/schemas/Timeslot"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservationTimeSlotDTO": {
+        "type": "object",
+        "properties": {
+          "equipmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeSlotId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
