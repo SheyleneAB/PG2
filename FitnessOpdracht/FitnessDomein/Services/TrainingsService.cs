@@ -51,5 +51,50 @@ namespace FitnessDomein.Services
                 throw new TrainingsServiceException("GetRunningSession", ex);
             }
         }
+        public List<RunningSession> GeefRunningSessionInMaandJaar(int memberId, int maand, int jaar)
+        {
+            try
+            {
+                return repo.GeefRunningSessionInMaandJaar(memberId, maand, jaar);
+            }
+            catch (Exception ex)
+            {
+                throw new TrainingsServiceException("GetRunningSessionInMaandJaar", ex);
+            }
+        }
+        public List<Cyclingsession> GeefCyclingSessionInMaandJaar(int memberId, int maand, int jaar)
+        {
+            try
+            {
+                return repo.GeefCyclingSessionInMaandJaar(memberId, maand, jaar);
+            }
+            catch (Exception ex)
+            {
+                throw new TrainingsServiceException("GetCyclingSessionInMaandJaar", ex);
+            }
+        }
+        public SessionStats GeefSessionStatsVoorMember(int MemberId)
+        {
+            try
+            {
+                return repo.GeefSessionStatsVoorMember(MemberId);
+            }
+            catch (Exception ex)
+            {
+                throw new TrainingsServiceException("GetSessionStatsVoorMember", ex);
+            }
+        }
+        public List<MaandSessionOverview> GetSessionsPerMonth(int memberId, int year)
+        {
+            try
+            {
+                return repo.GetSessionsPerMonth(memberId, year);
+            }
+            catch (Exception ex)
+            {
+                throw new TrainingsServiceException("GetSessionsPerMonth", ex);
+            }
+        }
+
     }
 }

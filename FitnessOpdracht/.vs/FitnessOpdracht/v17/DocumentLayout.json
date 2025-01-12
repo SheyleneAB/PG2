@@ -3,72 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdb\\repositories\\equipmentrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|solutionrelative:fitnessdb\\repositories\\equipmentrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessrest\\controllers\\trainingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|solutionrelative:fitnessrest\\controllers\\trainingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdb\\repositories\\trainingsrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|solutionrelative:fitnessdb\\repositories\\trainingsrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdomein\\services\\trainingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|solutionrelative:fitnessdomein\\services\\trainingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessrest\\controllers\\programcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|solutionrelative:fitnessrest\\controllers\\programcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdb\\mappers\\equipmentmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|solutionrelative:fitnessdb\\mappers\\equipmentmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdomein\\services\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|solutionrelative:fitnessdomein\\services\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessrest\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|solutionrelative:fitnessrest\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdomein\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|solutionrelative:fitnessdomein\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdomein\\model\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|solutionrelative:fitnessdomein\\model\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdb\\mappers\\reservationtimeslotmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|solutionrelative:fitnessdb\\mappers\\reservationtimeslotmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdb\\models\\reservationef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|solutionrelative:fitnessdb\\models\\reservationef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdomein\\services\\timeslotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|solutionrelative:fitnessdomein\\services\\timeslotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdb\\repositories\\timeslotrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|solutionrelative:fitnessdb\\repositories\\timeslotrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdb\\mappers\\timeslotmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1534E7F-E08E-4F63-B1AD-908B4D815898}|FitnessDB\\FitnessDB.csproj|solutionrelative:fitnessdb\\mappers\\timeslotmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessrest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|solutionrelative:fitnessrest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdomein\\interfaces\\itimeslotrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|solutionrelative:fitnessdomein\\interfaces\\itimeslotrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessrest\\dto\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A05BD15-1AD1-48A4-B280-4BFAD29FC6C7}|FitnessREST\\FitnessREST.csproj|solutionrelative:fitnessrest\\dto\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6714DC28-3152-4759-83AF-6C6183D42A23}|testlibrary\\testlibrary.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\testlibrary\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6714DC28-3152-4759-83AF-6C6183D42A23}|testlibrary\\testlibrary.csproj|solutionrelative:testlibrary\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|c:\\users\\elyne\\pg2\\fitnessopdracht\\fitnessdomein\\interfaces\\itrainingsrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10DB6371-5CBC-4565-9751-E5386D765782}|FitnessDomein\\FitnessDomein.csproj|solutionrelative:fitnessdomein\\interfaces\\itrainingsrepositoryef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,213 +34,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TrainingsService.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\TrainingsService.cs",
-              "RelativeDocumentMoniker": "FitnessDomein\\Services\\TrainingsService.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\TrainingsService.cs",
-              "RelativeToolTip": "FitnessDomein\\Services\\TrainingsService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAACgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T01:45:24.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EquipmentRepositoryEF.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Repositories\\EquipmentRepositoryEF.cs",
-              "RelativeDocumentMoniker": "FitnessDB\\Repositories\\EquipmentRepositoryEF.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Repositories\\EquipmentRepositoryEF.cs",
-              "RelativeToolTip": "FitnessDB\\Repositories\\EquipmentRepositoryEF.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAACQAAAAIAAAAAAAAAA==",
+              "Title": "TrainingController.cs",
+              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\Controllers\\TrainingController.cs",
+              "RelativeDocumentMoniker": "FitnessREST\\Controllers\\TrainingController.cs",
+              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\Controllers\\TrainingController.cs",
+              "RelativeToolTip": "FitnessREST\\Controllers\\TrainingController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAADIAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T19:44:32.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProgramController.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\Controllers\\ProgramController.cs",
-              "RelativeDocumentMoniker": "FitnessREST\\Controllers\\ProgramController.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\Controllers\\ProgramController.cs",
-              "RelativeToolTip": "FitnessREST\\Controllers\\ProgramController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T12:22:38.062Z",
+              "WhenOpened": "2025-01-12T17:53:34.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "EquipmentMapper.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Mappers\\EquipmentMapper.cs",
-              "RelativeDocumentMoniker": "FitnessDB\\Mappers\\EquipmentMapper.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Mappers\\EquipmentMapper.cs",
-              "RelativeToolTip": "FitnessDB\\Mappers\\EquipmentMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
+              "Title": "ITrainingsRepositoryEF.cs",
+              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Interfaces\\ITrainingsRepositoryEF.cs",
+              "RelativeDocumentMoniker": "FitnessDomein\\Interfaces\\ITrainingsRepositoryEF.cs",
+              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Interfaces\\ITrainingsRepositoryEF.cs",
+              "RelativeToolTip": "FitnessDomein\\Interfaces\\ITrainingsRepositoryEF.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T15:25:01.699Z",
+              "WhenOpened": "2025-01-12T17:50:44.511Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EquipmentService.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\EquipmentService.cs",
-              "RelativeDocumentMoniker": "FitnessDomein\\Services\\EquipmentService.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\EquipmentService.cs",
-              "RelativeToolTip": "FitnessDomein\\Services\\EquipmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "TrainingsRepositoryEF.cs",
+              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Repositories\\TrainingsRepositoryEF.cs",
+              "RelativeDocumentMoniker": "FitnessDB\\Repositories\\TrainingsRepositoryEF.cs",
+              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Repositories\\TrainingsRepositoryEF.cs",
+              "RelativeToolTip": "FitnessDB\\Repositories\\TrainingsRepositoryEF.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAIUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T01:45:40.264Z",
+              "WhenOpened": "2025-01-12T17:46:47.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ReservationTimeSlotMapper.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Mappers\\ReservationTimeSlotMapper.cs",
-              "RelativeDocumentMoniker": "FitnessDB\\Mappers\\ReservationTimeSlotMapper.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Mappers\\ReservationTimeSlotMapper.cs",
-              "RelativeToolTip": "FitnessDB\\Mappers\\ReservationTimeSlotMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TrainingsService.cs",
+              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\TrainingsService.cs",
+              "RelativeDocumentMoniker": "FitnessDomein\\Services\\TrainingsService.cs",
+              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\TrainingsService.cs",
+              "RelativeToolTip": "FitnessDomein\\Services\\TrainingsService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAArwE8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T22:23:56.363Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReservationController.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\Controllers\\ReservationController.cs",
-              "RelativeDocumentMoniker": "FitnessREST\\Controllers\\ReservationController.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\Controllers\\ReservationController.cs",
-              "RelativeToolTip": "FitnessREST\\Controllers\\ReservationController.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAAAFgAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T21:24:16.412Z",
+              "WhenOpened": "2025-01-12T01:45:24.877Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReservationService.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\ReservationService.cs",
-              "RelativeDocumentMoniker": "FitnessDomein\\Services\\ReservationService.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\ReservationService.cs",
-              "RelativeToolTip": "FitnessDomein\\Services\\ReservationService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T23:01:16.695Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Reservation.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Model\\Reservation.cs",
-              "RelativeDocumentMoniker": "FitnessDomein\\Model\\Reservation.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Model\\Reservation.cs",
-              "RelativeToolTip": "FitnessDomein\\Model\\Reservation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T22:26:48.451Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ReservationEF.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Models\\ReservationEF.cs",
-              "RelativeDocumentMoniker": "FitnessDB\\Models\\ReservationEF.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Models\\ReservationEF.cs",
-              "RelativeToolTip": "FitnessDB\\Models\\ReservationEF.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAA8AAABbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T22:24:32.303Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TimeSlotService.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\TimeSlotService.cs",
-              "RelativeDocumentMoniker": "FitnessDomein\\Services\\TimeSlotService.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Services\\TimeSlotService.cs",
-              "RelativeToolTip": "FitnessDomein\\Services\\TimeSlotService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAnwBwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T00:25:49.606Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TimeSlotRepositoryEF.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Repositories\\TimeSlotRepositoryEF.cs",
-              "RelativeDocumentMoniker": "FitnessDB\\Repositories\\TimeSlotRepositoryEF.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Repositories\\TimeSlotRepositoryEF.cs",
-              "RelativeToolTip": "FitnessDB\\Repositories\\TimeSlotRepositoryEF.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADgvyYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T00:33:48.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TimeSlotMapper.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Mappers\\TimeSlotMapper.cs",
-              "RelativeDocumentMoniker": "FitnessDB\\Mappers\\TimeSlotMapper.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDB\\Mappers\\TimeSlotMapper.cs",
-              "RelativeToolTip": "FitnessDB\\Mappers\\TimeSlotMapper.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAvwCoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T00:36:12.512Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\appsettings.json",
-              "RelativeDocumentMoniker": "FitnessREST\\appsettings.json",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\appsettings.json",
-              "RelativeToolTip": "FitnessREST\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-30T15:39:32.777Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ITimeSlotRepositoryEF.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Interfaces\\ITimeSlotRepositoryEF.cs",
-              "RelativeDocumentMoniker": "FitnessDomein\\Interfaces\\ITimeSlotRepositoryEF.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessDomein\\Interfaces\\ITimeSlotRepositoryEF.cs",
-              "RelativeToolTip": "FitnessDomein\\Interfaces\\ITimeSlotRepositoryEF.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T00:39:20.816Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ReservationDTO.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\DTO\\ReservationDTO.cs",
-              "RelativeDocumentMoniker": "FitnessREST\\DTO\\ReservationDTO.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\FitnessREST\\DTO\\ReservationDTO.cs",
-              "RelativeToolTip": "FitnessREST\\DTO\\ReservationDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T17:24:10.642Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Reservation.cs",
-              "DocumentMoniker": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\testlibrary\\models\\Reservation.cs",
-              "RelativeDocumentMoniker": "testlibrary\\models\\Reservation.cs",
-              "ToolTip": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\testlibrary\\models\\Reservation.cs",
-              "RelativeToolTip": "testlibrary\\models\\Reservation.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T21:25:06.336Z"
             }
           ]
         }

@@ -770,6 +770,162 @@
           }
         }
       }
+    },
+    "/api/Training/Training/Training/GeefTrainingMemberDate/{memberId}/{maand}/{jaar}": {
+      "get": {
+        "tags": [
+          "Training"
+        ],
+        "parameters": [
+          {
+            "name": "memberId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "maand",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "jaar",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/GeefSessionStatsMember/{id}": {
+      "get": {
+        "tags": [
+          "Training"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionStats"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionStats"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionStats"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Training/Training/Training/GetSessionsPerMonth/{memberId}/{year}": {
+      "get": {
+        "tags": [
+          "Training"
+        ],
+        "parameters": [
+          {
+            "name": "memberId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaandSessionOverview"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaandSessionOverview"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaandSessionOverview"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -847,6 +1003,19 @@
           },
           "isInMaintenance": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MaandSessionOverview": {
+        "type": "object",
+        "properties": {
+          "month": {
+            "nullable": true
+          },
+          "sessionCount": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1108,6 +1277,33 @@
             "format": "int32"
           },
           "intervalSpeed": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SessionStats": {
+        "type": "object",
+        "properties": {
+          "totalSessions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalDurationHours": {
+            "type": "number",
+            "format": "double"
+          },
+          "longestSession": {
+            "nullable": true
+          },
+          "shortestSession": {
+            "nullable": true
+          },
+          "averageSessionDuration": {
+            "nullable": true
+          },
+          "averageDurationMinutes": {
             "type": "number",
             "format": "double"
           }

@@ -26,6 +26,73 @@
     ]
   },
   {
+    "ContainingType": "FitnessREST.Controllers.TrainingController",
+    "Method": "GetTraining",
+    "RelativePath": "api/Training/Training/Training/GeefTrainingMemberDate/{memberId}/{maand}/{jaar}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "maand",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "jaar",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessREST.DTO.TrainingDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.TrainingController",
+    "Method": "GetSessionsPerMonth",
+    "RelativePath": "api/Training/Training/Training/GetSessionsPerMonth/{memberId}/{year}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.MaandSessionOverview, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "FitnessREST.Controllers.EquipmentController",
     "Method": "SetRepairEquipment",
     "RelativePath": "Equipment/SetRepair/{id}",
@@ -68,6 +135,32 @@
     "ReturnTypes": [
       {
         "Type": "FitnessDomein.Model.Equipment",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.TrainingController",
+    "Method": "GetSessionStats",
+    "RelativePath": "GeefSessionStatsMember/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessDomein.Model.SessionStats",
         "MediaTypes": [
           "text/plain",
           "application/json",
