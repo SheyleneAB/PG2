@@ -368,6 +368,46 @@
         }
       }
     },
+    "/GetMemberTrainings/{id}": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/Program/Voegtoe": {
       "post": {
         "tags": [
@@ -681,10 +721,105 @@
           }
         }
       }
+    },
+    "/api/Training/Training/Training/GeefTrainingDetail/{id}": {
+      "get": {
+        "tags": [
+          "Training"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RunningSessionDetail"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RunningSessionDetail"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RunningSessionDetail"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "Cyclingsession": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "avgWatt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxWatt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "avgCadence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxCadence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "member": {
+            "$ref": "#/components/schemas/Member"
+          },
+          "trainingType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Equipment": {
         "type": "object",
         "properties": {
@@ -928,6 +1063,57 @@
         },
         "additionalProperties": false
       },
+      "RunningSession": {
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "avgSpeed": {
+            "type": "number",
+            "format": "double"
+          },
+          "member": {
+            "$ref": "#/components/schemas/Member"
+          },
+          "runningSessionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "runningSessionDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RunningSessionDetail"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RunningSessionDetail": {
+        "type": "object",
+        "properties": {
+          "seqNR": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "intervalTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "intervalSpeed": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "Timeslot": {
         "type": "object",
         "properties": {
@@ -946,6 +1132,26 @@
           },
           "partOfDay": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TrainingDTO": {
+        "type": "object",
+        "properties": {
+          "cyclingsessions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cyclingsession"
+            },
+            "nullable": true
+          },
+          "runningsessions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RunningSession"
+            },
             "nullable": true
           }
         },

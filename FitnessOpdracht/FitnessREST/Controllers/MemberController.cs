@@ -10,10 +10,12 @@ namespace FitnessREST.Controllers
     public class MemberController : Controller
     {
         private MemberService MemberService;
+        private TrainingsService TrainingsService;
         private string url = "api/Members";
-        public MemberController(MemberService memberservice)
+        public MemberController(MemberService memberservice, TrainingsService trainingsService)
         {
             this.MemberService = memberservice;
+            TrainingsService = trainingsService;
         }
         [HttpPost("/Member/Voegtoe")]
         public FitnessDomein.Model.Member VoegMemberToe([FromBody] MemberDTO member)
@@ -112,6 +114,26 @@ namespace FitnessREST.Controllers
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+        [HttpGet("/GetMemberTrainings/{id}")]
+        public ActionResult<TrainingDTO> GetMemberTrainings([FromRoute] int id)
+        {
+            try
+            {
+                var RunningSessions = TrainingsService.GeefRunningSessionMember(id);
+                var CyclingSessions = TrainingsService.GeefCyclingSessionMember(id);
+                var trainingDTO = new TrainingDTO
+                {
+                    Runningsessions = RunningSessions,
+                    Cyclingsessions = CyclingSessions
+                };
+
+                return Ok(trainingDTO);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
 

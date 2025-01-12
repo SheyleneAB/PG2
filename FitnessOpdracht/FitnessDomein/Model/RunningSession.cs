@@ -13,5 +13,6 @@ namespace FitnessDomein.Model
         public Member Member { get; set; }
         public int? RunningSessionId {  get; set; }
         public DateTime Date { get; set; }
+        public List<RunningSessionDetail> RunningSessionDetails { get; set; }
     }
 }
