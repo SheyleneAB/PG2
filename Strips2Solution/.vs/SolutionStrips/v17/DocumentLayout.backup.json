@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\elyne\\PG2\\Strips2Solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsbl\\model\\strip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|solutionrelative:stripsbl\\model\\strip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}|StripClientWPFStripView\\StripClientWPFStripView.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripclientwpfstripview\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}|StripClientWPFStripView\\StripClientWPFStripView.csproj|solutionrelative:stripclientwpfstripview\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}|StripClientWPFStripView\\StripClientWPFStripView.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripclientwpfstripview\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}|StripClientWPFStripView\\StripClientWPFStripView.csproj|solutionrelative:stripclientwpfstripview\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripsbl\\model\\strip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBA6EB-19F0-4E1A-B9E2-741E8F14425E}|StripsBL\\StripsBL.csproj|solutionrelative:stripsbl\\model\\strip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC01B4FE-A182-4856-B47A-A9DC9FB26BAF}|StripClientWPFStripView\\StripClientWPFStripView.csproj|c:\\users\\elyne\\pg2\\strips2solution\\stripclientwpfstripview\\model\\auteur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -75,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Strip.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripsBL\\Model\\Strip.cs",
               "RelativeDocumentMoniker": "StripsBL\\Model\\Strip.cs",
@@ -88,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripClientWPFStripView\\MainWindow.xaml",
               "RelativeDocumentMoniker": "StripClientWPFStripView\\MainWindow.xaml",
@@ -100,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\elyne\\PG2\\Strips2Solution\\StripClientWPFStripView\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "StripClientWPFStripView\\MainWindow.xaml.cs",

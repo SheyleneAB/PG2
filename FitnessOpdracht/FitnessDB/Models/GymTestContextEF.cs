@@ -177,6 +177,11 @@ public partial class GymTestContextEF : DbContext
                 .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("reservation$FK_reservation_member");
+
+            entity.HasMany(r => r.ReservationTimeSlots)
+                .WithOne(ts => ts.Reservation)
+                .HasForeignKey(ts => ts.ReservationId)
+                .OnDelete(DeleteBehavior.ClientSetNull); // Manual deletion
         });
 
         modelBuilder.Entity<ReservationTimeSlotEF>(entity =>
@@ -191,7 +196,7 @@ public partial class GymTestContextEF : DbContext
 
             entity.HasOne(d => d.Reservation).WithMany(p => p.ReservationTimeSlots)
                 .HasForeignKey(d => d.ReservationId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.ClientSetNull) // Manual deletion
                 .HasConstraintName("FK_ReservationTimeSlot_reservation");
 
             entity.HasOne(d => d.TimeSlot).WithMany(p => p.ReservationTimeSlots)

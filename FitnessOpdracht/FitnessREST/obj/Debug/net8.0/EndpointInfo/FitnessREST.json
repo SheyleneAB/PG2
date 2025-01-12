@@ -868,8 +868,7 @@
             "items": {
               "$ref": "#/components/schemas/ReservationTimeSlot"
             },
-            "nullable": true,
-            "readOnly": true
+            "nullable": true
           }
         },
         "additionalProperties": false

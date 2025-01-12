@@ -21,11 +21,14 @@ namespace FitnessDomein.Model
         public Member Member { get; set; }
         public DateTime Date { get; set; }
 
-        public List<ReservationTimeSlot> ReservationTimeSlot { get; }
+        public ICollection<ReservationTimeSlot> ReservationTimeSlot { get; set; }
 
         public void AddTimeSlot(Timeslot timeSlot, Equipment equipment)
         {
-            ReservationTimeSlot.Add(new ReservationTimeSlot( equipment, timeSlot ));
+            if (timeSlot == null) throw new ArgumentNullException(nameof(timeSlot));
+            if (equipment == null) throw new ArgumentNullException(nameof(equipment));
+
+            ReservationTimeSlot.Add(new ReservationTimeSlot(equipment, timeSlot));
         }
 
 

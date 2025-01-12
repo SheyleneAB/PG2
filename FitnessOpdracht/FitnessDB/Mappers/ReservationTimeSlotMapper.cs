@@ -34,7 +34,7 @@ namespace FitnessDB.Mappers
             {
                 return new ReservationTimeSlotEF
                 {
-                    ReservationTimeSlotId = (int)r.Id,
+                    ReservationTimeSlotId = r.Id.HasValue ? (int)r.Id : 0,
                     Reservation = ReservationMapper.MapToDB(r.Reservation),
                     Equipment = EquipmentMapper.MapToDB(r.Equipment),
                     TimeSlot = TimeSlotMapper.MapToDB(r.TimeSlot)

@@ -32,6 +32,8 @@ namespace FitnessDB.Repositories
                 var reservationEFs = ctx.Reservations
 
                     .Where(x => x.MemberId == memberId)
+                    .Include(r => r.ReservationTimeSlots)
+                    .Include(r => r.Member)
                     .ToList();
 
                 return reservationEFs.Select(ReservationMapper.MapToDomain).ToList();
@@ -60,15 +62,27 @@ namespace FitnessDB.Repositories
         {
             try
             {
-                var reservationEF = ReservationMapper.MapToDB(reservation);
-                ctx.Entry(reservationEF).State = EntityState.Deleted;
-                SaveAndClear();
+                var reservationEF = ctx.Reservations
+                    .Include(r => r.ReservationTimeSlots)
+                    .FirstOrDefault(r => r.ReservationId == reservation.Id);
+
+                if (reservationEF != null)
+                {
+                    // Manually delete related ReservationTimeSlot records
+                    ctx.ReservationTimeSlots.RemoveRange(reservationEF.ReservationTimeSlots);
+
+                    // Delete the Reservation
+                    ctx.Reservations.Remove(reservationEF);
+
+                    ctx.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
                 throw new ReservationRepositoryException("Error in Repository during DeleteReservation", ex);
             }
         }
+        
         public List<Reservation> GeefReservations()
         {
             try
