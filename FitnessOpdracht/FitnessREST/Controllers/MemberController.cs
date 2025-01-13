@@ -18,7 +18,7 @@ namespace FitnessREST.Controllers
             TrainingsService = trainingsService;
         }
         [HttpPost("/Member/Voegtoe")]
-        public FitnessDomein.Model.Member VoegMemberToe([FromBody] MemberDTO member)
+        public ActionResult<FitnessDomein.Model.Member> VoegMemberToe([FromBody] MemberDTO member)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace FitnessREST.Controllers
 
                     );
 
-                return MemberService.VoegMemberToe(memberdm);
+                return Ok(MemberService.VoegMemberToe(memberdm));
 
             }
             catch (Exception ex)
@@ -43,7 +43,7 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpGet("/Member/{id}")]
-        public FitnessDomein.Model.Member GetMember([FromRoute]int id)
+        public ActionResult<Member> GetMember([FromRoute]int id)
         {
             try
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessDomein.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace FitnessDomein.Model
     public class Reservation
     {
         public Reservation() { }
+        private List<ReservationTimeSlot> reservationtimeslot = new List<ReservationTimeSlot>();
 
         public Reservation(Member member, DateTime date, List<ReservationTimeSlot> reservationTimeSlot)
         {
@@ -21,19 +23,27 @@ namespace FitnessDomein.Model
         public Member Member { get; set; }
         public DateTime Date { get; set; }
 
-        public ICollection<ReservationTimeSlot> ReservationTimeSlot { get; set; }
+        public ICollection<ReservationTimeSlot> ReservationTimeSlot { get { return reservationtimeslot; }
+            set
+            {
+                if (value == null || value.Count < 1) throw new DomeinException("Reservationtimeslot-setrestimeslot");
+                ReservationTimeSlot = new List<ReservationTimeSlot>(value);
+            }
+        }
 
         public void AddTimeSlot(Timeslot timeSlot, Equipment equipment)
         {
             if (timeSlot == null) throw new ArgumentNullException(nameof(timeSlot));
             if (equipment == null) throw new ArgumentNullException(nameof(equipment));
 
-            ReservationTimeSlot.Add(new ReservationTimeSlot(equipment, timeSlot));
+            reservationtimeslot.Add(new ReservationTimeSlot(equipment, timeSlot));
         }
-
-
-        // reservations in member 
-        // lijst combinatie tijdslot en equipment
+        public void RemoveTimeSlot(Timeslot timeSlot, Equipment equipment)
+        {
+            if (timeSlot == null) throw new ArgumentNullException(nameof(timeSlot));
+            if (equipment == null) throw new ArgumentNullException(nameof(equipment));
+            reservationtimeslot.Remove(new ReservationTimeSlot(equipment, timeSlot));
+        }
 
     }
 }

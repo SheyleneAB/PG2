@@ -131,5 +131,44 @@ namespace FitnessDB.Repositories
                 throw new ReservationRepositoryException("GeefReservation", ex);
             }
         }
+        public List<Timeslot> allTimeSlots = new List<Timeslot>
+        {
+        new Timeslot (1, 8, 9, "Morning" ),
+        new Timeslot (2, 9, 10, "Morning"),
+        new Timeslot (3, 10, 11, "Morning"),
+        new Timeslot (4, 11, 12, "Morning"),
+        new Timeslot (5, 12, 13, "Afternoon"),
+        new Timeslot (6, 13, 14, "Afternoon"),
+        new Timeslot (7, 14, 15, "Afternoon"),
+        new Timeslot (8, 15, 16, "Afternoon"),
+        new Timeslot (9, 16, 17, "Afternoon"),
+        new Timeslot (10, 17, 18, "Afternoon"),
+        new Timeslot (11, 18, 19, "Evening"),
+        new Timeslot (12, 19, 20, "Evening"),
+        new Timeslot (13, 20, 21, "Evening"),
+        new Timeslot (14, 21, 22, "Evening")
+        };
+        public List<Timeslot> GetUnusedTimeSlots(DateTime date, int equipmentId)
+        {
+            try
+            {
+                var usedTimeSlotIds = ctx.ReservationTimeSlots
+                    .Where(rts => rts.Reservation.Date == date && rts.EquipmentId == equipmentId)
+                    .Select(rts => rts.TimeSlotId)
+                    .Distinct()
+                    .ToList();
+
+                var unusedTimeSlots = allTimeSlots
+                    .Where(ts => !usedTimeSlotIds.Contains((int)ts.Id))
+                    .ToList();
+
+                return unusedTimeSlots;
+            }
+            catch (Exception ex)
+            {
+                throw new ReservationRepositoryException("GetUnusedTimeSlots", ex);
+
+            }
+        }
     }
 }

@@ -15,5 +15,6 @@ namespace FitnessDomein.Interfaces
         List<Reservation> GeefReservations();
         Reservation GeefReservation(int id);
         void UpdateReservation(Reservation existingReservation);
+        public List<Timeslot> GetUnusedTimeSlots(DateTime date, int equipmentId);
     }
 }

@@ -94,6 +94,26 @@
   },
   {
     "ContainingType": "FitnessREST.Controllers.EquipmentController",
+    "Method": "GetEquipment",
+    "RelativePath": "Equipment/GetAllAvailableEquipment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.Equipment, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.EquipmentController",
     "Method": "SetRepairEquipment",
     "RelativePath": "Equipment/SetRepair/{id}",
     "HttpMethod": "GET",
@@ -311,6 +331,37 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.Member, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.ReservationController",
+    "Method": "GetUnusedTimeSlots",
+    "RelativePath": "OngebruikteTimeslots/{equipmentid}/{date}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "equipmentid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.Timeslot, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

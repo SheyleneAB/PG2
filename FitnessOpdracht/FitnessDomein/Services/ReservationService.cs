@@ -85,5 +85,17 @@ namespace FitnessDomein.Services
             repo.AddReservation(reservationdm);
             return reservationdm;
         }
+        public List<Timeslot> GeefAlleOngebruikteTS (DateTime date, int equipmentId)
+        {
+            try
+            {
+                return repo.GetUnusedTimeSlots(date, equipmentId);
+            }
+            catch (Exception ex)
+            {
+                throw new ReservationServiceException("GeefAlleOngebruikteTS", ex);
+            }
+            
+        }
     }
 }

@@ -121,7 +121,19 @@ namespace FitnessREST.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        
+        [HttpGet("/OngebruikteTimeslots/{equipmentid}/{date}")]
+        public List<Timeslot> GetUnusedTimeSlots([FromRoute] int equipmentid, [FromRoute] DateTime date)
+        {
+            try
+            {
+                return ReservationService.GeefAlleOngebruikteTS( date, equipmentid);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 
 }

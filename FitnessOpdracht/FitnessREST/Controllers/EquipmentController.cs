@@ -44,6 +44,18 @@ namespace FitnessREST.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        [HttpGet("/Equipment/GetAllAvailableEquipment")]
+        public List<Equipment> GetEquipment()
+        {
+            try
+            {
+                return EquipmentService.GeefAllAvailableEquipment();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
 
     }

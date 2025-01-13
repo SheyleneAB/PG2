@@ -100,6 +100,20 @@ namespace FitnessDB.Repositories
             }
         }
 
+        public List<Equipment> GeefAllAvailableEquipment()
+        {
+            try
+            {
+                var equipment = ctx.Equipment
+                                    .Where(e => e.IsInMaintenance == false)
+                                    .ToList();
+
+                return equipment.Select(EquipmentMapper.MapToDomain).ToList(); ;
+            }
+            catch (Exception ex) {
+                throw new Exception("Error Geefallavailable", ex);
+            }
+        }
     }
 
 }

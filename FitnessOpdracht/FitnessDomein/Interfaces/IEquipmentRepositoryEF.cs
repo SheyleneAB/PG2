@@ -13,5 +13,6 @@ namespace FitnessDomein.Interfaces
         Equipment GeefEquipment(int equipmentId);
         bool HeeftEquipment(int equipmentId);
         public List<Member> SetRepairEquipment(int equipmentId);
+        List<Equipment> GeefAllAvailableEquipment();
     }
 }

@@ -53,5 +53,16 @@ namespace FitnessDomein.Services
             }
         }
 
+        public List<Equipment> GeefAllAvailableEquipment()
+        {
+            try
+            {
+                return repo.GeefAllAvailableEquipment();
+            }
+            catch (Exception e) 
+            {
+                throw new EquipmentServiceException("GeefAllAvailableEquipment", e);
+            }
+        }
     }
 }
