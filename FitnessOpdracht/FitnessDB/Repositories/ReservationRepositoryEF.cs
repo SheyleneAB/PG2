@@ -88,8 +88,8 @@ namespace FitnessDB.Repositories
             try
             {
                 var reservationEFs = ctx.Reservations
-                                    .Include(r => r.ReservationTimeSlots) // Include related time slots
-                                    .Include(r => r.Member) // Include related member
+                                    .Include(r => r.ReservationTimeSlots) 
+                                    .Include(r => r.Member) 
                                     .ToList();
                 return reservationEFs.Select(ReservationMapper.MapToDomain).ToList();
             }
@@ -98,7 +98,6 @@ namespace FitnessDB.Repositories
                 throw new ReservationRepositoryException("GeefReservations", ex);
             }
         }
-        // TODO: rename parameter 
         public void UpdateReservation(Reservation existingReservation)
         {
             try
@@ -118,7 +117,7 @@ namespace FitnessDB.Repositories
             try
             {
                 var reservationEF = ctx.Reservations
-                                        .Include(r => r.Member) // Include related member
+                                        .Include(r => r.Member) 
                                         .FirstOrDefault(r => r.ReservationId == id);
                 if (reservationEF == null || reservationEF.Member == null)
                 {

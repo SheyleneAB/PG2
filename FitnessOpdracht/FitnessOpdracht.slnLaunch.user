@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "FitnessREST\\FitnessREST.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "WPFAppFitnessHTTPClient\\WPFAppFitnessHTTPClient.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

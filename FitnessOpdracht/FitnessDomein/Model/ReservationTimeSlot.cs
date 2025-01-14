@@ -18,21 +18,13 @@ namespace FitnessDomein.Model
             TimeSlot = timeSlot;
         }
 
-        public ReservationTimeSlot(Reservation reservation, Equipment equipment, Timeslot timeSlot)
-        {
-            Reservation = reservation;
-            Equipment = equipment;
-            TimeSlot = timeSlot;
-        }
         public ReservationTimeSlot(int? id, Reservation reservation, Equipment equipment, Timeslot timeSlot)
         {
             Id = id;
-            Reservation = reservation;
             Equipment = equipment;
             TimeSlot = timeSlot;
         }
         public int? Id { get; set; }
-        public Reservation Reservation{ get; set; }
         public Equipment Equipment { get; set; }
         public Timeslot TimeSlot { get; set; }
     }

@@ -12,6 +12,7 @@ namespace FitnessREST.Controllers
         private MemberService MemberService;
         private TrainingsService TrainingsService;
         private string url = "api/Members";
+
         public MemberController(MemberService memberservice, TrainingsService trainingsService)
         {
             this.MemberService = memberservice;
@@ -34,7 +35,10 @@ namespace FitnessREST.Controllers
 
                     );
 
-                return Ok(MemberService.VoegMemberToe(memberdm));
+                var createdMember = MemberService.VoegMemberToe(memberdm);
+                return CreatedAtAction(nameof(GetMember), new { id = createdMember.Id }, createdMember);
+
+
 
             }
             catch (Exception ex)

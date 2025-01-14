@@ -62,7 +62,7 @@ namespace FitnessREST.Controllers
                     reservationTimeSlots
                 );
                 return Ok(ReservationService.VoegReservationToe(reservationdm));
-            }
+            }// createdataction
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);

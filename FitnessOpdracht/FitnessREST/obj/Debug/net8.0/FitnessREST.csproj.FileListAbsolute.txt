@@ -1,10 +1,3 @@
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.csproj.AssemblyReference.cache
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.AssemblyInfoInputs.cache
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.AssemblyInfo.cs
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.csproj.CoreCompileInputs.cache
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.sourcelink.json
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\bin\Debug\net8.0\appsettings.json
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\bin\Debug\net8.0\FitnessREST.staticwebassets.endpoints.json
@@ -157,6 +150,14 @@ C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\bin\Debug\net8.0\FitnessDB.dll
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\bin\Debug\net8.0\FitnessDomein.dll
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\bin\Debug\net8.0\FitnessDB.pdb
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\bin\Debug\net8.0\FitnessDomein.pdb
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.csproj.AssemblyReference.cache
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.AssemblyInfoInputs.cache
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.AssemblyInfo.cs
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.csproj.CoreCompileInputs.cache
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.sourcelink.json
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\scopedcss\bundle\FitnessREST.styles.css
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\staticwebassets.development.json
@@ -174,4 +175,3 @@ C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\refint\FitnessRE
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.pdb
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.genruntimeconfig.cache
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\ref\FitnessREST.dll
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessREST\obj\Debug\net8.0\FitnessREST.MvcApplicationPartsAssemblyInfo.cs

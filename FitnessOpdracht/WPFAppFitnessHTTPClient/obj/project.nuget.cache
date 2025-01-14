@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1/t4EN1e5wE=",
+  "dgSpecHash": "b5HDkCqjQqA=",
   "success": true,
   "projectFilePath": "C:\\Users\\elyne\\PG2\\FitnessOpdracht\\WPFAppFitnessHTTPClient\\WPFAppFitnessHTTPClient.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\elyne\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

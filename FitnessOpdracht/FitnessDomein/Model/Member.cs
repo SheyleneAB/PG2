@@ -8,7 +8,7 @@ namespace FitnessDomein.Model
 {
     public class Member
     {
-
+        public Member() { }
         public Member(string firstName, string lastName, string? email, string address, DateTime birthday, string? interests, string? memberType)
         {
             FirstName = firstName;

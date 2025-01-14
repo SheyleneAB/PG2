@@ -1,6 +1,8 @@
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\bin\Debug\net8.0\FitnessDomein.deps.json
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\bin\Debug\net8.0\FitnessDomein.runtimeconfig.json
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\bin\Debug\net8.0\FitnessDomein.dll
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\bin\Debug\net8.0\FitnessDomein.pdb
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.csproj.AssemblyReference.cache
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.AssemblyInfoInputs.cache
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.AssemblyInfo.cs
@@ -9,7 +11,5 @@ C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.dll
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\refint\FitnessDomein.dll
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.pdb
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\ref\FitnessDomein.dll
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\bin\Debug\net8.0\FitnessDomein.runtimeconfig.json
-C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.csproj.AssemblyReference.cache
 C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\FitnessDomein.genruntimeconfig.cache
+C:\Users\elyne\PG2\FitnessOpdracht\FitnessDomein\obj\Debug\net8.0\ref\FitnessDomein.dll

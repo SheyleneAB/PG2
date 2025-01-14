@@ -14,6 +14,10 @@ namespace FitnessDomein.Services
         private IMemberRepositoryEF repo;
         private IReservationRepositoryEF repoRes;
         private IProgramRepositoryEF repoProg;
+        public MemberService(IMemberRepositoryEF repo)
+        {
+            this.repo = repo;
+        }
         public MemberService(IMemberRepositoryEF repo, IReservationRepositoryEF repoRes, IProgramRepositoryEF repoProg)
         {
             this.repo = repo;
