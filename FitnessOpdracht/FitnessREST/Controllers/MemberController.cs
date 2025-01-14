@@ -18,7 +18,7 @@ namespace FitnessREST.Controllers
             TrainingsService = trainingsService;
         }
         [HttpPost("/Member/Voegtoe")]
-        public ActionResult<FitnessDomein.Model.Member> VoegMemberToe([FromBody] MemberDTO member)
+        public ActionResult<Member> VoegMemberToe([FromBody] MemberDTO member)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace FitnessREST.Controllers
         {
             try
             {
-                return MemberService.GeefMember(id);
+                return Ok(MemberService.GeefMember(id));
             }
             catch (Exception ex)
             {
@@ -55,11 +55,11 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpGet("/Members")]
-        public List<Member> GetMembers ()
+        public ActionResult<List<Member>> GetMembers ()
         {
             try
             {
-                return MemberService.GeefMembers();
+                return Ok(MemberService.GeefMembers());
             }
             catch (Exception ex)
             {
@@ -93,11 +93,11 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpGet("/GetMemberReservations/{id}")]
-        public List<Reservation> GetMemberReservations([FromRoute] int id)
+        public ActionResult<List<Reservation>> GetMemberReservations([FromRoute] int id)
         {
             try
             {
-                return MemberService.GetReservationsForMember(id);
+                return Ok(MemberService.GetReservationsForMember(id));
             }
             catch (Exception ex)
             {
@@ -105,11 +105,11 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpGet("/GetMemberPrograms/{id}")]
-        public List<FitnessDomein.Model.Program> GetMemberPrograms([FromRoute] int id)
+        public ActionResult<List<FitnessDomein.Model.Program>> GetMemberPrograms([FromRoute] int id)
         {
             try
             {
-                return MemberService.GetProgramsForMember(id);
+                return Ok(MemberService.GetProgramsForMember(id));
             }
             catch (Exception ex)
             {

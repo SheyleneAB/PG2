@@ -16,7 +16,7 @@ namespace FitnessREST.Controllers
             this.EquipmentService = equipmentservice;
         }
         [HttpPost("/Equipment/Voegtoe")]
-        public FitnessDomein.Model.Equipment VoegEquipmentToe([FromBody] EquipmentDTO equipment)
+        public ActionResult <Equipment> VoegEquipmentToe([FromBody] EquipmentDTO equipment)
         {
             try
             {
@@ -25,7 +25,7 @@ namespace FitnessREST.Controllers
                     equipment.DeviceType,
                     equipment.IsInMaintenance
                     );
-                return EquipmentService.VoegEquipmentToe(equipmentdm);
+                return Ok(EquipmentService.VoegEquipmentToe(equipmentdm));
             }
             catch (Exception ex)
             {
@@ -33,11 +33,11 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpGet("/Equipment/SetRepair/{id}")]
-        public List<Member> SetRepairEquipment([FromRoute]int id)
+        public ActionResult <List<Member>> SetRepairEquipment([FromRoute]int id)
         {
             try
             {
-                return EquipmentService.SetRepairEquipment(id);
+                return Ok(EquipmentService.SetRepairEquipment(id));
             }
             catch (Exception ex)
             {
@@ -45,11 +45,11 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpGet("/Equipment/GetAllAvailableEquipment")]
-        public List<Equipment> GetEquipment()
+        public ActionResult<List<Equipment>> GetEquipment()
         {
             try
             {
-                return EquipmentService.GeefAllAvailableEquipment();
+                return Ok(EquipmentService.GeefAllAvailableEquipment());
             }
             catch (Exception ex)
             {

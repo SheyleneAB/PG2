@@ -12,7 +12,8 @@
         <TextBox Name="MemberTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="70,100,0,0"/>
 
         <TextBlock Text="Equipment" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,140,0,0"/>
-        <ComboBox Name="EquipmentComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="70,140,0,0"/>
+        <ComboBox Name="EquipmentComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="70,140,0,0"/>
+        <Button Content="Vind" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="20" Margin="230,140,0,0" Background="FloralWhite"/>
 
         <TextBlock Text="Time Slot" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,140,0,0"/>
         <ComboBox Name="TimeSlotComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="340,140,0,0"/>

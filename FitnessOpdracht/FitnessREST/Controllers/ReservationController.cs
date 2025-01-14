@@ -43,7 +43,7 @@ namespace FitnessREST.Controllers
 
 
         [HttpPost("/ReservationVoegtoe")]
-        public Reservation VoegReservationToe([FromBody] ReservationDTO reservation)
+        public ActionResult<Reservation> VoegReservationToe([FromBody] ReservationDTO reservation)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace FitnessREST.Controllers
                     reservation.Date,
                     reservationTimeSlots
                 );
-                return ReservationService.VoegReservationToe(reservationdm);
+                return Ok(ReservationService.VoegReservationToe(reservationdm));
             }
             catch (Exception ex)
             {
@@ -69,11 +69,11 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpGet("/Reservations")]
-        public List<Reservation> GetReservations()
+        public ActionResult<List<Reservation>> GetReservations()
         {
             try
             {
-                return ReservationService.GeefReservations();
+                return Ok(ReservationService.GeefReservations());
             }
             catch (Exception ex)
             {
@@ -82,11 +82,12 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpDelete("/ReservationDelete/{id}")]
-        public void DeleteReservation([FromRoute] int id)
+        public async Task<IActionResult> DeleteReservation([FromRoute] int id)
         {
             try
             {
                 ReservationService.DeleteReservation(id);
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -95,7 +96,7 @@ namespace FitnessREST.Controllers
         }
         
         [HttpPut("/ReservationUpdate/{id}")]
-        public Reservation UpdateReservation([FromRoute] int id, [FromBody] ReservationDTO reservation)
+        public ActionResult<Reservation> UpdateReservation([FromRoute] int id, [FromBody] ReservationDTO reservation)
         {
             try
             {
@@ -114,7 +115,7 @@ namespace FitnessREST.Controllers
                     reservationTimeSlots
                 );
                 reservationdm.Id = id;
-                return ReservationService.UpdateReservation(reservationdm);
+                return Ok(ReservationService.UpdateReservation(reservationdm));
             }
             catch (Exception ex)
             {
@@ -122,11 +123,11 @@ namespace FitnessREST.Controllers
             }
         }
         [HttpGet("/OngebruikteTimeslots/{equipmentid}/{date}")]
-        public List<Timeslot> GetUnusedTimeSlots([FromRoute] int equipmentid, [FromRoute] DateTime date)
+        public ActionResult<List<Timeslot>> GetUnusedTimeSlots([FromRoute] int equipmentid, [FromRoute] DateTime date)
         {
             try
             {
-                return ReservationService.GeefAlleOngebruikteTS( date, equipmentid);
+                return Ok(ReservationService.GeefAlleOngebruikteTS( date, equipmentid));
             }
             catch (Exception ex)
             {

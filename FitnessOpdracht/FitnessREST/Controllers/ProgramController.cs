@@ -34,7 +34,7 @@ namespace FitnessREST.Controllers
                     program.MaxMembers
                 );
 
-                return ProgramService.VoegProgramToe(programdm);
+                return Ok(ProgramService.VoegProgramToe(programdm));
             }
             catch (Exception ex)
             {
@@ -59,7 +59,7 @@ namespace FitnessREST.Controllers
                     program.MaxMembers
                 );
                 programdm.ProgramCode = Programcode;
-                return ProgramService.UpdateProgram(programdm);
+                return Ok(ProgramService.UpdateProgram(programdm));
             }
             catch (Exception ex)
             {
