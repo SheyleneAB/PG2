@@ -15,7 +15,7 @@ namespace FitnessREST.Controllers
         {
             this.TrainingsService = trainingsService;
         }
-        [HttpGet("Training/GeefTrainingDetail/{id}")]
+        [HttpGet("/GeefTrainingDetail/{id}")]
         public ActionResult<List<RunningSessionDetail>> GetTraining([FromRoute] int id)
         {
             try
@@ -27,7 +27,7 @@ namespace FitnessREST.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpGet("Training/GeefTrainingMemberDate/{memberId}/{maand}/{jaar}")]
+        [HttpGet("/GeefTrainingMemberDate/{memberId}/{maand}/{jaar}")]
         public ActionResult<TrainingDTO> GetTraining([FromRoute] int memberId, [FromRoute] int maand, [FromRoute] int jaar)
         {
             try
@@ -58,7 +58,7 @@ namespace FitnessREST.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpGet("Training/GetSessionsPerMonth/{memberId}/{year}")]
+        [HttpGet("/GetSessionsPerMonth/{memberId}/{year}")]
         public ActionResult<List<MaandSessionOverview>> GetSessionsPerMonth([FromRoute] int memberId, [FromRoute] int year)
         {
             try

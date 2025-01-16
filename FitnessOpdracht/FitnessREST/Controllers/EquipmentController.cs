@@ -15,7 +15,7 @@ namespace FitnessREST.Controllers
         {
             this.EquipmentService = equipmentservice;
         }
-        [HttpPost("/Equipment/Voegtoe")]
+        [HttpPost("/Voegtoe")]
         public ActionResult <Equipment> VoegEquipmentToe([FromBody] EquipmentDTO equipment)
         {
             try
@@ -32,7 +32,7 @@ namespace FitnessREST.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("/Equipment/SetRepair/{id}")]
+        [HttpGet("/SetRepair/{id}")]
         public ActionResult <List<Member>> SetRepairEquipment([FromRoute]int id)
         {
             try
@@ -44,7 +44,7 @@ namespace FitnessREST.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("/Equipment/GetAllAvailableEquipment")]
+        [HttpGet("/GetAllAvailableEquipment")]
         public ActionResult<List<Equipment>> GetEquipment()
         {
             try

@@ -20,7 +20,7 @@ namespace FitnessREST.Controllers
             this.ProgramService = programservice;
         }
 
-        [HttpPost("/Program/Voegtoe")]
+        [HttpPost("/Voegtoe")]
         public ActionResult<FitnessDomein.Model.Program> VoegProgramToe([FromBody] ProgramDTO program)
         {
             try
@@ -41,7 +41,7 @@ namespace FitnessREST.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("/Program/Update{Programcode}")]
+        [HttpPut("/Update{Programcode}")]
         public ActionResult<FitnessDomein.Model.Program> UpdateProgram([FromRoute] string Programcode, [FromBody] ProgramDTO program)
         {
             if (string.IsNullOrEmpty(Programcode) || program == null)

@@ -18,7 +18,7 @@ namespace FitnessREST.Controllers
             this.MemberService = memberservice;
             TrainingsService = trainingsService;
         }
-        [HttpPost("/Member/Voegtoe")]
+        [HttpPost("/Voegtoe")]
         public ActionResult<Member> VoegMemberToe([FromBody] MemberDTO member)
         {
             try
@@ -71,7 +71,7 @@ namespace FitnessREST.Controllers
             }
 
         }
-        [HttpPut("/Update/{id}")]
+        [HttpPut("/{id}")]
         public IActionResult UpdateMember([FromRoute] int id, [FromBody] MemberDTO member)
         {
             try

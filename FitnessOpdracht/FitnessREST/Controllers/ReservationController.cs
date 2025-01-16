@@ -23,7 +23,7 @@ namespace FitnessREST.Controllers
         }
 
 
-        [HttpGet("/Reservation/{id}")]
+        [HttpGet("/{id}")]
         public ActionResult<Reservation> GetReservation([FromRoute] int id)
         {
             try
