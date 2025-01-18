@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FitnessDB.Exceptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace FitnessDB.Mappers
 {
@@ -43,7 +44,31 @@ namespace FitnessDB.Mappers
                 throw new MapException("MapEquipment - MapToDB", ex);
             }
         }
+        /*
+        public static EquipmentEF MapToDB(Equipment e, DbContext ctx)
+        {
+            try
+            {
+                var existingEquipment = ctx.Equipment.Find(e.Id);
+                if (existingEquipment != null)
+                {
+                    return existingEquipment;
+                }
 
+                
+                return new EquipmentEF
+                {
+                    EquipmentId = e.Id.HasValue ? (int)e.Id : 0,
+                    DeviceType = e.DeviceType,
+                    IsInMaintenance = e.IsInMaintenance
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new MapException("MapEquipment - MapToDB", ex);
+            }
+        }
 
+        */
     }
 }

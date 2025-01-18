@@ -51,6 +51,19 @@ namespace FitnessDB.Repositories
                 var reservationEF = ReservationMapper.MapToDB(reservationdm);
                 ctx.Reservations.Add(reservationEF);
                 SaveAndClear();
+                reservationdm.Id = reservationEF.ReservationId;
+                int reservationId = reservationEF.ReservationId;
+
+                foreach (var tijdslot in reservationdm.ReservationTimeSlot)
+                {
+                    var tijdslotef = ReservationTimeSlotMapper.MapToDB(tijdslot);
+                    tijdslotef.ReservationId = reservationId;
+                    ctx.ReservationTimeSlots.Add(tijdslotef);
+                }
+
+                SaveAndClear();
+                reservationEF.ReservationId = reservationId;
+
             }
             catch (Exception ex)
             {
@@ -117,16 +130,18 @@ namespace FitnessDB.Repositories
             try
             {
                 var reservationEF = ctx.Reservations
-                                        .Include(r => r.Member) 
-                                        .Include(r => r.ReservationTimeSlots)
-                                            .ThenInclude(rts => rts.Equipment)
-                                        .Include(r => r.ReservationTimeSlots)
-                                            .ThenInclude(rts => rts.TimeSlot)
-                                        .FirstOrDefault(r => r.ReservationId == id);
-                if (reservationEF == null || reservationEF.Member == null)
+                    .Include(r => r.Member)
+                    .Include(r => r.ReservationTimeSlots)
+                        .ThenInclude(rts => rts.Equipment)
+                    .Include(r => r.ReservationTimeSlots)
+                        .ThenInclude(rts => rts.TimeSlot)
+                    .FirstOrDefault(r => r.ReservationId == id);
+
+                if (reservationEF == null)
                 {
-                    throw new InvalidOperationException("Reservation or Member cannot be null");
+                    throw new InvalidOperationException($"Reservation with ID {id} not found.");
                 }
+
                 return ReservationMapper.MapToDomain(reservationEF);
             }
             catch (Exception ex)

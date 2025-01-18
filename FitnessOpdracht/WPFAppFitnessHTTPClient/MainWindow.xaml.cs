@@ -141,7 +141,7 @@ namespace WPFAppFitnessHTTPClient
             
             reservation.Member = member;
             reservation.Date = (DateTime)DatePicker.SelectedDate;
-            string reservationPath = "/ReservationVoegtoe";
+            string reservationPath = "/api/Reservation";
             bool success = await fitnessService.SchrijfReservatieAsync(reservationPath, reservation);
 
             if (success)

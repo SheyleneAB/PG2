@@ -16,7 +16,6 @@ namespace FitnessDB.Mappers
         {
             try
             {
-
                 return new Reservation
                 {
                     Id = db.ReservationId,
@@ -39,8 +38,8 @@ namespace FitnessDB.Mappers
                 {
                     ReservationId = r.Id.HasValue ? (int)r.Id : 0,
                     Date = r.Date,
-                    Member = MemberMapper.MapToDB(r.Member),
-                    ReservationTimeSlots = r.ReservationTimeSlot.Select(ReservationTimeSlotMapper.MapToDB).ToList()
+                    MemberId = (int)r.Member.Id 
+                    
                 };
             }
             catch (Exception ex)

@@ -43,7 +43,7 @@ namespace FitnessREST.Controllers
         }
 
 
-        [HttpPost("")]
+        [HttpPost]
         public ActionResult<Reservation> VoegReservationToe([FromBody] ReservationDTO reservation)
         {
             try
@@ -55,6 +55,7 @@ namespace FitnessREST.Controllers
                         Equipment = EquipmentService.GeefEquipment(dto.EquipmentId),
                         TimeSlot= TimeSlotService.GeefTimeSlot(dto.TimeSlotId)
                     }).ToList();
+               
 
                 Reservation reservationdm = new Reservation
                 (
@@ -62,11 +63,12 @@ namespace FitnessREST.Controllers
                     reservation.Date,
                     reservationTimeSlots
                 );
-                return Ok(ReservationService.VoegReservationToe(reservationdm));
-            }// createdataction
+                ReservationService.VoegReservationToe(reservationdm);
+                return CreatedAtAction(nameof(GetReservation), new { id = reservationdm.Id }, reservationdm);
+            }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                return BadRequest(new { Message = ex.Message });
             }
         }
         [HttpGet]

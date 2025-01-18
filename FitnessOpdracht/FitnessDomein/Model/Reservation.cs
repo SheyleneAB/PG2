@@ -21,28 +21,21 @@ namespace FitnessDomein.Model
         private DateTime date;
         public int? Id {  get; set; }
         public Member Member { get; set; }
-        public DateTime Date
+        public DateTime Date{
+            get; set;
+        }
+
+        public ICollection<ReservationTimeSlot> ReservationTimeSlot
         {
-            get => date;
+            get { return reservationtimeslot; }
             set
             {
-                if (value <= DateTime.Now)
-                    throw new DomeinException("Reservaties kunnen enkel in de toekomst gemaakt worden. ");
-
-                if (value > DateTime.Now.AddDays(7))
-                    throw new DomeinException("Reservaties kunnen maximum 1 week op voorhand gemaakt worden. ");
-
-                date = value;
+                if (value == null || value.Count < 1)
+                    throw new DomeinException("Reservationtimeslot-setrestimeslot");
+                reservationtimeslot = new List<ReservationTimeSlot>(value);
             }
         }
 
-        public ICollection<ReservationTimeSlot> ReservationTimeSlot { get { return reservationtimeslot; }
-            set
-            {
-                if (value == null || value.Count < 1) throw new DomeinException("Reservationtimeslot-setrestimeslot");
-                ReservationTimeSlot = new List<ReservationTimeSlot>(value);
-            }
-        }
 
         public void AddTimeSlot(Timeslot timeSlot, Equipment equipment)
         {

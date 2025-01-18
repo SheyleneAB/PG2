@@ -28,7 +28,8 @@ namespace FitnessDB.Repositories
         {
             try
             {
-                return EquipmentMapper.MapToDomain(ctx.Equipment.Where(x => x.EquipmentId == id).AsNoTracking().FirstOrDefault());
+                var equipmentEF = ctx.Equipment.AsNoTracking().FirstOrDefault(x => x.EquipmentId == id);
+                return EquipmentMapper.MapToDomain(equipmentEF);
             }
             catch (Exception ex)
             {
