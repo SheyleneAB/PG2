@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/Equipment/Voegtoe": {
+    "/api/Equipment": {
       "post": {
         "tags": [
           "Equipment"
@@ -53,8 +53,8 @@
         }
       }
     },
-    "/Equipment/SetRepair/{id}": {
-      "get": {
+    "/api/Equipment/{id}/Repair": {
+      "put": {
         "tags": [
           "Equipment"
         ],
@@ -102,7 +102,7 @@
         }
       }
     },
-    "/Equipment/GetAllAvailableEquipment": {
+    "/api/Equipment/Available": {
       "get": {
         "tags": [
           "Equipment"
@@ -140,7 +140,7 @@
         }
       }
     },
-    "/Member/Voegtoe": {
+    "/api/member": {
       "post": {
         "tags": [
           "Member"
@@ -226,47 +226,7 @@
             }
           }
         }
-      }
-    },
-    "/Members": {
-      "get": {
-        "tags": [
-          "Member"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Member"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Member"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Member"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/Update/{id}": {
+      },
       "put": {
         "tags": [
           "Member"
@@ -304,6 +264,44 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/Members": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Member"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Member"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Member"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -446,7 +444,7 @@
         }
       }
     },
-    "/Program/Voegtoe": {
+    "/Voegtoe": {
       "post": {
         "tags": [
           "Program"
@@ -494,7 +492,7 @@
         }
       }
     },
-    "/Program/Update{Programcode}": {
+    "/Update{Programcode}": {
       "put": {
         "tags": [
           "Program"
@@ -552,7 +550,7 @@
         }
       }
     },
-    "/Reservation/{id}": {
+    "/api/Reservation/{id}": {
       "get": {
         "tags": [
           "Reservation"
@@ -592,7 +590,7 @@
         }
       }
     },
-    "/ReservationVoegtoe": {
+    "/api/Reservation": {
       "post": {
         "tags": [
           "Reservation"
@@ -638,9 +636,7 @@
             }
           }
         }
-      }
-    },
-    "/Reservations": {
+      },
       "get": {
         "tags": [
           "Reservation"
@@ -818,7 +814,7 @@
         }
       }
     },
-    "/api/Training/Training/Training/GeefTrainingDetail/{id}": {
+    "/GeefTrainingDetail/{id}": {
       "get": {
         "tags": [
           "Training"
@@ -867,7 +863,7 @@
         }
       }
     },
-    "/api/Training/Training/Training/GeefTrainingMemberDate/{memberId}/{maand}/{jaar}": {
+    "/GeefTrainingMemberDate/{memberId}/{maand}/{jaar}": {
       "get": {
         "tags": [
           "Training"
@@ -965,7 +961,7 @@
         }
       }
     },
-    "/api/Training/Training/Training/GetSessionsPerMonth/{memberId}/{year}": {
+    "/GetSessionsPerMonth/{memberId}/{year}": {
       "get": {
         "tags": [
           "Training"

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessREST.Controllers
 {
-    [Route("api/[controller]/Equipment")]
+    [Route("api/Equipment")]
     [ApiController]
     public class EquipmentController : Controller
     {
@@ -15,7 +15,7 @@ namespace FitnessREST.Controllers
         {
             this.EquipmentService = equipmentservice;
         }
-        [HttpPost("/Voegtoe")]
+        [HttpPost]
         public ActionResult <Equipment> VoegEquipmentToe([FromBody] EquipmentDTO equipment)
         {
             try
@@ -32,7 +32,7 @@ namespace FitnessREST.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("/SetRepair/{id}")]
+        [HttpPut("{id}/Repair")]
         public ActionResult <List<Member>> SetRepairEquipment([FromRoute]int id)
         {
             try
@@ -44,7 +44,7 @@ namespace FitnessREST.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("/GetAllAvailableEquipment")]
+        [HttpGet("Available")]
         public ActionResult<List<Equipment>> GetEquipment()
         {
             try

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WPFAppFitnessHTTPClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01d928a81dfd681580ea1c3913b4d69edb87578b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecafd0de18c7a72a61fd57624efd2f0214e21b50")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPFAppFitnessHTTPClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPFAppFitnessHTTPClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -118,6 +118,10 @@ namespace FitnessDB.Repositories
             {
                 var reservationEF = ctx.Reservations
                                         .Include(r => r.Member) 
+                                        .Include(r => r.ReservationTimeSlots)
+                                            .ThenInclude(rts => rts.Equipment)
+                                        .Include(r => r.ReservationTimeSlots)
+                                            .ThenInclude(rts => rts.TimeSlot)
                                         .FirstOrDefault(r => r.ReservationId == id);
                 if (reservationEF == null || reservationEF.Member == null)
                 {

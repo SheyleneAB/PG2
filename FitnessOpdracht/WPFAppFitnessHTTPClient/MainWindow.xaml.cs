@@ -21,13 +21,12 @@ namespace WPFAppFitnessHTTPClient
     public partial class MainWindow : Window
     {
         private Reservation reservation;
-        private List<ReservationTimeSlot> reservationSlots;
         private FitnessService fitnessService;
         public MainWindow()
         {
             InitializeComponent();
             fitnessService = new FitnessService();
-            reservationSlots = new List<ReservationTimeSlot>(); 
+            reservation = new();
             this.Loaded += async (s, e) => await LoadEquipmentAsync();
         }
 
@@ -35,7 +34,7 @@ namespace WPFAppFitnessHTTPClient
         {
             try
             {
-                var equipmentList = await fitnessService.GeefLijstEquipment($"/Equipment/GetAllAvailableEquipment");
+                var equipmentList = await fitnessService.GeefLijstEquipment($"/api/Equipment/Available");
                 var equipmentDisplayList = equipmentList.Select(e => new
                 {
                     Id = e.Id,
@@ -81,43 +80,49 @@ namespace WPFAppFitnessHTTPClient
 
         private void btnAddTimeSlot_Click(object sender, RoutedEventArgs e)
         {
-           
-            var selectedEquipment = EquipmentComboBox.SelectedItem as dynamic;
-            if (selectedEquipment == null)
+            try
             {
-                MessageBox.Show("Please select an equipment.");
-                return;
-            }
 
-            int equipmentId = selectedEquipment.Id;
-
-            var selectedTimeSlot = TimeSlotComboBox.SelectedItem as TimeSlot;
-            if (selectedTimeSlot == null)
-            {
-                MessageBox.Show("Please select a time slot.");
-                return;
-            }
-
-            var reservationTimeSlot = new ReservationTimeSlot
-            {
-                Equipment = new Equipment
+                var selectedEquipment = EquipmentComboBox.SelectedItem as dynamic;
+                if (selectedEquipment == null)
                 {
-                    Id = equipmentId,
-                    DeviceType = selectedEquipment.DisplayText 
-                },
-                TimeSlot = selectedTimeSlot
-            };
+                    MessageBox.Show("Please select an equipment.");
+                    return;
+                }
 
-            reservationSlots.Add(reservationTimeSlot); 
+                int equipmentId = selectedEquipment.Id;
 
-            MessageBox.Show("Time slot added to reservation.");
+                var selectedTimeSlot = TimeSlotComboBox.SelectedItem as TimeSlot;
+                if (selectedTimeSlot == null)
+                {
+                    MessageBox.Show("Please select a time slot.");
+                    return;
+                }
 
-            UpdateReservationDisplay();
+                var reservationTimeSlot = new ReservationTimeSlot
+                {
+                    Equipment = new Equipment
+                    {
+                        Id = equipmentId,
+                        DeviceType = selectedEquipment.DisplayText
+                    },
+                    TimeSlot = selectedTimeSlot
+                };
+
+                reservation.AddTimeSlot(reservationTimeSlot.TimeSlot, reservationTimeSlot.Equipment);
+
+                MessageBox.Show("Time slot added to reservation.");
+
+                UpdateReservationDisplay();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private async void btnMakeReservation_Click(object sender, RoutedEventArgs e)
         {
-            // Validate Member ID
             if (string.IsNullOrWhiteSpace(MemberTextBox.Text) || !int.TryParse(MemberTextBox.Text, out int memberId))
             {
                 MessageBox.Show("Please enter a valid Member ID.");
@@ -133,30 +138,17 @@ namespace WPFAppFitnessHTTPClient
                 return;
             }
 
-            // Validate Reservation Time Slots
-            if (reservationSlots == null || !reservationSlots.Any())
-            {
-                MessageBox.Show("Please add at least one time slot to the reservation.");
-                return;
-            }
-
-            // Create Reservation Object
-            Reservation reservation = new Reservation
-            {
-                Member = member,
-                Date = DateTime.Now,
-                ReservationTimeSlots = reservationSlots
-            };
-
-            // Send Reservation to API
+            
+            reservation.Member = member;
+            reservation.Date = (DateTime)DatePicker.SelectedDate;
             string reservationPath = "/ReservationVoegtoe";
             bool success = await fitnessService.SchrijfReservatieAsync(reservationPath, reservation);
 
             if (success)
             {
                 MessageBox.Show("Reservation successfully created!");
-                reservationSlots.Clear(); // Clear the time slots list
-                UpdateReservationDisplay(); // Refresh the UI
+                reservation = new Reservation(); 
+                UpdateReservationDisplay(); 
             }
             else
             {
@@ -174,7 +166,7 @@ namespace WPFAppFitnessHTTPClient
                 MessageBox.Show("Please select a time slot to remove.");
                 return;
             }
-            reservationSlots.Remove(selectedReservationTimeSlot);
+            reservation.RemoveTimeSlot( selectedReservationTimeSlot.TimeSlot, selectedReservationTimeSlot.Equipment);
 
 
             UpdateReservationDisplay();
@@ -184,7 +176,7 @@ namespace WPFAppFitnessHTTPClient
         private void UpdateReservationDisplay()
         {
             TimeSlotListBox.ItemsSource = null;
-            TimeSlotListBox.ItemsSource = reservationSlots;
+            TimeSlotListBox.ItemsSource = reservation.ReservationTimeSlot;
         }
     }
 }

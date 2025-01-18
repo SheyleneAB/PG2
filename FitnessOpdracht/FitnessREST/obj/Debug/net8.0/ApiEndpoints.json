@@ -1,108 +1,21 @@
 [
   {
-    "ContainingType": "FitnessREST.Controllers.TrainingController",
-    "Method": "GetTraining",
-    "RelativePath": "api/Training/Training/Training/GeefTrainingDetail/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.RunningSessionDetail, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "FitnessREST.Controllers.TrainingController",
-    "Method": "GetTraining",
-    "RelativePath": "api/Training/Training/Training/GeefTrainingMemberDate/{memberId}/{maand}/{jaar}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "memberId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "maand",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "jaar",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "FitnessREST.DTO.TrainingDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "FitnessREST.Controllers.TrainingController",
-    "Method": "GetSessionsPerMonth",
-    "RelativePath": "api/Training/Training/Training/GetSessionsPerMonth/{memberId}/{year}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "memberId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "year",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.MaandSessionOverview, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "FitnessREST.Controllers.EquipmentController",
-    "Method": "GetEquipment",
-    "RelativePath": "Equipment/GetAllAvailableEquipment",
-    "HttpMethod": "GET",
+    "Method": "VoegEquipmentToe",
+    "RelativePath": "api/Equipment",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "equipment",
+        "Type": "FitnessREST.DTO.EquipmentDTO",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.Equipment, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "FitnessDomein.Model.Equipment",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -115,8 +28,8 @@
   {
     "ContainingType": "FitnessREST.Controllers.EquipmentController",
     "Method": "SetRepairEquipment",
-    "RelativePath": "Equipment/SetRepair/{id}",
-    "HttpMethod": "GET",
+    "RelativePath": "api/Equipment/{id}/Repair",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -140,21 +53,113 @@
   },
   {
     "ContainingType": "FitnessREST.Controllers.EquipmentController",
-    "Method": "VoegEquipmentToe",
-    "RelativePath": "Equipment/Voegtoe",
+    "Method": "GetEquipment",
+    "RelativePath": "api/Equipment/Available",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.Equipment, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.MemberController",
+    "Method": "VoegMemberToe",
+    "RelativePath": "api/member",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "equipment",
-        "Type": "FitnessREST.DTO.EquipmentDTO",
+        "Name": "member",
+        "Type": "FitnessREST.DTO.MemberDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "FitnessDomein.Model.Equipment",
+        "Type": "FitnessDomein.Model.Member",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.ReservationController",
+    "Method": "VoegReservationToe",
+    "RelativePath": "api/Reservation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservation",
+        "Type": "FitnessREST.DTO.ReservationDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessDomein.Model.Reservation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.ReservationController",
+    "Method": "GetReservations",
+    "RelativePath": "api/Reservation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.Reservation, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.ReservationController",
+    "Method": "GetReservation",
+    "RelativePath": "api/Reservation/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessDomein.Model.Reservation",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -181,6 +186,68 @@
     "ReturnTypes": [
       {
         "Type": "FitnessDomein.Model.SessionStats",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.TrainingController",
+    "Method": "GetTraining",
+    "RelativePath": "GeefTrainingDetail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.RunningSessionDetail, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessREST.Controllers.TrainingController",
+    "Method": "GetTraining",
+    "RelativePath": "GeefTrainingMemberDate/{memberId}/{maand}/{jaar}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "maand",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "jaar",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FitnessREST.DTO.TrainingDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -269,6 +336,37 @@
     ]
   },
   {
+    "ContainingType": "FitnessREST.Controllers.TrainingController",
+    "Method": "GetSessionsPerMonth",
+    "RelativePath": "GetSessionsPerMonth/{memberId}/{year}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.MaandSessionOverview, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "FitnessREST.Controllers.MemberController",
     "Method": "GetMember",
     "RelativePath": "Member/{id}",
@@ -296,29 +394,24 @@
   },
   {
     "ContainingType": "FitnessREST.Controllers.MemberController",
-    "Method": "VoegMemberToe",
-    "RelativePath": "Member/Voegtoe",
-    "HttpMethod": "POST",
+    "Method": "UpdateMember",
+    "RelativePath": "Member/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
       {
         "Name": "member",
         "Type": "FitnessREST.DTO.MemberDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "FitnessDomein.Model.Member",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "FitnessREST.Controllers.MemberController",
@@ -372,89 +465,6 @@
     ]
   },
   {
-    "ContainingType": "FitnessREST.Controllers.ProgramController",
-    "Method": "UpdateProgram",
-    "RelativePath": "Program/Update{Programcode}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Programcode",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "program",
-        "Type": "FitnessREST.DTO.ProgramDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "FitnessDomein.Model.Program",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "FitnessREST.Controllers.ProgramController",
-    "Method": "VoegProgramToe",
-    "RelativePath": "Program/Voegtoe",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "program",
-        "Type": "FitnessREST.DTO.ProgramDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "FitnessDomein.Model.Program",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "FitnessREST.Controllers.ReservationController",
-    "Method": "GetReservation",
-    "RelativePath": "Reservation/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "FitnessDomein.Model.Reservation",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "FitnessREST.Controllers.ReservationController",
     "Method": "DeleteReservation",
     "RelativePath": "ReservationDelete/{id}",
@@ -469,26 +479,6 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FitnessREST.Controllers.ReservationController",
-    "Method": "GetReservations",
-    "RelativePath": "Reservations",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[FitnessDomein.Model.Reservation, FitnessDomein, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   },
   {
     "ContainingType": "FitnessREST.Controllers.ReservationController",
@@ -522,22 +512,27 @@
     ]
   },
   {
-    "ContainingType": "FitnessREST.Controllers.ReservationController",
-    "Method": "VoegReservationToe",
-    "RelativePath": "ReservationVoegtoe",
-    "HttpMethod": "POST",
+    "ContainingType": "FitnessREST.Controllers.ProgramController",
+    "Method": "UpdateProgram",
+    "RelativePath": "Update{Programcode}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "reservation",
-        "Type": "FitnessREST.DTO.ReservationDTO",
+        "Name": "Programcode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "program",
+        "Type": "FitnessREST.DTO.ProgramDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "FitnessDomein.Model.Reservation",
+        "Type": "FitnessDomein.Model.Program",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -548,24 +543,29 @@
     ]
   },
   {
-    "ContainingType": "FitnessREST.Controllers.MemberController",
-    "Method": "UpdateMember",
-    "RelativePath": "Update/{id}",
-    "HttpMethod": "PUT",
+    "ContainingType": "FitnessREST.Controllers.ProgramController",
+    "Method": "VoegProgramToe",
+    "RelativePath": "Voegtoe",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "member",
-        "Type": "FitnessREST.DTO.MemberDTO",
+        "Name": "program",
+        "Type": "FitnessREST.DTO.ProgramDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "FitnessDomein.Model.Program",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

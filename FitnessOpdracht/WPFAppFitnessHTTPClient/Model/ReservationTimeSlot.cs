@@ -2,6 +2,16 @@
 {
     internal class ReservationTimeSlot
     {
+        public ReservationTimeSlot()
+        {
+
+        }
+        public ReservationTimeSlot(Equipment equipment, TimeSlot timeSlot)
+        {
+            Equipment = equipment;
+            TimeSlot = timeSlot;
+        }
+
         public Equipment Equipment { get; set; }
         public TimeSlot TimeSlot { get; set; }
         public override string ToString()

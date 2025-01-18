@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessREST.Controllers
 {
-    [Route("api/[controller]/Reservation")]
+    
     [ApiController]
+    [Route("api/[controller]")]
     public class ReservationController : Controller
     {
         private ReservationService ReservationService;
@@ -23,7 +24,7 @@ namespace FitnessREST.Controllers
         }
 
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         public ActionResult<Reservation> GetReservation([FromRoute] int id)
         {
             try
@@ -42,7 +43,7 @@ namespace FitnessREST.Controllers
         }
 
 
-        [HttpPost("/ReservationVoegtoe")]
+        [HttpPost("")]
         public ActionResult<Reservation> VoegReservationToe([FromBody] ReservationDTO reservation)
         {
             try
@@ -68,7 +69,7 @@ namespace FitnessREST.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("/Reservations")]
+        [HttpGet]
         public ActionResult<List<Reservation>> GetReservations()
         {
             try

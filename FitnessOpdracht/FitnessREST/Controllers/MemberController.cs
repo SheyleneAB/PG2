@@ -5,7 +5,7 @@ using FitnessDomein.Model;
 
 namespace FitnessREST.Controllers
 {
-    [Route("api/[controller]/Member")]
+    [Route("api/member")]
     [ApiController]
     public class MemberController : Controller
     {
@@ -18,12 +18,12 @@ namespace FitnessREST.Controllers
             this.MemberService = memberservice;
             TrainingsService = trainingsService;
         }
-        [HttpPost("/Voegtoe")]
+        [HttpPost]
         public ActionResult<Member> VoegMemberToe([FromBody] MemberDTO member)
         {
             try
             {
-                FitnessDomein.Model.Member memberdm = new FitnessDomein.Model.Member
+                FitnessDomein.Model.Member memberdm = new 
                 (
                     member.FirstName,
                     member.LastName,
@@ -37,8 +37,6 @@ namespace FitnessREST.Controllers
 
                 var createdMember = MemberService.VoegMemberToe(memberdm);
                 return CreatedAtAction(nameof(GetMember), new { id = createdMember.Id }, createdMember);
-
-
 
             }
             catch (Exception ex)
@@ -71,7 +69,7 @@ namespace FitnessREST.Controllers
             }
 
         }
-        [HttpPut("/{id}")]
+        [HttpPut("/Member/{id}")]
         public IActionResult UpdateMember([FromRoute] int id, [FromBody] MemberDTO member)
         {
             try
