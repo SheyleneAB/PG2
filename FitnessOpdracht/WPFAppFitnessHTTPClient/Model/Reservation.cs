@@ -12,7 +12,7 @@ namespace WPFAppFitnessHTTPClient.Model
         public Reservation() { }
         private DateTime date;
         public int? Id { get; set; }
-        public Member Member { get; set; }
+        public int MemberId { get; set; }
         public DateTime Date
         {
             get => date;
@@ -76,7 +76,7 @@ namespace WPFAppFitnessHTTPClient.Model
         }
         public override string ToString()
         {
-            return $" \n\t{string.Join("\n\t",Member)}, {Date}, \n\t{string.Join("\n\t", ReservationTimeSlot)}";
+            return $" {MemberId}, {Date}, \n\t{string.Join("\n\t", ReservationTimeSlot)}";
         }
 
     }

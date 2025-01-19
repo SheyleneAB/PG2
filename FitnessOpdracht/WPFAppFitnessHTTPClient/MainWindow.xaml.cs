@@ -128,21 +128,20 @@ namespace WPFAppFitnessHTTPClient
                 MessageBox.Show("Please enter a valid Member ID.");
                 return;
             }
-
-            string memberPath = $"/Member/{memberId}";
-            Member member = await fitnessService.GetMember(memberPath);
-
-            if (member == null)
+            List<ReservationTimeSlotDTO> tijdslotten = new List<ReservationTimeSlotDTO>();
+            foreach(var reservationtijdslot in reservation.ReservationTimeSlot)
             {
-                MessageBox.Show("Member not found.");
-                return;
+                tijdslotten.Add(new ReservationTimeSlotDTO(reservationtijdslot.TimeSlot.Id, reservationtijdslot.Equipment.Id));
             }
 
-            
-            reservation.Member = member;
-            reservation.Date = (DateTime)DatePicker.SelectedDate;
+            var Reservationsend = new ReservationDTO
+            {
+                MemberId = memberId,
+                Date = (DateTime)DatePicker.SelectedDate,
+                Reservationtimeslot = tijdslotten
+            };
             string reservationPath = "/api/Reservation";
-            bool success = await fitnessService.SchrijfReservatieAsync(reservationPath, reservation);
+            bool success = await fitnessService.SchrijfReservatieAsync(reservationPath, Reservationsend);
 
             if (success)
             {
