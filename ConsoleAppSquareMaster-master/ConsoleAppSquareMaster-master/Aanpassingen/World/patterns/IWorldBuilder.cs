@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleAppSquareMaster
+namespace ConsoleAppSquareMaster.Aanpassingen.World.patterns
 {
     internal interface IWorldBuilder
     {
-        bool[,] BuildWorld(int maxy, int maxx, double coverage = 0.5);
+        bool[,] BuildWorld(int maxY, int maxX, params object[] parameters);
     }
 }

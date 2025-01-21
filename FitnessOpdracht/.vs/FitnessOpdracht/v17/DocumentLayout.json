@@ -58,8 +58,7 @@
               "RelativeToolTip": "WPFAppFitnessHTTPClient\\Model\\ReservationTimeSlotDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T02:59:23.976Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T02:59:23.976Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "WPFAppFitnessHTTPClient\\Services\\FitnessService.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAAABkAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T02:41:58.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T02:41:58.612Z"
             },
             {
               "$type": "Document",
@@ -84,8 +82,7 @@
               "RelativeToolTip": "WPFAppFitnessHTTPClient\\Model\\ReservationTimeSlot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T02:27:47.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T02:27:47.614Z"
             },
             {
               "$type": "Document",
@@ -97,8 +94,7 @@
               "RelativeToolTip": "WPFAppFitnessHTTPClient\\Model\\Reservation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T02:19:21.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T02:19:21.955Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "FitnessREST\\Controllers\\ReservationController.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAAwC0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T00:53:04.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T00:53:04.134Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "FitnessREST\\DTO\\ReservationTimeSlotDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T02:24:11.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T02:24:11.494Z"
             },
             {
               "$type": "Document",
@@ -149,8 +143,7 @@
               "RelativeToolTip": "FitnessDB\\Repositories\\ReservationRepositoryEF.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAAAC4AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T00:53:37.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T00:53:37.09Z"
             }
           ]
         }
